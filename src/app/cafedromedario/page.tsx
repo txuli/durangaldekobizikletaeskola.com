@@ -14,7 +14,7 @@ export default function cafeDromedario() {
             <Slideshow images={images} />
             <h1 className="text-center text-4xl">CAFÉ DROMEDARIO TALDEA</h1>
             <TextInfo
-                Text="Eskolatik Kadete mailara egiten dute salto eta gauzak serio jartzen hasten dira. Konpetizioa ikasketekin batera uztartu behar dituzte baita ere. Taldearekin konpromisu gehiago hartu beharra dago."
+                Text="Eskolatik Kadete mailara egiten dute salto eta gauzak serio jartzen hasten dira. Konpetizioa ikasketekin batera uztartu behar dituzte baita ere."
                 SecondText="Eskolatik Kadete mailara egiten dute salto eta gauzak serio jartzen hasten dira. Konpetizioa ikasketekin batera uztartu behar dituzte baita ere. Taldearekin konpromisu gehiago hartu beharra dago."
                 ThirdText=""
             />
