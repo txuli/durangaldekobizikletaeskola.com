@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import imageLogo from '../media/logo.png';
-import logoMEnu from '../media/menu/logoMenu.svg';
+import imageLogo from '@/app/media/logo.png';
+import logoMEnu from '@/app/media/menu/logoMenu.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import euskera from '../media/euskera.png';
-import spanish from '../media/spanish.png';
+import euskera from '@/app/media/euskera.png';
+import spanish from '@/app/media/spanish.png';
 
 const NavBar = () => {
 
