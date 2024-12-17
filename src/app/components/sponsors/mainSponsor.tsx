@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const SecondSponsor = (props: { Link: string | undefined; img: string | undefined; }) => {
     return (
-        <div className="bg-gradient-to-r from-blue-400 to-blue-500 mb-2 m-6 h-36 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-xl">
+        <div className="bg-gradient-to-r from-blue-400 to-blue-500  mx-6 mb-6 h-36 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:shadow-xl">
             <a href={props.Link} target="_blank" rel="noopener noreferrer" className="h-full flex items-center justify-center">
                 <Image
                     src={props.img ?? ''}

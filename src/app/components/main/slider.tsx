@@ -19,7 +19,14 @@ interface SlideshowProps {
 const Slideshow: React.FC<SlideshowProps> = ({ images=[] }) => {
   return (
     <div className="slide-container w-9/12 mb-10 mx-auto xl:mt-36 sm:mt-10">
-      <Slide>
+      <Slide
+        duration={4000} // Duración de cada slide en milisegundos
+        transitionDuration={800} // Duración de la transición en milisegundos
+        infinite={true} // Hacer que el slider sea infinito
+        indicators={true} // Mostrar indicadores
+        arrows={true} // Mostrar flechas de navegación
+        autoplay={true}
+      >
         {images.map((slideImage, index) => (
           <div key={index}>
             <div style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}></div>

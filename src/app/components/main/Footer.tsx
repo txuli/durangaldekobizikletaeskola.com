@@ -1,10 +1,10 @@
 "use client";
-import logos from "../media/linkLogo.png";
+import logos from "@/app/media/linkLogo.png";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import instagram from "../media/RSS/instagram.svg";
-import facebook from "../media/RSS/facebook.svg";
-import twitter from "../media/RSS/twitter.svg";
+import instagram from "@/app/media/RSS/instagram.svg";
+import facebook from "@/app/media/RSS/facebook.svg";
+import twitter from "@/app/media/RSS/twitter.svg";
 export default function Footer() {
     const [windowWidth, setWindowWidth] = useState<number | null>(null);
     useEffect(() => {
