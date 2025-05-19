@@ -1,7 +1,8 @@
 "use client";
-import { useEffect, useRef, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import info from "@/app/media/info.svg";
 import Image from "next/image";
+import Table from "@/app/[locale]/components/Table";
 
 type Carrera = {
     id: number;
@@ -34,19 +35,11 @@ export default function RaceClient({ carreras }: RaceClientProps) {
     const [closing, setClosing] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
     const [deleteId, setDeleteId] = useState<number | null>(null);
-    const firstRowRefs = useRef<(HTMLTableCellElement | null)[]>([]);
-    const [colWidths, setColWidths] = useState<number[]>([]);
     const [selectedRace, setSelectedRace] = useState<Carrera | null>(null);
     const [athleteForm, setAthleteForm] = useState({ nombre: "", apellidos: "", tiempo: "", posicion: 0 });
     const [searchAthleteTerm, setSearchAthleteTerm] = useState("");
     const [filteredAthletes, setFilteredAthletes] = useState<any[]>([]);
     const [selectedAthlete, setSelectedAthlete] = useState<any | null>(null);
-
-    useLayoutEffect(() => {
-        if (firstRowRefs.current.length) {
-            setColWidths(firstRowRefs.current.map(td => td?.offsetWidth || 0));
-        }
-    }, [data]);
 
     // Filtrar los datos según el término de búsqueda
     const filteredData = data.filter(carrera =>
@@ -378,17 +371,22 @@ export default function RaceClient({ carreras }: RaceClientProps) {
                 <>
                     {/* Título y botón responsive */}
                     <div className="mb-6">
-                        <h2 className="text-3xl font-semibold text-white drop-shadow text-center mb-4">CARRERAS</h2>
-                        <div className="flex justify-end">
-                            <button
-                                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
-                                    transition-all duration-200 ease-in-out
-                                    hover:shadow-xl hover:opacity-90
-                                    focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 uppercase"
-                                onClick={handleAdd}
-                            >
-                                Añadir carrera
-                            </button>
+                        <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between relative">
+                            <div className="flex-1 hidden md:block"></div>
+                            <h2 className="text-3xl font-semibold text-white drop-shadow text-center flex-1 md:absolute md:left-1/2 md:-translate-x-1/2">
+                                CARRERAS
+                            </h2>
+                            <div className="flex justify-end mt-4 md:mt-0 flex-1">
+                                <button
+                                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                                        transition-all duration-200 ease-in-out
+                                        hover:shadow-xl hover:opacity-90
+                                        focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 uppercase"
+                                    onClick={handleAdd}
+                                >
+                                    Añadir carrera
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div className="flex justify-center">
@@ -415,133 +413,22 @@ export default function RaceClient({ carreras }: RaceClientProps) {
                                     className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                                 />
                             </div>
-                            {/* Tabla responsive: en móvil todo junto, en desktop cabecera separada */}
-                            <div className="rounded-2xl shadow-xl backdrop-blur-md bg-white/10 border border-blue-400 pb-2 overflow-hidden">
-                                <div className="overflow-x-auto">
-                                    <table className="min-w-full table-auto border-collapse">
-                                        <colgroup>
-                                            {colWidths.map((w, i) => (
-                                                <col key={i} style={{ width: w ? `${w}px` : undefined }} />
-                                            ))}
-                                        </colgroup>
-                                        <thead className="bg-gray-700 text-blue-100 uppercase hidden md:table-header-group">
-                                            <tr>
-                                                <th className="px-2 md:px-4 py-3 rounded-tl-2xl font-semibold">Nombre</th>
-                                                <th className="px-2 md:px-4 py-3 font-semibold">Fecha</th>
-                                                <th className="px-2 md:px-4 py-3 font-semibold">Lugar</th>
-                                                <th className="px-2 md:px-4 py-3 font-semibold">Categoría</th>
-                                                <th className="px-2 md:px-4 py-3 font-semibold">Modalidad</th>
-                                                <th className="px-2 md:px-4 py-3 font-semibold">Descripción</th>
-                                                <th className="px-2 md:px-4 py-3 font-semibold">Acciones</th>
-                                                <th className="w-3 rounded-tr-2xl font-semibold"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {filteredData.map((c, rowIdx) => (
-                                                <tr
-                                                    key={c.id}
-                                                    className="hover:bg-blue-900/20 transition cursor-pointer border-t border-blue-900/30"
-                                                    onClick={() => handleRowClick(c)}
-                                                >
-                                                    {/* Vista móvil: una sola celda con toda la info */}
-                                                    <td
-                                                        colSpan={8}
-                                                        className="md:hidden px-4 py-4"
-                                                    >
-                                                        <div className="flex flex-col gap-2">
-                                                            <div>
-                                                                <span className="font-bold text-blue-300">Nombre: </span>
-                                                                <span>{c.nombre}</span>
-                                                            </div>
-                                                            <div>
-                                                                <span className="font-bold text-blue-300">Fecha: </span>
-                                                                <span>{formatFecha(c.fecha)}</span>
-                                                            </div>
-                                                            <div>
-                                                                <span className="font-bold text-blue-300">Lugar: </span>
-                                                                <span>{c.lugar}</span>
-                                                            </div>
-                                                            <div>
-                                                                <span className="font-bold text-blue-300">Categoría: </span>
-                                                                <span>{c.categoria}</span>
-                                                            </div>
-                                                            <div>
-                                                                <span className="font-bold text-blue-300">Modalidad: </span>
-                                                                <span>{c.modalidad.replace("_", "-")}</span>
-                                                            </div>
-                                                            <div>
-                                                                <span className="font-bold text-blue-300">Descripción: </span>
-                                                                <span>{c.descripcion}</span>
-                                                            </div>
-                                                            <div className="flex gap-2 mt-2">
-                                                                <button
-                                                                    className="px-2 py-1 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 transition font-semibold w-full"
-                                                                    onClick={e => {
-                                                                        e.stopPropagation();
-                                                                        handleEdit(c);
-                                                                    }}
-                                                                >
-                                                                    Editar
-                                                                </button>
-                                                                <button
-                                                                    className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition font-semibold w-full"
-                                                                    onClick={e => {
-                                                                        e.stopPropagation();
-                                                                        handleDelete(c.id);
-                                                                    }}
-                                                                >
-                                                                    Eliminar
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    {/* Vista escritorio: columnas normales */}
-                                                    <td className="px-2 md:px-4 py-2 hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[0] = el; }}>
-                                                        {c.nombre}
-                                                    </td>
-                                                    <td className="px-2 md:px-4 py-2 text-center hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[1] = el; }}>
-                                                        {formatFecha(c.fecha)}
-                                                    </td>
-                                                    <td className="px-2 md:px-4 py-2 text-center hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[2] = el; }}>
-                                                        {c.lugar}
-                                                    </td>
-                                                    <td className="px-2 md:px-4 py-2 text-center hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[3] = el; }}>
-                                                        {c.categoria}
-                                                    </td>
-                                                    <td className="px-2 md:px-4 py-2 text-center hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[4] = el; }}>
-                                                        {c.modalidad.replace("_", "-")}
-                                                    </td>
-                                                    <td className="px-2 md:px-4 py-2 hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[5] = el; }}>
-                                                        {c.descripcion}
-                                                    </td>
-                                                    <td className="px-2 md:px-4 py-2 hidden md:table-cell" ref={el => { if (rowIdx === 0) firstRowRefs.current[6] = el; }}>
-                                                        <div className="flex flex-col md:flex-row justify-center gap-2 items-center">
-                                                            <button
-                                                                className="px-2 py-1 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 transition font-semibold w-full md:w-auto"
-                                                                onClick={e => {
-                                                                    e.stopPropagation();
-                                                                    handleEdit(c);
-                                                                }}
-                                                            >
-                                                                Editar
-                                                            </button>
-                                                            <button
-                                                                className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition font-semibold w-full md:w-auto"
-                                                                onClick={e => {
-                                                                    e.stopPropagation();
-                                                                    handleDelete(c.id);
-                                                                }}
-                                                            >
-                                                                Eliminar
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                            <Table
+                                columns={[
+                                    { name: "Nombre", key: "nombre" },
+                                    { name: "Fecha", key: "fecha" },
+                                    { name: "Lugar", key: "lugar" },
+                                    { name: "Categoría", key: "categoria" },
+                                    { name: "Modalidad", key: "modalidad" },
+                                    { name: "Descripción", key: "descripcion" },
+                                ]}
+                                data={filteredData}
+                                colWidths={[225, 250, 150, 150, 150, 300]}
+                                onRowClick={handleRowClick}
+                                onEdit={handleEdit}
+                                onDelete={handleDelete}
+                                formatFecha={formatFecha}
+                            />
                         </div>
                     </div>
                 </>
@@ -566,7 +453,7 @@ export default function RaceClient({ carreras }: RaceClientProps) {
                     <h3 className="text-2xl font-extrabold mb-6 text-blue-400 text-center drop-shadow uppercase">
                         {selectedRace.nombre}
                     </h3>
-            
+
                     {/* Contenedor responsive */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start w-full md:w-[70%] mx-auto">
                         {/* Columna izquierda: Lista de participantes */}
@@ -601,7 +488,7 @@ export default function RaceClient({ carreras }: RaceClientProps) {
                                 <p className="text-gray-400 text-center">No hay participantes en esta carrera.</p>
                             )}
                         </div>
-            
+
                         {/* Columna derecha: Barra de búsqueda y formulario */}
                         <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
                             {!selectedAthlete && (
@@ -646,7 +533,7 @@ export default function RaceClient({ carreras }: RaceClientProps) {
                                     </ul>
                                 </>
                             )}
-            
+
                             {selectedAthlete && (
                                 <form onSubmit={handleAddAthlete} className="space-y-4 mt-6 px-0 md:px-8">
                                     <h4 className="text-xl font-bold text-gray-300 mb-4 uppercase">Añadir resultado</h4>
