@@ -1,0 +1,26 @@
+# people.txt
+
+# ——————————————————————
+#  The people behind this project
+# ——————————————————————
+
+Name: jaimedm
+Role: Developer
+GitHub: https://github.com/JaimeDM6
+Description: Passionate about clean code, innovation, and building scalable solutions.
+
+---
+
+Name: lordlichi
+Role: Developer
+GitHub: https://github.com/lordlichi2006
+Description: Creative thinker with a strong eye for detail, focused on elegant design and user-friendly experiences.
+
+---
+
+# ——————————————————————
+#  Special Thanks
+# ——————————————————————
+
+This project would not be possible without the dedication, vision, and hard work of these developers.
+Thank you, **jaimedm** and **lordlichi**, for your contributions and inspiration.

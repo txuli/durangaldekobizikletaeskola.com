@@ -27,7 +27,7 @@ export default function CarreraPage() {
         }
 
         const data = await response.json();
-        console.log("Respuesta del backend:", data);
+        
 
         if (!Array.isArray(data)) {
           console.error("Respuesta no es un array:", data);

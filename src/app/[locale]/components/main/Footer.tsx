@@ -74,15 +74,15 @@ const Footer = async ({ color = "", color2 = "", color3 = "" }) => {
 
                 
                 <div className={`flex flex-col lg:flex-row items-center justify-center lg:justify-end ${color2 ? color2 : 'bg-customDarkBlue'} h-auto lg:h-10 mt-4 lg:mt-0  py-2 pr-3`}>
-                    <div className="text-left w-[75%]"><Link href="/terms&use" className="cursor-pointer underline ">terms of use </Link></div>
-                    <div className="flex items-center justify-center lg:justify-end text-center lg:text-right">
-                        <span className="lg:pl-1">Designed by</span>
+                    <div className="text-left w-[65%]"><Link href="/terms&use" className="cursor-pointer underline ">terms of use </Link></div>
+                    <div className="flex items-center justify-center lg:justify-end text-center lg:text-right ">
+                        <span className=" w-fit lg:pl-1 lg:w-50">Designed by</span>
                         <a href="https://github.com/txuli" className={`flex items-center pl-1 ${color3 ? color3 : 'bg-customDarkerBlue'} rounded-lg justify-center px-2 mx-2 group`}>
                             <Image src={logos} alt="Logo" width={20} height={20} className="group-hover:rotate-180 transition-all grayscale invert" />
                             <span className="pl-1">Txuli</span>
                         </a>
                     </div>
-                    <span className="text-center lg:text-right ">for Durangaldeko Bizikleta Eskola ©2025</span>
+                    <span className="text-center lg:text-right w-100 ">for Durangaldeko Bizikleta Eskola ©2025</span>
                 </div>
             </div>
 

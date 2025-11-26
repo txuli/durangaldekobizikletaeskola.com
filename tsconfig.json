@@ -32,6 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
+    "buildd/types/**/*.ts",
     "next-env.d.ts",
     "next-sitemap.js",
     "build/types/**/*.ts"

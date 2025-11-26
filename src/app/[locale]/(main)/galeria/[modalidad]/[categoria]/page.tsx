@@ -13,8 +13,7 @@ export default function CategoriaPage() {
 
   useEffect(() => {
     async function fetchCategoriaData() {
-      console.log("Album:", album);
-      console.log("Modalidad:", modalidad); 
+      
       if (!API_URL) throw new Error("API URL no definida en las variables de entorno");
 
       try {

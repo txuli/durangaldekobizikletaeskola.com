@@ -2,6 +2,7 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import Image from 'next/image';
 
 const divStyle: React.CSSProperties = {
     display: 'flex',
@@ -26,7 +27,7 @@ const captionStyle: React.CSSProperties = {
 };
 
 interface SlideshowProps {
-    images: { url: string;  }[];
+    images: { url: string; }[];
     title: string;
 }
 
@@ -37,21 +38,27 @@ const Slides: React.FC<SlideshowProps> = ({ images = [], title }) => {
             <Slide
                 duration={4000}
                 transitionDuration={1000}
-                infinite={true} 
-                indicators={false} 
+                infinite={true}
+                indicators={false}
                 arrows={false}
                 autoplay={true}
             >
                 {images.map((slideImage, index) => (
                     <div key={index}>
-                        <div style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>
-                           
+                        <div style={divStyle}>
+                            <Image
+                                src={slideImage.url}
+                                alt=""
+                                fill
+                                className="object-cover"
+                                priority={index === 0}
+                            />
                         </div>
                     </div>
                 ))}
 
             </Slide>
-            
+
         </div>
     );
 };

@@ -9,10 +9,7 @@ export default function Page() {
     const t = useTranslations("eskolaPage");
     const images = [
         { url: 'https://photos.txuli.com/duranguesa/media/foto16.webp' },
-        {
-            url: 'https://photos.txuli.com/duranguesa/eskola2.jpeg'
-
-        },
+        { url: 'https://photos.txuli.com/duranguesa/eskola2.jpeg'},
         { url: 'https://photos.txuli.com/duranguesa/escuela.jpg' },
         { url: 'https://photos.txuli.com/duranguesa/esk3.jpeg' },
         
