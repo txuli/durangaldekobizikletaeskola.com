@@ -19,6 +19,7 @@
     "@better-auth/cli": "^1.3.27",
     "@pdf-lib/fontkit": "^1.1.1",
     "@prisma/client": "^6.7.0",
+    "@tailwindcss/postcss": "^4.1.17",
     "better-auth": "1.3",
     "busboy": "^1.6.0",
     "dotenv": "^16.5.0",

@@ -3,7 +3,7 @@
     "slug": "bttTxapelduna",
     "image": "https://photos.txuli.com/duranguesa/notices/ander.JPG",
     "altKey": "altImage3",
-    "date": "26-05-2024",
+    "date": "2024-05-26",
     "titleKey": "noticeTitle3",
     "categoryKey": "category3",
     "translationKey": "bttTxapeldunaPage",
@@ -13,7 +13,7 @@
     "slug": "irrisarriNotice",
     "image": "https://photos.txuli.com/duranguesa/notices/irrisarri.JPG",
     "altKey": "altImage3",
-    "date": "20-10-2024",
+    "date": "2024-10-20",
     "titleKey": "noticeTitle2",
     "categoryKey": "category2",
     "translationKey": "irrisarriNoticePage",
@@ -23,7 +23,7 @@
     "slug": "espainakoTxapelketa",
     "image": "https://photos.txuli.com/duranguesa/notices/noticiasSeleccion.png",
     "altKey": "altImage3",
-    "date": "12-01-2025",
+    "date": "2025-01-12",
     "titleKey": "noticeTitle",
     "categoryKey": "category",
     "translationKey": "espainakoTxapelketaPage",
@@ -33,7 +33,7 @@
     "slug": "tenporadaAsiera",
     "image": "https://photos.txuli.com/duranguesa/notices/cronica1.jpeg",
     "altKey": "altImage4",
-    "date": "1-03-2025",
+    "date": "2025-03-01",
     "titleKey": "noticeTitle4",
     "categoryKey": "category4",
     "translationKey": "tenporadaAsieraPage",
@@ -43,7 +43,7 @@
     "slug": "puntagaleaTeam",
     "image": "https://photos.txuli.com/duranguesa/notices/portadaneskak.JPG",
     "altKey": "altImage3",
-    "date": "6-03-2025",
+    "date": "2025-03-06",
     "titleKey": "noticeTitle5",
     "categoryKey": "category4",
     "translationKey": "puntagaleaTeamPage",
@@ -53,7 +53,7 @@
     "slug": "cronica9-03-25",
     "image": "https://photos.txuli.com/duranguesa/notices/cronica2.jpeg",
     "altKey": "altImage3",
-    "date": "9-03-2025",
+    "date": "2025-03-09",
     "titleKey": "noticeTitle6",
     "categoryKey": "category4",
     "translationKey": "cronica9-03-25Page",
@@ -63,7 +63,7 @@
     "slug": "cronica15-03-25",
     "image": "https://photos.txuli.com/duranguesa/notices/cronica3.jpeg",
     "altKey": "altImage3",
-    "date": "15-03-2025",
+    "date": "2025-03-15",
     "titleKey": "noticeTitle7",
     "categoryKey": "category5",
     "translationKey": "cronica15-03-25Page",
@@ -73,7 +73,7 @@
     "slug": "cronica23-03-25",
     "image": "https://photos.txuli.com/duranguesa/notices/cronica4.jpeg",
     "altKey": "altImage3",
-    "date": "23-03-2025",
+    "date": "2025-03-23",
     "titleKey": "noticeTitle8",
     "categoryKey": "category5",
     "translationKey": "cronica23-03-25Page",
@@ -83,7 +83,7 @@
     "slug": "cronica29-03-25",
     "image": "https://photos.txuli.com/duranguesa/notices/cronica5b.JPEG",
     "altKey": "altImage3",
-    "date": "29-03-2025",
+    "date": "2025-03-29",
     "titleKey": "noticeTitle9",
     "categoryKey": "category5",
     "translationKey": "cronica29-03-25Page",
@@ -93,7 +93,7 @@
     "slug": "presentacion",
     "image": "https://photos.txuli.com/duranguesa/notices/DuranguesaPresenta2red.jpg",
     "altKey": "altImage3",
-    "date": "4-04-2025",
+    "date": "2025-04-04",
     "titleKey": "noticeTitle10",
     "categoryKey": "category6",
     "translationKey": "presentacionPage",
@@ -103,7 +103,7 @@
     "slug": "cronica05-04-25",
     "image": "https://photos.txuli.com/duranguesa/notices/por.jpg",
     "altKey": "altImage3",
-    "date": "5-04-2025",
+    "date": "2025-04-05",
     "titleKey": "noticeTitle11",
     "categoryKey": "category5",
     "translationKey": "cronica05-04-25Page",
@@ -113,7 +113,7 @@
     "slug": "cronica12-04-25",
     "image": "https://photos.txuli.com/duranguesa/notices/cronica120425v2.jpg",
     "altKey": "altImage3",
-    "date": "12-04-2025",
+    "date": "2025-04-12",
     "titleKey": "noticeTitle12",
     "categoryKey": "category5",
     "translationKey": "cronica12-04-25Page",
@@ -130,7 +130,6 @@
     "translationKey": [
       "cronica2025-05-02Page"
     ]
-    
   },
   {
     "date": "2025-05-12",
@@ -143,6 +142,5 @@
     "translationKey": [
       "cronica2025-05-12Page"
     ]
-    
   }
 ]
