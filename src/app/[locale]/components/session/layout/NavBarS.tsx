@@ -43,7 +43,7 @@ const NavBarS = ({ rol }: { rol: string }) => {
     };
 
     return (
-        <nav className="bg-customDarkBlueSession/65 rounded-b-2xl mx-auto  mb-4 px-2 sm:px-4 w-full">
+        <nav className="bg-custom-dark-blue-session/65 rounded-b-2xl mx-auto  mb-4 px-2 sm:px-4 w-full">
             <div className="flex h-14 items-center justify-between relative text-white font-fredoka uppercase px-2 py-2 rounded-lg text-xl md:text-base">
                 <Link
                     href="/"
@@ -79,7 +79,7 @@ const NavBarS = ({ rol }: { rol: string }) => {
                     <span className={`block w-6 h-0.5 bg-white transition-all ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}`}></span>
                 </button>
                 {/* Enlaces */}
-                <div className={`flex-1 justify-center items-center xl:flex gap-4 ${menuOpen ? "flex flex-col fixed inset-0 left-0 w-full bg-customDarkBlueSession/95 z-40 py-3 px-2 space-y-1" : "hidden xl:flex"}`}>
+                <div className={`flex-1 justify-center items-center xl:flex gap-4 ${menuOpen ? "flex flex-col fixed inset-0 left-0 w-full bg-custom-dark-blue-session/95 z-40 py-3 px-2 space-y-1" : "hidden xl:flex"}`}>
                     {rol && (
                         <Link
                             href="/dashboard"

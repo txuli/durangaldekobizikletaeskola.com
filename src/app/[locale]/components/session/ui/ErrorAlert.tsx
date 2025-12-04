@@ -28,7 +28,7 @@ export default function ErrorAlert({ message, onClose }: ErrorAlertProps) {
   if (!visible || !message) return null;
 
   return (
-    <div className={`fixed inset-0 flex items-center justify-center z-[110] bg-black bg-opacity-60 ${closing ? "animate-fade-out" : "animate-fade-in"}`}>
+    <div className={`fixed inset-0 flex items-center justify-center z-110 bg-black bg-opacity-60 ${closing ? "animate-fade-out" : "animate-fade-in"}`}>
       <div className={`bg-gray-900 rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center border-4 border-red-500 relative ${closing ? "animate-slide-down" : "animate-slide-up"}`}>
         <div className="flex items-center justify-center mb-4 gap-3">
           <Image
@@ -39,11 +39,11 @@ export default function ErrorAlert({ message, onClose }: ErrorAlertProps) {
               filter: "invert(36%) sepia(99%) saturate(2000%) hue-rotate(340deg) brightness(90%) contrast(110%)",
             }}
           />
-          <h3 className="text-xl font-bold text-red-400 drop-shadow m-0">¡Error!</h3>
+          <h3 className="text-xl font-bold text-red-400 drop-shadow-sm m-0">¡Error!</h3>
         </div>
         <p className="mb-4 text-gray-200">{message}</p>
         <button
-          className="mt-2 px-5 py-2 bg-gradient-to-r from-red-700 to-red-500 text-gray-100 rounded-lg font-bold shadow transition duration-200 hover:filter hover:brightness-125"
+          className="mt-2 px-5 py-2 bg-linear-to-r from-red-700 to-red-500 text-gray-100 rounded-lg font-bold shadow-sm transition duration-200 hover:filter hover:brightness-125"
           onClick={handleClose}
         >
           Cerrar

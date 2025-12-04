@@ -35,7 +35,7 @@ export default function News({ items }: NewsProps) {
 								className="w-full h-96 object-cover rounded-t-2xl"
 								quality={60}
 							/>
-							<div className="bg-customDarkBlue text-white  rounded-b-2xl pl-1 h-28  flex flex-col justify-center">
+							<div className="bg-custom-dark-blue text-white  rounded-b-2xl pl-1 h-28  flex flex-col justify-center">
 								<main className="ml-1 pb-2 flex flex-col justify-center">
 									<h4 className="font-fredoka font-light text-left text-sm px-1 opacity-75 mt-1">
 										{item.category}

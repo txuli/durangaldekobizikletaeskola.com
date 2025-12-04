@@ -6,7 +6,7 @@ interface bProps {
   }
   const bar: React.FC<bProps> = ({ color = ""}) => {
     return (
-        <div className={`${color ? color : 'bg-customDarkBlue'} w-full h-6 `}></div>
+        <div className={`${color ? color : 'bg-custom-dark-blue'} w-full h-6 `}></div>
     )
 }
 export default bar;

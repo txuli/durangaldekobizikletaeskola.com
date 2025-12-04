@@ -41,13 +41,13 @@ export default async function RootLayout({
         <link rel="shortcut icon" href="/media/logo.png" />
       </head>
       <body
-        className={`${fredoka.className} antialiased page-specific absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]`}
+        className={`${fredoka.className} antialiased page-specific absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]`}
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
-          <NavBar className="bg-customPuntagaleaOrange" color2="bg-customPuntagaleaDarkOrange" />
-          <Line color="bg-customPuntagaleaDarkOrange" />
+          <NavBar className="bg-custom-puntagalea-orange" color2="bg-custom-puntagalea-dark-orange" />
+          <Line color="bg-custom-puntagalea-dark-orange" />
           {children}
-          <Footer color="bg-customPuntagaleaOrange" color2="bg-customPuntagaleaDarkOrange" color3="bg-customPuntagaleaDarkerOrange" />
+          <Footer color="bg-custom-puntagalea-orange" color2="bg-custom-puntagalea-dark-orange" color3="bg-custom-puntagalea-darker-orange" />
         </NextIntlClientProvider>
       </body>
     </html>

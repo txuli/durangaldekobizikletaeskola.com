@@ -229,11 +229,11 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
             {showConfirm && (
                 <div className={`fixed inset-0 bg-black bg-opacity-60 flex items-start justify-center z-50 pt-10 transition-opacity duration-300 ${closing ? "animate-fade-out" : "animate-fade-in"}`}>
                     <div className={`bg-gray-900 rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center border-4 border-blue-500 transition-all duration-300 ${closing ? "animate-slide-down" : "animate-slide-up"}`}>
-                        <h2 className="text-2xl font-extrabold mb-4 text-gray-200 drop-shadow">¿Estás seguro/a de que deseas eliminar este deportista?</h2>
+                        <h2 className="text-2xl font-extrabold mb-4 text-gray-200 drop-shadow-sm">¿Estás seguro/a de que deseas eliminar este deportista?</h2>
                         <p className="text-gray-300 mb-6">Se eliminarán todos sus datos y sus estadísticas. Esta acción no se puede deshacer.</p>
                         <div className="flex justify-center gap-6 mt-4">
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-red-600 to-red-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-red-700 hover:to-red-500 transition-all duration-150"
+                                className="px-6 py-2 bg-linear-to-r from-red-600 to-red-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-red-700 hover:to-red-500 transition-all duration-150"
                                 onClick={async () => {
                                     setClosing(true);
                                     setTimeout(async () => {
@@ -245,7 +245,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 Eliminar
                             </button>
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 rounded-xl font-bold shadow-lg hover:scale-105 hover:from-gray-400 hover:to-gray-500 transition-all duration-150"
+                                className="px-6 py-2 bg-linear-to-r from-gray-300 to-gray-400 text-gray-800 rounded-xl font-bold shadow-lg hover:scale-105 hover:from-gray-400 hover:to-gray-500 transition-all duration-150"
                                 onClick={() => {
                                     setClosing(true);
                                     setTimeout(() => {
@@ -265,16 +265,16 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
             {/* Mostrar información de los deportistas */}
             {/* Título y botón responsive */}
             <div className="mb-8">
-                <h2 className="text-3xl font-semibold text-white drop-shadow text-center mb-4">
+                <h2 className="text-3xl font-semibold text-white drop-shadow-sm text-center mb-4">
                     {rol === "coach" ? "MIS DEPORTISTAS" : "DEPORTISTAS"}
                 </h2>
                 {rol === "coach" && (
                     <div className="flex justify-center md:justify-end mb-4">
                         <button
-                            className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                            className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                 transition-all duration-200 ease-in-out
                                 hover:shadow-xl hover:opacity-90
-                                focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                                focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                             onClick={handleAdd}
                         >
                             Añadir deportista
@@ -296,7 +296,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                     placeholder="Buscar..."
                                     value={searchTerm}
                                     onChange={handleSearchChange}
-                                    className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
+                                    className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                                 />
                             </div>
                             <Table
@@ -341,7 +341,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 <div className="text-blue-200 text-center py-4">No hay deportistas disponibles</div>
                             ) : (
                                 availableRunners.map(runner => (
-                                    <label key={runner.numero_licencia} className="flex items-center gap-3 py-2 px-2 hover:bg-blue-900/20 rounded cursor-pointer">
+                                    <label key={runner.numero_licencia} className="flex items-center gap-3 py-2 px-2 hover:bg-blue-900/20 rounded-sm cursor-pointer">
                                         <input
                                             type="checkbox"
                                             checked={selectedRunners.includes(runner.numero_licencia)}
@@ -354,14 +354,14 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                         </div>
                         <div className="flex gap-4 mt-6 justify-end">
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg"
+                                className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg"
                                 onClick={handleAssignRunners}
                                 disabled={selectedRunners.length === 0 || loadingRunners}
                             >
                                 Añadir seleccionados
                             </button>
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg"
+                                className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg"
                                 onClick={handleCloseAddList}
                             >
                                 Cancelar
@@ -382,7 +382,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                         >
                             ✕
                         </button>
-                        <h3 className="text-2xl font-extrabold mb-6 text-blue-400 text-center drop-shadow">{
+                        <h3 className="text-2xl font-extrabold mb-6 text-blue-400 text-center drop-shadow-sm">{
                             editId ? "Editar deportista" : "Añadir deportista"
                         }</h3>
                         <form onSubmit={handleSubmit} className="space-y-4 text-white">
@@ -393,7 +393,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.numero_licencia || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="text"
@@ -402,7 +402,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.nombre || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="text"
@@ -411,7 +411,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.apellidos || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="text"
@@ -420,7 +420,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.dni || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="text"
@@ -429,7 +429,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.telefono || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="date"
@@ -438,7 +438,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.fecha_nacimiento ? form.fecha_nacimiento.slice(0, 10) : ""}
                                 onChange={handleChange}
                                 required
-                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.fecha_nacimiento ? "text-gray-400" : "text-white"
+                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.fecha_nacimiento ? "text-gray-400" : "text-white"
                                     }`}
                             />
                             <input
@@ -448,7 +448,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.peso || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="number"
@@ -457,7 +457,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.altura || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="number"
@@ -466,7 +466,7 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.ftp || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="number"
@@ -475,24 +475,24 @@ export default function RunnersClient({ deportistas, rol }: RunnerClientProps) {
                                 value={form.pulso || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <div className="flex gap-4 mt-6 justify-end">
                                 <button
                                     type="submit"
-                                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                                    className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                                transition-all duration-200 ease-in-out
                                                hover:shadow-xl hover:opacity-90
-                                               focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                                               focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                                 >
                                     {editId ? "Guardar cambios" : "Añadir"}
                                 </button>
                                 <button
                                     type="button"
-                                    className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
+                                    className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
                                                transition-all duration-200 ease-in-out
                                                hover:shadow-xl hover:opacity-90
-                                               focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                                               focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                                     onClick={handleCloseForm}
                                 >
                                     Cancelar

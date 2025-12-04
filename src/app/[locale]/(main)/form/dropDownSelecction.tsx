@@ -20,7 +20,7 @@ const DropDownSelection: FC<DropDownSelec> = ({ items = [], title }) => {
     <div className="relative inline-block text-left">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2 bg-blue-600 text-white rounded-lg focus:outline-none"
+        className="px-4 py-2 bg-blue-600 text-white rounded-lg focus:outline-hidden"
       >
         {title} <span className="ml-2">▼</span>
       </button>

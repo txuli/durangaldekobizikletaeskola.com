@@ -399,7 +399,7 @@ export default function ClientForm() {
 
     return (
         <>
-            <h2 className="text-3xl font-semibold text-white drop-shadow text-center mb-4 uppercase font-fredoka">Categorías de galeria</h2>
+            <h2 className="text-3xl font-semibold text-white drop-shadow-sm text-center mb-4 uppercase font-fredoka">Categorías de galeria</h2>
 
             <form onSubmit={handleSubmit} className="w-full mx-auto px-2 sm:px-4 md:px-24 lg:px-52 xl:px-[33%] font-fredoka">
                 <p className='text-center'>Seleciona que apartado quieres crear</p> 
@@ -407,28 +407,28 @@ export default function ClientForm() {
                     <button
                         type="button"
                         onClick={(event) => handleButton(event, "Año")}
-                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     >
                         Año
                     </button>
                     <button
                         type="button"
                         onClick={(event) => handleButton(event, "Modalidad")}
-                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     >
                         Modalidad
                     </button>
                     <button
                         type="button"
                         onClick={(event) => handleButton(event, "Categoria")}
-                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     >
                         Categoria
                     </button>
                     <button
                         type="button"
                         onClick={(event) => handleButton(event, "Carrera")}
-                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="py-2 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     >
                         Carrera
                     </button>
@@ -445,7 +445,7 @@ export default function ClientForm() {
                                 name="year"
                                 value={formData.year}
                                 onChange={handleChange}
-                                className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             >
                                 <option value="">Seleccionar</option>
                                 {yearOptions.map((year) => (
@@ -471,7 +471,7 @@ export default function ClientForm() {
                                 value={formData.mode}
                                 onChange={handleChange}
                                 disabled={disabledDropdowns.mode}
-                                className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             >
                                 <option value="">Seleccionar</option>
                                 {modeOptions.map((mode) => (
@@ -498,7 +498,7 @@ export default function ClientForm() {
                                 value={formData.category}
                                 onChange={handleChange}
                                 disabled={disabledDropdowns.category}
-                                className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             >
                                 <option value="">Seleccionar</option>
                                 {categoryOptions.map((category) => (
@@ -522,7 +522,7 @@ export default function ClientForm() {
                             value={formData.year}
                             onChange={handleChange}
                             placeholder="Escribe el año"
-                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                         />
                     </section>
                 ) : null}
@@ -538,7 +538,7 @@ export default function ClientForm() {
                             onChange={handleChange}
                             placeholder="Escribe la modalidad"
                             disabled={disabledDropdowns.mode}
-                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                         />
                     </section>
                 ) : null}
@@ -554,7 +554,7 @@ export default function ClientForm() {
                             onChange={handleChange}
                             placeholder="Escribe la categoría"
                             disabled={disabledDropdowns.category}
-                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                         />
                     </section>
                 ) : null}
@@ -570,14 +570,14 @@ export default function ClientForm() {
                             onChange={handleChange}
                             placeholder="Escribe el nombre de la carrera"
                             disabled={disabledDropdowns.race}
-                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                            className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                         />
                     </section>
                 ) : null}
 
 
                 <section className="flex my-3">
-                    <div className="w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div className="w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500">
                         <input
                             type="file"
                             id="fileUpload"
@@ -613,7 +613,7 @@ export default function ClientForm() {
 
 
                 <div className="mx-auto my-3">
-                    <button type="submit" className="w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" className="w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500">
                         Subir Portada de {type}
                     </button>
                 </div>

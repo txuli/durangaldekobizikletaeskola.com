@@ -12,11 +12,11 @@ import { Link } from '@/i18n/routing';
 
 
 interface fProps {
-  
+
     color?: string;
-    color2?: string;    
+    color2?: string;
     color3?: string;
-  }
+}
 const Footer = async ({ color = "", color2 = "", color3 = "" }) => {
 
     return (
@@ -47,7 +47,7 @@ const Footer = async ({ color = "", color2 = "", color3 = "" }) => {
                             {/* Social media */}
                             <div className="flex items-center gap-4 mt-4 lg:mt-6">
                                 <a href="https://www.facebook.com/profile.php?id=100014739280844" target="_blank" rel="noopener noreferrer">
-                                    <Image src={facebook} alt="Facebook" width={35} height={30} className="hover:scale-110 transition invert"  />
+                                    <Image src={facebook} alt="Facebook" width={35} height={30} className="hover:scale-110 transition invert" />
                                 </a>
                                 <a href="https://www.instagram.com/durangaldeko_bzkeskola/" target="_blank" rel="noopener noreferrer">
                                     <Image src={instagram} alt="Instagram" width={35} height={30} className="hover:scale-110 transition invert" />
@@ -72,18 +72,47 @@ const Footer = async ({ color = "", color2 = "", color3 = "" }) => {
                 </div>
 
 
-                
-                <div className={`flex flex-col lg:flex-row items-center justify-center lg:justify-end ${color2 ? color2 : 'bg-customDarkBlue'} h-auto lg:h-10 mt-4 lg:mt-0  py-2 pr-3`}>
-                    <div className="text-left w-[60%] sm:w-full "><Link href="/terms&use" className="cursor-pointer underline ">terms of use </Link></div>
-                    <div className="flex items-center justify-center lg:justify-end text-center lg:text-right">
-                        <span className="lg:pl-1 ">Designed by</span>
-                        <a href="https://github.com/txuli" className={`flex items-center pl-1 ${color3 ? color3 : 'bg-customDarkerBlue'} rounded-lg justify-center px-2 mx-2 group`}>
-                            <Image src={logos} alt="Logo" width={20} height={20} className="group-hover:rotate-180 transition-all grayscale invert" />
-                            <span className="pl-1">Txuli</span>
-                        </a>
+
+                <div
+                    className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.5fr_1fr] items-centergap-2 sm:gap-3 ${color2 ? color2 : 'bg-custom-dark-blue'} h-auto lg:h-10 mt-4 lg:mt-0  py-2 pr-3`}
+                >
+                    {/* Columna 1 */}
+                    <div className="w-full text-center sm:text-left ml-5">
+                        <Link href="/terms&use" className="cursor-pointer underline">
+                            terms of use
+                        </Link>
                     </div>
-                    <span className="text-center lg:text-right ">for Durangaldeko Bizikleta Eskola ©2025</span>
+
+                    {/* Columna 2 — Diseño + Copyright */}
+                    <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-end w-full text-center lg:text-right">
+
+                        {/* Designed by */}
+                        <div className="flex items-center justify-center lg:justify-end">
+                            <span className="lg:pl-1">Designed by</span>
+
+                            <a
+                                href="https://github.com/txuli"
+                                className={`flex items-center pl-1 ${color3 ? color3 : 'bg-custom-darker-blue'} rounded-lg justify-center px-2 mx-2 group`}
+                            >
+                                <Image
+                                    src={logos}
+                                    alt="Logo"
+                                    width={20}
+                                    height={20}
+                                    className="group-hover:rotate-180 transition-all grayscale invert"
+                                />
+                                <span className="pl-1">Txuli</span>
+                            </a>
+                        </div>
+
+                        {/* Texto final */}
+                        <span className="mt-1 lg:mt-0 lg:ml-3">
+                            for Durangaldeko Bizikleta Eskola ©2025
+                        </span>
+                    </div>
                 </div>
+
+
             </div>
 
         </footer>

@@ -128,7 +128,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
     return (
         <div className="p-4 font-fredoka">
             <div className="mb-16">
-                <h2 className="text-3xl font-semibold text-white drop-shadow text-center flex-1 md:absolute md:left-1/2 md:-translate-x-1/2 uppercase">
+                <h2 className="text-3xl font-semibold text-white drop-shadow-sm text-center flex-1 md:absolute md:left-1/2 md:-translate-x-1/2 uppercase">
                     {rol === "runner"
                         ? "Historial de carreras"
                         : `Historial de carreras de ${nombre} ${apellidos}`}
@@ -153,7 +153,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                             placeholder="Buscar..."
                             value={searchTerm}
                             onChange={handleSearchChange}
-                            className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
+                            className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                         />
                     </div>
                     <Table
@@ -198,7 +198,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                                 ? "Tu comentario:"
                                                 : "Comentario del deportista:"}
                                         </div>
-                                        <div className="bg-gray-100 p-3 rounded mb-2 text-gray-700">
+                                        <div className="bg-gray-100 p-3 rounded-sm mb-2 text-gray-700">
                                             {localHistorial[selectedIdx].valoracion_deportista}
                                         </div>
                                         {/* Si el rol es coach, mostrar textarea para responder si no hay respuesta aún */}
@@ -206,7 +206,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                             <div className="mb-4">
                                                 <div className="font-semibold mb-1">Responder al deportista:</div>
                                                 <textarea
-                                                    className="w-full p-2 border rounded mb-2 text-gray-700"
+                                                    className="w-full p-2 border rounded-sm mb-2 text-gray-700"
                                                     rows={3}
                                                     value={respuesta}
                                                     onChange={e => setRespuesta(e.target.value)}
@@ -214,7 +214,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                                     required
                                                 />
                                                 <button
-                                                    className="bg-customDarkBlueSession text-white px-4 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-blue-800"
+                                                    className="bg-custom-dark-blue-session text-white px-4 py-2 rounded-sm cursor-pointer transition-colors duration-200 hover:bg-blue-800"
                                                     onClick={handleEnviarRespuesta}
                                                     disabled={enviandoRespuesta || !respuesta.trim()}
                                                 >
@@ -226,7 +226,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                         {rol === "coach" && localHistorial[selectedIdx].valoracion_entrenador && localHistorial[selectedIdx].valoracion_entrenador !== '' && localHistorial[selectedIdx].valoracion_entrenador !== 'null' && (
                                             <>
                                                 <div className="font-semibold mb-1">Tu respuesta:</div>
-                                                <div className="bg-green-100 p-3 rounded text-gray-700">
+                                                <div className="bg-green-100 p-3 rounded-sm text-gray-700">
                                                     {localHistorial[selectedIdx].valoracion_entrenador}
                                                 </div>
                                             </>
@@ -236,7 +236,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                     <div className="mb-4">
                                         <div className="font-semibold mb-1">Escribe tu comentario:</div>
                                         <textarea
-                                            className="w-full p-2 border rounded mb-2 text-gray-700"
+                                            className="w-full p-2 border rounded-sm mb-2 text-gray-700"
                                             rows={3}
                                             value={comentario}
                                             onChange={e => setComentario(e.target.value)}
@@ -244,7 +244,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                             required
                                         />
                                         <button
-                                            className="bg-customDarkBlueSession text-white px-4 py-2 rounded cursor-pointer transition-colors duration-200 hover:bg-blue-800"
+                                            className="bg-custom-dark-blue-session text-white px-4 py-2 rounded-sm cursor-pointer transition-colors duration-200 hover:bg-blue-800"
                                             onClick={handleEnviarComentario}
                                             disabled={enviando || !comentario.trim()}
                                         >
@@ -256,7 +256,7 @@ export default function ClientHistory({ historial, nombre, apellidos, rol }: His
                                 {(rol === "runner" || rol === "admin" || rol === "staff") && localHistorial[selectedIdx].valoracion_entrenador && (
                                     <>
                                         <div className="font-semibold mb-1">Respuesta del entrenador:</div>
-                                        <div className="bg-green-100 p-3 rounded text-gray-700">
+                                        <div className="bg-green-100 p-3 rounded-sm text-gray-700">
                                             {localHistorial[selectedIdx].valoracion_entrenador}
                                         </div>
                                     </>

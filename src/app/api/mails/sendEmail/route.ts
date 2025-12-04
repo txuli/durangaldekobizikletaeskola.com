@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
-import { NextRequest, NextResponse } from "next/server"; 
-
+import { NextRequest, NextResponse } from "next/server";
+import { render } from '@react-email/components';
+import { Email } from '@/app/[locale]/components/mail/newChildMail'
+import React from "react";
 interface EmailRequestBody {
     name: string;
     birthDate: string;
@@ -16,49 +18,61 @@ interface EmailRequestBody {
 export async function POST(req: NextRequest) {
     if (req.method === "POST") {
         try {
-            
+
             const { name, birthDate, address, city, school, guardianName, phone, email, message }: EmailRequestBody = await req.json();
 
-         
-            if (!name || !birthDate || !city || !guardianName || !phone || !email ) {
+
+            /* if (!name || !birthDate || !city || !guardianName || !phone || !email) {
                 return NextResponse.json({ message: "Faltan datos en el formulario" }, { status: 400 });
-            }
+            } */
 
             // Nodemailer Config
             const transporter = nodemailer.createTransport({
-                service: "gmail", 
+                service: "gmail",
                 auth: {
-                    user: process.env.EMAIL_USER, 
-                    pass: process.env.EMAIL_PASSWORD, 
+                    user: process.env.EMAIL_USER,
+                    pass: process.env.EMAIL_PASSWORD,
                 },
             });
-
-           
-            await transporter.sendMail({
+            const emailHtml = await render(React.createElement(Email, {
+                name,
+                birthDate,
+                address,
+                city,
+                school,
+                guardianName,
+                phone,
+                email,
+                message,
+            }));
+            const options = {
                 from: process.env.EMAIL_USER,
-                to: process.env.EMAIL_RECIPIENT, 
+                to: /* process.env.EMAIL_RECIPIENT */ " EMAIL_REMOVIDO",
                 subject: "Nuevo formulario recibido",
-                text: `Nombre: ${name}
-                        Fecha de Nacimiento: ${birthDate}
-                        Dirección: ${address}
-                        Ciudad: ${city}
-                        Centro de Estudios: ${school}
-                        Tutor: ${guardianName}
-                        Teléfono: ${phone}
-                        Email: ${email}
-                        Mensaje: ${message}`,
-            });
+                /*  text: `Nombre: ${name}
+                         Fecha de Nacimiento: ${birthDate}
+                         Dirección: ${address}
+                         Ciudad: ${city}
+                         Centro de Estudios: ${school}
+                         Tutor: ${guardianName}
+                         Teléfono: ${phone}
+                         Email: ${email}
+                         Mensaje: ${message}`, */
+                html: emailHtml
 
-           
+            }
+            await transporter.sendMail(options);
+
+
             return NextResponse.json({ message: "Correo enviado correctamente" }, { status: 200 });
         } catch (error) {
             console.error("Error enviando el correo:", error);
             return NextResponse.json({ message: "Hubo un error enviando el correo" }, { status: 500 });
         }
     } else {
-       
+
         return NextResponse.json(
-            { message: `Método ${req.method} no permitido` }, 
+            { message: `Método ${req.method} no permitido` },
             { status: 405, headers: { Allow: "POST" } }
         );
     }

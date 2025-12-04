@@ -78,7 +78,7 @@ export default function ClothesClient({ t, item, itemSchool, tallas }: ClothesCl
                     width={30}
                     height={30}
                 />
-                <div className="text-lg font-fredoka text-customDarkBlue font-semibold italic">
+                <div className="text-lg font-fredoka text-custom-dark-blue font-semibold italic">
                     <p>{t.info}</p>
                 </div>
             </section>
@@ -91,7 +91,7 @@ export default function ClothesClient({ t, item, itemSchool, tallas }: ClothesCl
 
             <form
                 action=""
-                className="mt-10 max-w-3xl mx-auto bg-gradient-to-br rounded-lg p-8 text-black space-y-6"
+                className="mt-10 max-w-3xl mx-auto bg-linear-to-br rounded-lg p-8 text-black space-y-6"
                 onSubmit={async e => {
                     e.preventDefault();
 
@@ -152,7 +152,7 @@ export default function ClothesClient({ t, item, itemSchool, tallas }: ClothesCl
                             type="text"
                             id="nombre"
                             name="nombre"
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-customDarkBlue placeholder:font-fredoka placeholder:text-lg placeholder:uppercase placeholder:font-semibold"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-custom-dark-blue placeholder:font-fredoka placeholder:text-lg placeholder:uppercase placeholder:font-semibold bg-white"
                             placeholder={t.nameSurname}
                             required
                         />
@@ -162,7 +162,7 @@ export default function ClothesClient({ t, item, itemSchool, tallas }: ClothesCl
                             type="email"
                             id="mail"
                             name="mail"
-                            className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-customDarkBlue placeholder:font-fredoka placeholder:text-lg placeholder:uppercase placeholder:font-semibold"
+                            className="w-full rounded-md border border-gray-300 px-3 py-2 placeholder:text-custom-dark-blue placeholder:font-fredoka placeholder:text-lg placeholder:uppercase placeholder:font-semibold bg-white"
                             placeholder={t.telephone}
                             required
                         />
@@ -183,9 +183,9 @@ export default function ClothesClient({ t, item, itemSchool, tallas }: ClothesCl
                                         alt={producto.name}
                                         width={80}
                                         height={96}
-                                        className="w-20 h-24 object-contain rounded"
+                                        className="w-20 h-24 object-contain rounded-sm"
                                     />
-                                    <span className="font-semibold font-fredoka text-customDarkBlue capitalize">
+                                    <span className="font-semibold font-fredoka text-custom-dark-blue capitalize">
                                         {producto.name} <span className="text-gray-500">{getTypeLabel(producto.type)}</span>
                                     </span>
                                 </div>
@@ -218,7 +218,7 @@ export default function ClothesClient({ t, item, itemSchool, tallas }: ClothesCl
 
                 <button
                     type="submit"
-                    className="mt-4 bg-customDarkBlue text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-900 transition uppercase"
+                    className="mt-4 bg-custom-dark-blue text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-900 transition uppercase"
                 >
                     {t.send}
                 </button>

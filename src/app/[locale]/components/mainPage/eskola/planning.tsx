@@ -24,7 +24,7 @@ const Planning: FC<PlanningProps> = ({ planning = [] }) => {
                     className="relative flex flex-col items-center w-80 md:w-96  mx-auto"
                 >
                     <Image src={url} alt={title} width={500} height={500} className="w-full h-60 object-cover  rounded-t-xl" />
-                    <h3 className="text-2xl  w-full text-left font-fredoka font-semibold text-white bg-customDarkBlue p-2 rounded-b-xl">{title}</h3>
+                    <h3 className="text-2xl  w-full text-left font-fredoka font-semibold text-white bg-custom-dark-blue p-2 rounded-b-xl">{title}</h3>
                     <p className="mt-3 ml-2 text-justify font-fredoka text-2xl">{text}</p>
 
                 </div>

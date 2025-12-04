@@ -74,7 +74,7 @@ export default function Perfil({ user }: PerfilProps) {
 
     return (
         <div className="w-[95%] md:w-full max-w-xl mx-auto mt-10 bg-gray-900/90 p-8 rounded-2xl shadow-2xl border border-blue-700 font-fredoka">
-            <h2 className="text-3xl font-semibold mb-8 text-center text-blue-200 drop-shadow uppercase">Mi perfil</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center text-blue-200 drop-shadow-sm uppercase">Mi perfil</h2>
             {success && <div className="text-green-400 mb-4 text-center font-semibold">{success}</div>}
             {error && <div className="text-red-400 mb-4 text-center font-semibold">{error}</div>}
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -89,7 +89,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.nombre || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                             />
                         </div>
                         <div>
@@ -100,7 +100,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.apellidos || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                             />
                         </div>
                         <div>
@@ -111,7 +111,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.dni || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                             />
                         </div>
                         <div>
@@ -122,7 +122,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.telefono || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                             />
                         </div>
                         <div>
@@ -133,7 +133,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={toInputDateValue(form.fecha_nacimiento) || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                             />
                         </div>
                     </>
@@ -150,7 +150,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.licencia || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                             />
                         </div>
                         <div>
@@ -161,7 +161,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.peso || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                                 min={0}
                                 step="any"
                             />
@@ -174,7 +174,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.altura || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                                 min={0}
                                 step="any"
                             />
@@ -187,7 +187,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.ftp || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                                 min={0}
                                 step="any"
                             />
@@ -200,7 +200,7 @@ export default function Perfil({ user }: PerfilProps) {
                                 value={form.pulso || ""}
                                 onChange={handleChange}
                                 disabled={!editMode}
-                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
+                                className={`w-full rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm ${editMode ? "hover:border-blue-400" : "opacity-80 cursor-not-allowed"}`}
                                 min={0}
                                 step="any"
                             />
@@ -211,14 +211,14 @@ export default function Perfil({ user }: PerfilProps) {
                     <div className="flex gap-4 justify-end mt-8">
                         <button
                             type="submit"
-                            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold shadow transition disabled:opacity-60 uppercase"
+                            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-lg font-semibold shadow-sm transition disabled:opacity-60 uppercase"
                             disabled={loading}
                         >
                             {loading ? "Guardando..." : "Guardar"}
                         </button>
                         <button
                             type="button"
-                            className="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-lg font-semibold shadow transition uppercase"
+                            className="bg-gray-600 hover:bg-gray-500 text-white px-6 py-2 rounded-lg font-semibold shadow-sm transition uppercase"
                             onClick={() => {
                                 setForm(user);
                                 setEditMode(false);
@@ -234,7 +234,7 @@ export default function Perfil({ user }: PerfilProps) {
                 <div className="flex justify-end mt-8">
                     <button
                         type="button"
-                        className="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold shadow transition uppercase"
+                        className="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold shadow-sm transition uppercase"
                         onClick={() => setEditMode(true)}
                     >
                         Editar perfil

@@ -150,13 +150,13 @@ export default function Codigos({ codigos, rol }: CodeClientProps) {
 
     return (
         <div className="w-[95%] max-w-full md:max-w-2xl mx-auto mt-10 bg-gray-900/90 p-4 sm:p-8 rounded-2xl shadow-2xl border border-blue-700 font-fredoka">
-            <h2 className="text-3xl font-semibold mb-8 text-center text-blue-200 drop-shadow uppercase">Códigos de acti vación</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center text-blue-200 drop-shadow-sm uppercase">Códigos de acti vación</h2>
             <form onSubmit={handleSubmit} className="flex flex-col justify-end md:flex-row gap-4 mb-8">
                 <select
                     name="role"
                     value={form.role}
                     onChange={handleChange}
-                    className="rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none w-full md:w-auto"
+                    className="rounded-lg px-4 py-2 bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden w-full md:w-auto"
                 >
                     {roles.map(r => (
                         <option
@@ -170,10 +170,10 @@ export default function Codigos({ codigos, rol }: CodeClientProps) {
                 </select>
                 <button
                     type="submit"
-                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                    className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                 transition-all duration-200 ease-in-out
                                 hover:shadow-xl hover:opacity-90
-                                focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 uppercase w-full md:w-auto"
+                                focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 uppercase w-full md:w-auto"
                     disabled={loading}
                 >
                     {loading ? "Generando..." : "Generar"}
@@ -181,7 +181,7 @@ export default function Codigos({ codigos, rol }: CodeClientProps) {
             </form>
             <div className="flex justify-end mb-4">
                 <button
-                    className="bg-gray-700 hover:bg-blue-700 text-blue-100 px-4 py-2 rounded-lg font-semibold shadow transition-all uppercase"
+                    className="bg-gray-700 hover:bg-blue-700 text-blue-100 px-4 py-2 rounded-lg font-semibold shadow-sm transition-all uppercase"
                     onClick={() => {
                         setClosingExpired(false);
                         setShowExpired(true);
@@ -198,7 +198,7 @@ export default function Codigos({ codigos, rol }: CodeClientProps) {
                 </div>
             )}
             {copied && (
-                <div className="fixed top-14 left-1/2 -translate-x-1/2 z-[200]">
+                <div className="fixed top-14 left-1/2 -translate-x-1/2 z-200">
                     <div
                         className={`bg-blue-700 text-white px-6 py-2 rounded-xl shadow-lg font-semibold text-lg transition-all
                         ${copiedLeaving ? "animate-fade-out animate-slide-down" : "animate-fade-in animate-slide-up"}`}
@@ -298,7 +298,7 @@ export default function Codigos({ codigos, rol }: CodeClientProps) {
                                                     <div className="flex gap-2 mt-2">
                                                         <button
                                                             onClick={() => handleDelete(code.id, true)}
-                                                            className="bg-red-600 hover:bg-red-500 text-white px-3 py-1 rounded font-semibold transition-all"
+                                                            className="bg-red-600 hover:bg-red-500 text-white px-3 py-1 rounded-sm font-semibold transition-all"
                                                             disabled={loading}
                                                             style={{ flex: "1 1 0", whiteSpace: "nowrap" }}
                                                         >
@@ -315,7 +315,7 @@ export default function Codigos({ codigos, rol }: CodeClientProps) {
                                             <td className="px-2 sm:px-4 py-2 text-center hidden sm:table-cell">
                                                 <button
                                                     onClick={() => handleDelete(code.id, true)}
-                                                    className="bg-red-600 hover:bg-red-500 text-white px-3 py-1 rounded font-semibold transition-all text-xs sm:text-sm min-w-[90px] max-w-[120px]"
+                                                    className="bg-red-600 hover:bg-red-500 text-white px-3 py-1 rounded-sm font-semibold transition-all text-xs sm:text-sm min-w-[90px] max-w-[120px]"
                                                     disabled={loading}
                                                     style={{ flex: "1 1 0", whiteSpace: "nowrap" }}
                                                 >

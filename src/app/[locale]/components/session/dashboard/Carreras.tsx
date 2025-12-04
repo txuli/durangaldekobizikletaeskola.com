@@ -557,11 +557,11 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
             {showConfirm && !scholarship && (
                 <div className={`fixed inset-0 bg-black bg-opacity-60 flex items-start justify-center z-50 pt-10 transition-opacity duration-300 ${closing ? "animate-fade-out" : "animate-fade-in"}`}>
                     <div className={`bg-gray-900 rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center border-4 border-blue-500 transition-all duration-300 ${closing ? "animate-slide-down" : "animate-slide-up"}`}>
-                        <h2 className="text-2xl font-extrabold mb-4 text-gray-200 drop-shadow">¿Estás seguro/a de que deseas eliminar esta carrera?</h2>
+                        <h2 className="text-2xl font-extrabold mb-4 text-gray-200 drop-shadow-sm">¿Estás seguro/a de que deseas eliminar esta carrera?</h2>
                         <p className="text-gray-300 mb-6">Esta acción no se puede deshacer.</p>
                         <div className="flex justify-center gap-6 mt-4">
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-red-600 to-red-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-red-700 hover:to-red-500 transition-all duration-150"
+                                className="px-6 py-2 bg-linear-to-r from-red-600 to-red-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-red-700 hover:to-red-500 transition-all duration-150"
                                 onClick={async () => {
                                     setClosing(true);
                                     setTimeout(async () => {
@@ -573,7 +573,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 Eliminar
                             </button>
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 rounded-xl font-bold shadow-lg hover:scale-105 hover:from-gray-400 hover:to-gray-500 transition-all duration-150"
+                                className="px-6 py-2 bg-linear-to-r from-gray-300 to-gray-400 text-gray-800 rounded-xl font-bold shadow-lg hover:scale-105 hover:from-gray-400 hover:to-gray-500 transition-all duration-150"
                                 onClick={() => {
                                     setClosing(true);
                                     setTimeout(() => {
@@ -592,13 +592,13 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
             {successMessage && (
                 <div className={`fixed inset-0 bg-black bg-opacity-60 flex items-start justify-center z-50 pt-10 transition-opacity duration-300`}>
                     <div className="bg-green-900 rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center border-4 border-green-500 transition-all duration-300 animate-slide-up">
-                        <h2 className="text-2xl font-extrabold mb-4 text-green-200 drop-shadow">
+                        <h2 className="text-2xl font-extrabold mb-4 text-green-200 drop-shadow-sm">
                             ¡Inscripción realizada!
                         </h2>
                         <p className="text-green-100 mb-6">{successMessage}</p>
                         <div className="flex justify-center mt-4">
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-green-600 to-green-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-green-700 hover:to-green-500 transition-all duration-150"
+                                className="px-6 py-2 bg-linear-to-r from-green-600 to-green-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-green-700 hover:to-green-500 transition-all duration-150"
                                 onClick={() => setSuccessMessage(null)}
                             >
                                 Aceptar
@@ -615,16 +615,16 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                     <div className="mb-6">
                         <div className="mb-6 flex flex-col md:flex-row md:items-center md:justify-between relative">
                             <div className="flex-1 hidden md:block"></div>
-                            <h2 className="text-3xl font-semibold text-white drop-shadow text-center flex-1 md:absolute md:left-1/2 md:-translate-x-1/2">
+                            <h2 className="text-3xl font-semibold text-white drop-shadow-sm text-center flex-1 md:absolute md:left-1/2 md:-translate-x-1/2">
                                 CARRERAS
                             </h2>
                             {!scholarship && (
                                 <div className="flex justify-end mt-4 md:mt-0 flex-1">
                                     <button
-                                        className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                                        className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                             transition-all duration-200 ease-in-out
                                             hover:shadow-xl hover:opacity-90
-                                            focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 uppercase"
+                                            focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 uppercase"
                                         onClick={handleAdd}
                                     >
                                         Añadir carrera
@@ -665,7 +665,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                             placeholder="Buscar..."
                                             value={searchTerm}
                                             onChange={handleSearchChange}
-                                            className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
+                                            className="w-full md:w-1/5 border border-blue-400 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                                         />
                                     </div>
                                     <Table
@@ -695,10 +695,10 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
             {selectedRace && !scholarship && selectedRace.categoria !== "Escuela" && (
                 <div>
                     <button
-                        className="mb-4 px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
+                        className="mb-4 px-4 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
                             transition-all duration-200 ease-in-out
                             hover:shadow-xl hover:opacity-90
-                            focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center gap-1"
+                            focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center gap-1"
                         onClick={() => {
                             setSelectedRace(null);
                             setSearchAthleteTerm("");
@@ -708,7 +708,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                         <Image src={back} alt="Volver" className="h-5 w-5" />
                         Volver
                     </button>
-                    <h3 className="text-3xl font-extrabold mb-6 text-blue-400 text-center drop-shadow uppercase">
+                    <h3 className="text-3xl font-extrabold mb-6 text-blue-400 text-center drop-shadow-sm uppercase">
                         {selectedRace.nombre}
                     </h3>
 
@@ -733,7 +733,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                                 <div className="flex flex-col md:flex-row md:items-center gap-2">
                                                     <span className="text-sm md:mr-4">Tiempo: {formatTiempo(participante.tiempo)}</span>
                                                     <button
-                                                        className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition font-semibold"
+                                                        className="px-2 py-1 bg-red-500 text-white rounded-sm hover:bg-red-600 transition font-semibold"
                                                         onClick={() => handleDeleteParticipant(index)}
                                                     >
                                                         Eliminar
@@ -768,7 +768,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                                 }
                                             }
                                         }}
-                                        className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
+                                        className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                                     />
                                     <ul className="mt-4 space-y-2 max-h-[40vh] overflow-y-auto">
                                         {Array.isArray(filteredAthletes) &&
@@ -802,7 +802,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                             type="text"
                                             value={`${selectedAthlete.nombre} ${selectedAthlete.apellidos}`}
                                             disabled
-                                            className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none"
+                                            className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-hidden"
                                         />
                                     </div>
                                     <div>
@@ -814,7 +814,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                             value={athleteForm.tiempo}
                                             onChange={handleAthleteFormChange}
                                             required
-                                            className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
+                                            className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                                         />
                                     </div>
                                     <div>
@@ -827,25 +827,25 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                             onChange={handleAthleteFormChange}
                                             required
                                             min="1"
-                                            className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
+                                            className="w-full border border-blue-400 bg-gray-700 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-500"
                                         />
                                     </div>
                                     <div className="flex flex-col md:flex-row justify-end gap-4">
                                         <button
                                             type="submit"
-                                            className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                                            className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                                        transition-all duration-200 ease-in-out
                                                        hover:shadow-xl hover:opacity-90
-                                                       focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                                                       focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                                         >
                                             Añadir
                                         </button>
                                         <button
                                             type="button"
-                                            className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
+                                            className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
                                                        transition-all duration-200 ease-in-out
                                                        hover:shadow-xl hover:opacity-90
-                                                       focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                                                       focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                                             onClick={handleCancelAddAthlete}
                                         >
                                             Cancelar
@@ -861,10 +861,10 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
             {selectedRace?.categoria === "Escuela" && !parent && (
                 <div className="mt-8">
                     <button
-                        className="mb-4 px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
+                        className="mb-4 px-4 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
                             transition-all duration-200 ease-in-out
                             hover:shadow-xl hover:opacity-90
-                            focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center gap-1"
+                            focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 flex items-center gap-1"
                         onClick={() => {
                             setSelectedRace(null);
                             setInscritos([]);
@@ -876,13 +876,13 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                     <div className="mb-6 flex items-center">
                         <div className="flex-1" />
                         <div className="flex-1 flex justify-center">
-                            <h3 className="text-3xl font-bold text-blue-400 text-center drop-shadow uppercase">
+                            <h3 className="text-3xl font-bold text-blue-400 text-center drop-shadow-sm uppercase">
                                 Deportistas inscritos
                             </h3>
                         </div>
                         <div className="flex-1 flex justify-end">
                             <button
-                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-lg font-semibold shadow-lg hover:scale-105 transition-all"
+                                className="flex items-center gap-2 px-4 py-2 bg-linear-to-r from-blue-700 to-blue-500 text-white rounded-lg font-semibold shadow-lg hover:scale-105 transition-all"
                                 onClick={handleDownloadPDF}
                                 type="button"
                             >
@@ -950,7 +950,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                         >
                             ✕
                         </button>
-                        <h3 className="text-2xl font-extrabold mb-6 text-blue-400 text-center drop-shadow">{
+                        <h3 className="text-2xl font-extrabold mb-6 text-blue-400 text-center drop-shadow-sm">{
                             editId ? "Editar carrera" : "Añadir carrera"
                         }</h3>
                         <form onSubmit={handleSubmit} className="space-y-4 text-white">
@@ -961,7 +961,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 value={form.nombre || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="datetime-local"
@@ -970,7 +970,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 value={toInputDateTimeValue(form.fecha)}
                                 onChange={handleChange}
                                 required
-                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.fecha ? "text-gray-400" : "text-white"
+                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.fecha ? "text-gray-400" : "text-white"
                                     }`}
                             />
                             <input
@@ -979,14 +979,14 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 value={form.lugar || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <select
                                 name="categoria"
                                 value={form.categoria || ""}
                                 onChange={handleChange}
                                 required
-                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.categoria ? "text-gray-400" : "text-white"
+                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.categoria ? "text-gray-400" : "text-white"
                                     }`}
                             >
                                 <option value="" disabled hidden className="text-gray-400">Selecciona la categoría</option>
@@ -998,7 +998,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 value={form.modalidad || ""}
                                 onChange={handleChange}
                                 required
-                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.modalidad ? "text-gray-400" : "text-white"
+                                className={`w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700 ${!form.modalidad ? "text-gray-400" : "text-white"
                                     }`}
                             >
                                 <option value="" disabled hidden className="text-gray-400">Selecciona la modalidad</option>
@@ -1013,25 +1013,25 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 value={form.descripcion || ""}
                                 onChange={handleChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition resize-none shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition resize-none shadow-lg hover:border-blue-400 hover:bg-gray-700"
                                 rows={3}
                             />
                             <div className="flex gap-4 mt-6 justify-end">
                                 <button
                                     type="submit"
-                                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                                    className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                                transition-all duration-200 ease-in-out
                                                hover:shadow-xl hover:opacity-90
-                                               focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                                               focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                                 >
                                     {editId ? "Guardar cambios" : "Añadir"}
                                 </button>
                                 <button
                                     type="button"
-                                    className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
+                                    className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
                                                transition-all duration-200 ease-in-out
                                                hover:shadow-xl hover:opacity-90
-                                               focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                                               focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                                     onClick={handleCloseForm}
                                 >
                                     Cancelar
@@ -1051,7 +1051,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                         >
                             ✕
                         </button>
-                        <h3 className="text-2xl font-bold mb-6 text-blue-400 text-center drop-shadow uppercase">
+                        <h3 className="text-2xl font-bold mb-6 text-blue-400 text-center drop-shadow-sm uppercase">
                             Inscripción carrera
                         </h3>
                         <form onSubmit={handleSubmitSignUp} className="space-y-4 text-white">
@@ -1067,7 +1067,7 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 value={signUpForm.nombre_apellido || ""}
                                 onChange={handleSignUpFormChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <input
                                 type="text"
@@ -1077,24 +1077,24 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
                                 maxLength={4}
                                 onChange={handleSignUpFormChange}
                                 required
-                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                                className="w-full border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                             />
                             <div className="flex gap-4 mt-6 justify-end">
                                 <button
                                     type="submit"
-                                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
+                                    className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg
                                                transition-all duration-200 ease-in-out
                                                hover:shadow-xl hover:opacity-90
-                                               focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                                               focus:outline-hidden focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                                 >
                                     Inscribir
                                 </button>
                                 <button
                                     type="button"
-                                    className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
+                                    className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-gray-200 rounded-lg font-semibold shadow-lg
                                                transition-all duration-200 ease-in-out
                                                hover:shadow-xl hover:opacity-90
-                                               focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                                               focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                                     onClick={handleCloseSignUpForm}
                                 >
                                     Cancelar

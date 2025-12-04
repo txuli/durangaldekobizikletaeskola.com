@@ -266,7 +266,7 @@ export default function ClientForm() {
 
     return (
         <>
-            <h2 className="text-3xl font-semibold text-white drop-shadow text-center mb-4 uppercase font-fredoka">Subida de imágenes</h2>
+            <h2 className="text-3xl font-semibold text-white drop-shadow-sm text-center mb-4 uppercase font-fredoka">Subida de imágenes</h2>
 
             <form onSubmit={handleSubmit} className="w-full mx-auto px-2 sm:px-4 md:px-24 lg:px-52 xl:px-[28%] font-fredoka">
                 {/* AÑO */}
@@ -280,7 +280,7 @@ export default function ClientForm() {
                         value={formData.year}
                         onChange={handleChange}
 
-                        className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                        className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                     >
                         <option value="">Seleccionar</option>
                         {yearOptions.map((year) => (
@@ -304,7 +304,7 @@ export default function ClientForm() {
                         value={formData.mode}
                         onChange={handleChange}
                         disabled={disabledDropdowns.mode}
-                        className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                        className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                     >
                         <option value="">Seleccionar</option>
                         {modeOptions.map((mode) => (
@@ -330,7 +330,7 @@ export default function ClientForm() {
                         value={formData.category}
                         onChange={handleChange}
                         disabled={disabledDropdowns.category}
-                        className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                        className="w-full  border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                     >
                         <option value="">Seleccionar</option>
                         {categoryOptions.map((category) => (
@@ -354,7 +354,7 @@ export default function ClientForm() {
                         value={formData.race}
                         onChange={handleChange}
                         disabled={disabledDropdowns.race}
-                        className="w-full h-auto border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
+                        className="w-full h-auto border border-blue-700 bg-gray-800 text-white px-4 py-2 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition placeholder-gray-400 shadow-lg hover:border-blue-400 hover:bg-gray-700"
                     >
                         <option value="">Seleccionar</option>
                         {raceOptions.map((race) => (
@@ -380,7 +380,7 @@ export default function ClientForm() {
                     />
                     <label htmlFor="fileUpload" className="w-full">
 
-                        <div className=" cursor-pointer w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div className=" cursor-pointer w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500">
                             <p className=' text-center block'> Haz clic aquí para seleccionar imagenes</p>
                             <section className='text-center '>
                                 <p className="text-orange-400 italic text-sm ">hay un limite de 30 imagenes de 5MB por cada subida</p>
@@ -408,7 +408,7 @@ export default function ClientForm() {
                 </section>
 
                 <div className="mx-auto my-3">
-                    <button type="submit" className="w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" className="w-full py-2  bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500">
                         Subir Imágenes
                     </button>
                 </div>

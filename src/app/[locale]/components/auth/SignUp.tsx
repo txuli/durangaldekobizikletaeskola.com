@@ -195,7 +195,7 @@ export default function SignUp() {
         <>
             {/* Popup de error */}
             {errorMsg && (
-                <div className={`fixed inset-0 flex items-center justify-center z-[110] ${closingError ? "animate-fade-out" : "animate-fade-in"}`}>
+                <div className={`fixed inset-0 flex items-center justify-center z-110 ${closingError ? "animate-fade-out" : "animate-fade-in"}`}>
                     <div className={`bg-gray-900 rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center border-4 border-red-500 relative ${closingError ? "animate-slide-down" : "animate-slide-up"}`}>
                         <div className="flex items-center justify-center mb-4 gap-3">
                             <Image
@@ -206,11 +206,11 @@ export default function SignUp() {
                                     filter: "invert(36%) sepia(99%) saturate(2000%) hue-rotate(340deg) brightness(90%) contrast(110%)"
                                 }}
                             />
-                            <h3 className="text-xl font-bold text-red-400 drop-shadow m-0">¡Error!</h3>
+                            <h3 className="text-xl font-bold text-red-400 drop-shadow-sm m-0">¡Error!</h3>
                         </div>
                         <p className="mb-4 text-gray-200">{errorMsg}</p>
                         <button
-                            className="mt-2 px-5 py-2 bg-gradient-to-r from-red-700 to-red-500 text-gray-100 rounded-lg font-bold shadow transition duration-200 hover:filter hover:brightness-125"
+                            className="mt-2 px-5 py-2 bg-linear-to-r from-red-700 to-red-500 text-gray-100 rounded-lg font-bold shadow-sm transition duration-200 hover:filter hover:brightness-125"
                             onClick={handleCloseError}
                         >
                             Cerrar
@@ -221,7 +221,7 @@ export default function SignUp() {
 
             <div className="flex items-center justify-center">
                 <div className="w-full max-w-xl p-8 rounded-2xl shadow-2xl bg-gray-900/90 border border-blue-700 mb-5">
-                    <h2 className="text-3xl font-bold text-center mb-8 text-blue-200 drop-shadow">Registro</h2>
+                    <h2 className="text-3xl font-bold text-center mb-8 text-blue-200 drop-shadow-sm">Registro</h2>
 
                     {/* Validación de código de activación FUERA del formulario */}
                     {!codeValidated && (
@@ -233,14 +233,14 @@ export default function SignUp() {
                                     value={activationCode}
                                     onChange={(e) => setActivationCode(e.target.value)}
                                     autoComplete="off"
-                                    className="flex-1 p-3 rounded-lg bg-gray-800 text-blue-100 border border-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow"
+                                    className="flex-1 p-3 rounded-lg bg-gray-800 text-blue-100 border border-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm"
                                     placeholder="Introduce tu código de activación"
                                     disabled={loading}
                                 />
                                 <button
                                     type="button"
                                     onClick={validateCode}
-                                    className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold shadow transition"
+                                    className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold shadow-sm transition"
                                     disabled={loading || !activationCode}
                                 >
                                     {loading ? "Validando..." : "Validar Código"}
@@ -273,7 +273,7 @@ export default function SignUp() {
                                     value={name}
                                     onChange={e => setName(e.target.value)}
                                     autoComplete="off"
-                                    className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("name") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                    className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("name") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                     placeholder="Introduce tu nombre"
                                     disabled={loading}
                                 />
@@ -288,7 +288,7 @@ export default function SignUp() {
                                         value={extraFields.apellidos}
                                         onChange={e => setExtraFields({ ...extraFields, apellidos: e.target.value })}
                                         autoComplete="off"
-                                        className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("apellidos") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                        className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("apellidos") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                         placeholder="Introduce tus apellidos"
                                         disabled={loading}
                                     />
@@ -303,7 +303,7 @@ export default function SignUp() {
                                     value={email}
                                     onChange={e => setEmail(e.target.value)}
                                     autoComplete="off"
-                                    className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("email") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                    className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("email") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                     placeholder="Introduce tu correo"
                                     disabled={loading}
                                 />
@@ -317,7 +317,7 @@ export default function SignUp() {
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
                                     autoComplete="new-password"
-                                    className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("password") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                    className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("password") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                     placeholder="Introduce tu contraseña"
                                     disabled={loading}
                                 />
@@ -335,7 +335,7 @@ export default function SignUp() {
                                             value={extraFields.dni}
                                             onChange={e => setExtraFields({ ...extraFields, dni: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("dni") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("dni") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu DNI"
                                             disabled={loading}
                                         />
@@ -349,7 +349,7 @@ export default function SignUp() {
                                             value={formatTelefono(extraFields.telefono)}
                                             onChange={e => setExtraFields({ ...extraFields, telefono: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("telefono") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("telefono") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu teléfono"
                                             disabled={loading}
                                         />
@@ -363,7 +363,7 @@ export default function SignUp() {
                                             value={extraFields.nacimiento}
                                             onChange={e => setExtraFields({ ...extraFields, nacimiento: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("nacimiento") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("nacimiento") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             disabled={loading}
                                         />
                                     </div>
@@ -381,7 +381,7 @@ export default function SignUp() {
                                             value={extraFields.licencia}
                                             onChange={e => setExtraFields({ ...extraFields, licencia: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("licencia") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("licencia") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu número de licencia"
                                             disabled={loading}
                                         />
@@ -395,7 +395,7 @@ export default function SignUp() {
                                             value={extraFields.peso}
                                             onChange={e => setExtraFields({ ...extraFields, peso: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("peso") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("peso") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu peso"
                                             disabled={loading}
                                         />
@@ -409,7 +409,7 @@ export default function SignUp() {
                                             value={extraFields.altura}
                                             onChange={e => setExtraFields({ ...extraFields, altura: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("altura") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("altura") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu altura"
                                             disabled={loading}
                                         />
@@ -423,7 +423,7 @@ export default function SignUp() {
                                             value={extraFields.ftp}
                                             onChange={e => setExtraFields({ ...extraFields, ftp: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("ftp") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("ftp") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu FTP"
                                             disabled={loading}
                                         />
@@ -437,7 +437,7 @@ export default function SignUp() {
                                             value={extraFields.pulso}
                                             onChange={e => setExtraFields({ ...extraFields, pulso: e.target.value })}
                                             autoComplete="off"
-                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("pulso") ? "border-red-500" : "border-blue-700"} focus:outline-none focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow`}
+                                            className={`w-full p-3 rounded-lg bg-gray-800 text-blue-100 border ${invalidFields.includes("pulso") ? "border-red-500" : "border-blue-700"} focus:outline-hidden focus:ring-2 focus:ring-blue-400 transition placeholder-gray-400 shadow-sm`}
                                             placeholder="Introduce tu pulso"
                                             disabled={loading}
                                         />
@@ -475,7 +475,7 @@ export default function SignUp() {
                             <div>
                                 <button
                                     type="submit"
-                                    className="w-full py-3 mt-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold shadow transition"
+                                    className="w-full py-3 mt-4 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold shadow-sm transition"
                                     disabled={loading}
                                 >
                                     {loading ? "Registrando..." : "Registrarse"}

@@ -72,7 +72,7 @@ const Sponsor = () => {
         <>
 
 
-            <div className=" bg-customDarkBlue lg:bg-transparent  rounded-lg w-10/12 sm:w8/12 mx-auto grid grid-cols-5  lg:flex lg:space-x-4 sm:gap-8 justify-center mb-20 place-items-center ">
+            <div className=" bg-custom-dark-blue lg:bg-transparent  rounded-lg w-10/12 sm:w8/12 mx-auto grid grid-cols-5  lg:flex lg:space-x-4 sm:gap-8 justify-center mb-20 place-items-center ">
                 {HELPERS.map(({ img, link, style }, idx) => (
                     <Helpers key={idx} img={img} Link={link} style={style} />
                 ))}

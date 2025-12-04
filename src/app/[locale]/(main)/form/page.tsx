@@ -87,7 +87,7 @@ export default function Page() {
 
             <form
                 onSubmit={handleSubmit}
-                className="mt-10 max-w-3xl mx-auto bg-gradient-to-br bg-customblue shadow-2xl rounded-lg p-8 text-black"
+                className="mt-10 max-w-3xl mx-auto bg-linear-to-br bg-customblue shadow-2xl rounded-lg p-8 text-black"
             >
                 <p className="my-4 text-center text-white font-fredoka text-xl">
                     {t("P")}
@@ -97,7 +97,7 @@ export default function Page() {
                     <div>
                         <label className="block text-lg font-medium text-white">{t("name")}</label>
                         <input
-                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none"
+                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden bg-white"
                             type="text"
                             name="name"
                             value={formData.name}
@@ -108,7 +108,7 @@ export default function Page() {
                     <div>
                         <label className="block text-lg font-medium text-white">{t("birth")}</label>
                         <input
-                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                             type="date"
                             name="birthDate"
                             value={formData.birthDate}
@@ -120,7 +120,7 @@ export default function Page() {
                 <div className="mt-6">
                     <label className="block text-lg font-medium text-white">{t("direction")}</label>
                     <input
-                        className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                         type="text"
                         name="address"
                         value={formData.address}
@@ -133,7 +133,7 @@ export default function Page() {
                     <div>
                         <label className="block text-lg font-medium text-white">{t("city")}</label>
                         <input
-                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                             type="text"
                             name="city"
                             value={formData.city}
@@ -144,7 +144,7 @@ export default function Page() {
                     <div>
                         <label className="block text-lg font-medium text-white">{t("school")}</label>
                         <input
-                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                             type="text"
                             name="school"
                             value={formData.school}
@@ -158,7 +158,7 @@ export default function Page() {
                     <div>
                         <label className="block text-lg font-medium text-white">{t("parents")}</label>
                         <input
-                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                             type="text"
                             name="guardianName"
                             value={formData.guardianName}
@@ -169,7 +169,7 @@ export default function Page() {
                     <div>
                         <label className="block text-lg font-medium text-white">{t("phone")}</label>
                         <input
-                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                             type="tel"
                             name="phone"
                             value={formData.phone}
@@ -182,7 +182,7 @@ export default function Page() {
                 <div className="mt-6">
                     <label className="block text-lg font-medium text-white">{t("mail")}</label>
                     <input
-                        className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="border-2 border-gray-300 rounded-lg p-3 w-full focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                         type="email"
                         name="email"
                         value={formData.email}
@@ -194,7 +194,7 @@ export default function Page() {
                 <div className="mt-6">
                     <label className="block text-lg font-medium text-white">{t("message")}</label>
                     <textarea
-                        className="border-2 border-gray-300 rounded-lg p-3 w-full h-28 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="border-2 border-gray-300 rounded-lg p-3 w-full h-28 focus:outline-hidden focus:ring-2 focus:ring-blue-500 bg-white"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
@@ -224,7 +224,7 @@ export default function Page() {
                 <div className="text-center mt-8">
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white py-3 px-8 rounded-lg text-lg font-semibold transition transform hover:bg-blue-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="bg-blue-500 text-white py-3 px-8 rounded-lg text-lg font-semibold transition transform hover:bg-blue-600 hover:scale-105 focus:outline-hidden focus:ring-2 focus:ring-blue-400"
                     >
                         {t("button")}
                     </button>

@@ -90,7 +90,7 @@ export default function ClientForm() {
         }
     };
 
-    const inputClass = "w-full px-4 py-2 border border-blue-500 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400 mb-4";
+    const inputClass = "w-full px-4 py-2 border border-blue-500 bg-gray-800 text-white rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-400 placeholder-gray-400 mb-4";
 
     return (
         <div className="max-w-6xl mx-auto mt-10 p-8 bg-gray-900/80 rounded-3xl shadow-2xl text-white">
@@ -111,12 +111,12 @@ export default function ClientForm() {
                             className="block w-full text-sm text-blue-100
 								   file:mr-4 file:py-2 file:px-4
 								   file:rounded-lg file:border-0
-								   file:bg-gradient-to-r file:from-blue-700 file:to-blue-500
+								   file:bg-linear-to-r file:from-blue-700 file:to-blue-500
 								   file:text-white file:font-semibold
 								   file:shadow-lg file:uppercase file:tracking-wide
 								   hover:file:opacity-90 hover:file:shadow-xl
 								   transition file:transition file:duration-200
-								   bg-gray-800 border border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400 mb-4 file:cursor-pointer"
+								   bg-gray-800 border border-blue-500 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-400 placeholder-gray-400 mb-4 file:cursor-pointer"
                         />
                     </div>
                     <div>
@@ -128,12 +128,12 @@ export default function ClientForm() {
                             className="block w-full text-sm text-blue-100
 								   file:mr-4 file:py-2 file:px-4
 								   file:rounded-lg file:border-0
-								   file:bg-gradient-to-r file:from-blue-700 file:to-blue-500
+								   file:bg-linear-to-r file:from-blue-700 file:to-blue-500
 								   file:text-white file:font-semibold
 								   file:shadow-lg file:uppercase file:tracking-wide
 								   hover:file:opacity-90 hover:file:shadow-xl
 								   transition file:transition file:duration-200
-								   bg-gray-800 border border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400 mb-4 file:cursor-pointer"
+								   bg-gray-800 border border-blue-500 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-400 placeholder-gray-400 mb-4 file:cursor-pointer"
                         />
                     </div>
                 </div>
@@ -196,7 +196,7 @@ export default function ClientForm() {
                         <button
                             type="button"
                             onClick={addLink}
-                            className="px-5 py-2 bg-gradient-to-r from-blue-700 to-blue-500 rounded-xl text-white font-semibold shadow-md uppercase tracking-wide transition hover:opacity-90 hover:shadow-xl"
+                            className="px-5 py-2 bg-linear-to-r from-blue-700 to-blue-500 rounded-xl text-white font-semibold shadow-md uppercase tracking-wide transition hover:opacity-90 hover:shadow-xl"
                             disabled={links.length >= 5}
                         >
                             Añadir enlace
@@ -205,7 +205,7 @@ export default function ClientForm() {
                 </div>
 
                 <div className="pt-6 text-center">
-                    <button type="submit" className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg transition hover:opacity-90 hover:shadow-xl uppercase">
+                    <button type="submit" className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg transition hover:opacity-90 hover:shadow-xl uppercase">
                         Crear Crónica
                     </button>
                 </div>

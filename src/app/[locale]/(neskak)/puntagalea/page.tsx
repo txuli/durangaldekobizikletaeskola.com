@@ -15,9 +15,9 @@ export default function Page() {
                 images={images}
                 title="PUNTAGALEA OCCIDENT-DURANGALDEKO"
             />
-            <Line color="bg-customPuntagaleaDarkOrange"/>
+            <Line color="bg-custom-puntagalea-dark-orange"/>
             {/* <Section >
-            <Runner runner={runner} title={t("titleRunners")} color="bg-customPuntagaleaOrange" color2="bg-customPuntagaleaBlue" />
+            <Runner runner={runner} title={t("titleRunners")} color="bg-custom-puntagalea-orange" color2="bg-custom-puntagalea-blue" />
             </Section > */}
             <Section >
                 <P>

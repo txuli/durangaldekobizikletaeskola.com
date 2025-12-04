@@ -1,99 +1,163 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@config "../../../tailwind.config.ts";
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-geist-sans: 'Oswald', sans-serif;
+@import 'tailwindcss';
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-custom-puntagalea-blue: #014aa8;
+  --color-custom-puntagalea-orange: #ff7d01;
+  --color-custom-puntagalea-dark-orange: #e65c00;
+  --color-custom-puntagalea-darker-orange: #c44a00;
+  --color-customblue: #3984c8;
+  --color-custom-dark-blue: #21486c;
+  --color-custom-darker-blue: #18344e;
+  --color-custom-gray: #bcc3ca;
+  --color-custom-dark-blue-session: #001f5f;
+
+  --font-fredoka:
+    Fredoka, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-weight-semibold: 500;
+  --font-weight-semibold600: 600;
+
+  --height-21: 5.3rem;
+  --height-29: 7.45rem;
+  --height-65: 17.438rem;
+  --height-74: 18.5rem;
+  --height-83: 20.75rem;
+  --height-86: 21.5rem;
+  --height-100: 27rem;
+  --height-105: 28rem;
+  --height-110: 26.5rem;
+  --height-112: 35rem;
+  --height-116: 29.25rem;
+  --height-130: 35.5rem;
+  --height-131: 36.5rem;
+
+  --width-18: 4.5rem;
+  --width-50: 12.5rem;
+  --width-86: 22rem;
+  --width-97: 24.5rem;
+  --width-100: 27rem;
+  --width-105: 29rem;
+  --width-110: 26.5rem;
+  --width-111: 27.5rem;
+  --width-112: 28rem;
+  --width-130: 32.5rem;
+
+  --margin-27: 6.65rem;
+  --margin-33: 8.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-body {
-  color: rgb(255, 255, 255);
-  background: #aca6a6;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Estilo por defecto para el scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-  /* Ancho del scrollbar */
-  height: 12px;
-  /* Altura del scrollbar horizontal */
-}
-
-/* Estilo por defecto del scrollbar sin clase específica */
-body.pageNO-specific::-webkit-scrollbar-thumb {
-  background-color: #3984C8;
-  /* Color del scrollbar igual al fondo */
-  border-radius: 10px;
-}
-
-body:not(.page-specific)::-webkit-scrollbar-thumb:active {
-  background-color: #21486C;
-  /* Mismo color al pasar el mouse */
-}
-
-/* Fondo más oscuro para el scrollbar */
-::-webkit-scrollbar-track {
-  background-color: #3d3d3d;
-  /* Fondo gris oscuro */
-}
-
-/* Estilo para el scrollbar en la página específica */
-body.page-specific::-webkit-scrollbar-thumb {
-  background-color: #FF7D01;
-  /* Color rojo para el pulgar del scrollbar */
-  border-radius: 10px;
-}
-
-body.page-specific::-webkit-scrollbar-thumb:active {
-  background-color: #E65C00;
-  /* Color más oscuro al hacer clic */
-}
-
-/* Estilo para el hover de Ropa */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.group:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  top: 0;
-  left: 0;
-}
-
-.flip-card-front {
-  z-index: 2;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  z-index: 1;
+@utility text-balance {
+  text-wrap: balance;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --font-geist-sans: 'Oswald', sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #ffffff;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    color: rgb(255, 255, 255);
+    background: #aca6a6;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Estilo por defecto para el scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+    /* Ancho del scrollbar */
+    height: 12px;
+    /* Altura del scrollbar horizontal */
+  }
+
+  /* Estilo por defecto del scrollbar sin clase específica */
+  body.pageNO-specific::-webkit-scrollbar-thumb {
+    background-color: #3984c8;
+    /* Color del scrollbar igual al fondo */
+    border-radius: 10px;
+  }
+
+  body:not(.page-specific)::-webkit-scrollbar-thumb:active {
+    background-color: #21486c;
+    /* Mismo color al pasar el mouse */
+  }
+
+  /* Fondo más oscuro para el scrollbar */
+  ::-webkit-scrollbar-track {
+    background-color: #3d3d3d;
+    /* Fondo gris oscuro */
+  }
+
+  /* Estilo para el scrollbar en la página específica */
+  body.page-specific::-webkit-scrollbar-thumb {
+    background-color: #ff7d01;
+    /* Color rojo para el pulgar del scrollbar */
+    border-radius: 10px;
+  }
+
+  body.page-specific::-webkit-scrollbar-thumb:active {
+    background-color: #e65c00;
+    /* Color más oscuro al hacer clic */
+  }
+
+  /* Estilo para el hover de Ropa */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  .group:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .flip-card-front {
+    z-index: 2;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
   }
 }
 

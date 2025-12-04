@@ -145,7 +145,7 @@ const Table: React.FC<TableProps> = ({
                                                     )}
                                                     {onEdit && (
                                                         <button
-                                                            className="px-2 py-1 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 transition font-semibold w-full md:w-auto"
+                                                            className="px-2 py-1 bg-yellow-400 text-gray-900 rounded-sm hover:bg-yellow-500 transition font-semibold w-full md:w-auto"
                                                             onClick={e => {
                                                                 e.stopPropagation();
                                                                 onEdit(row);
@@ -156,7 +156,7 @@ const Table: React.FC<TableProps> = ({
                                                     )}
                                                     {onDelete && (
                                                         <button
-                                                            className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition font-semibold w-full md:w-auto"
+                                                            className="px-2 py-1 bg-red-500 text-white rounded-sm hover:bg-red-600 transition font-semibold w-full md:w-auto"
                                                             onClick={e => {
                                                                 e.stopPropagation();
                                                                 onDelete(row.id ?? row.numero_licencia ?? row.evento_id);
@@ -267,7 +267,7 @@ const Table: React.FC<TableProps> = ({
                                                 )}
                                                 {onEdit && (
                                                     <button
-                                                        className="px-2 py-1 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 transition font-semibold w-full"
+                                                        className="px-2 py-1 bg-yellow-400 text-gray-900 rounded-sm hover:bg-yellow-500 transition font-semibold w-full"
                                                         onClick={e => {
                                                             e.stopPropagation();
                                                             onEdit(row);
@@ -278,7 +278,7 @@ const Table: React.FC<TableProps> = ({
                                                 )}
                                                 {onDelete && (
                                                     <button
-                                                        className="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition font-semibold w-full"
+                                                        className="px-2 py-1 bg-red-500 text-white rounded-sm hover:bg-red-600 transition font-semibold w-full"
                                                         onClick={e => {
                                                             e.stopPropagation();
                                                             onDelete(row.id);

@@ -195,7 +195,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     name="title"
                     value={formData.title}
                     onChange={handleInputChange}
-                    className="w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-none focus:border-blue-700 hover:border-blue-700"
+                    className="w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg focus:outline-hidden focus:border-blue-700 hover:border-blue-700"
                   />
 
                   <textarea
@@ -203,7 +203,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     name="subtitle"
                     value={formData.subtitle}
                     onChange={handleInputChange}
-                    className="w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg resize-none overflow-hidden focus:outline-none focus:border-blue-700 hover:border-blue-700"
+                    className="w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg resize-none overflow-hidden focus:outline-hidden focus:border-blue-700 hover:border-blue-700"
                   />
 
                   {["p1", "p2", "p3", "p4", "p5", "p6"]
@@ -215,7 +215,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         name={field}
                         value={formData[field as keyof typeof formData]}
                         onChange={handleInputChange}
-                        className="w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg resize-none overflow-hidden focus:outline-none focus:border-blue-700 hover:border-blue-700"
+                        className="w-full border border-blue-700 bg-gray-800 px-4 py-2 rounded-lg resize-none overflow-hidden focus:outline-hidden focus:border-blue-700 hover:border-blue-700"
                       />
                     ))}
 
@@ -223,14 +223,14 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <div className="flex justify-end gap-4 mt-6">
                     <button
                       type="submit"
-                      className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
+                      className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
                     >
                       Guardar
                     </button>
                     <button
                       type="button"
                       onClick={handleCloseForm}
-                      className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
+                      className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
                     >
                       Cancelar
                     </button>
@@ -261,7 +261,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             />
 
             <div
-              className="bg-customDarkBlue text-white rounded-b-2xl px-3 py-3 h-28 flex flex-col justify-center"
+              className="bg-custom-dark-blue text-white rounded-b-2xl px-3 py-3 h-28 flex flex-col justify-center"
               onClick={() => handleSelect(item.slug)}
             >
               <h4 className="font-fredoka text-sm opacity-75">{item.category}</h4>
@@ -274,7 +274,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 e.stopPropagation();
                 handleEdit(item.slug);
               }}
-              className="absolute top-2 right-2 bg-white text-gray-700 hover:bg-gray-200 transition-all p-1.5 font-semibold rounded-full shadow uppercase"
+              className="absolute top-2 right-2 bg-white text-gray-700 hover:bg-gray-200 transition-all p-1.5 font-semibold rounded-full shadow-sm uppercase"
               title="Editar noticia"
             >
               editar

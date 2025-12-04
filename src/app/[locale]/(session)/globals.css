@@ -1,39 +1,100 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@config "../../../../tailwind.config.ts";
+@import 'tailwindcss';
 
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-custom-puntagalea-blue: #014aa8;
+  --color-custom-puntagalea-orange: #ff7d01;
+  --color-custom-puntagalea-dark-orange: #e65c00;
+  --color-custom-puntagalea-darker-orange: #c44a00;
+  --color-customblue: #3984c8;
+  --color-custom-dark-blue: #21486c;
+  --color-custom-darker-blue: #18344e;
+  --color-custom-gray: #bcc3ca;
+  --color-custom-dark-blue-session: #001f5f;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-geist-sans: 'Oswald', sans-serif;
+  --font-fredoka:
+    Fredoka, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  --font-weight-semibold: 500;
+  --font-weight-semibold600: 600;
+
+  --height-21: 5.3rem;
+  --height-29: 7.45rem;
+  --height-65: 17.438rem;
+  --height-74: 18.5rem;
+  --height-83: 20.75rem;
+  --height-86: 21.5rem;
+  --height-100: 27rem;
+  --height-105: 28rem;
+  --height-110: 26.5rem;
+  --height-112: 35rem;
+  --height-116: 29.25rem;
+  --height-130: 35.5rem;
+  --height-131: 36.5rem;
+
+  --width-18: 4.5rem;
+  --width-50: 12.5rem;
+  --width-86: 22rem;
+  --width-97: 24.5rem;
+  --width-100: 27rem;
+  --width-105: 29rem;
+  --width-110: 26.5rem;
+  --width-111: 27.5rem;
+  --width-112: 28rem;
+  --width-130: 32.5rem;
+
+  --margin-27: 6.65rem;
+  --margin-33: 8.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #ededed;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
 
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
-body {
-  color: rgb(255, 255, 255);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--font-geist-sans);
-  font-weight: 700;
+@utility text-balance {
+  text-wrap: balance;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  :root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --font-geist-sans: 'Oswald', sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #171717;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    color: rgb(255, 255, 255);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-geist-sans);
+    font-weight: 700;
   }
 }

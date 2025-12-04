@@ -67,7 +67,7 @@ export default function ToggleClient() {
                 aria-checked={selectedIdx === 1}
             >
                 <div
-                    className="absolute left-0.5 top-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full shadow-xl transition-transform duration-300"
+                    className="absolute left-0.5 top-1/2 -translate-y-1/2 w-8 h-8 bg-linear-to-br from-blue-500 to-blue-300 rounded-full shadow-xl transition-transform duration-300"
                     style={{
                         transform: `translateX(${selectedIdx === 0 ? 0 : offset}px) translateY(-50%)`,
                     }}

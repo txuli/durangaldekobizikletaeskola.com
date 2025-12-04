@@ -5,7 +5,7 @@ const MainSponsor = (props: { Link: string | undefined; img: string | undefined;
         <>
             <div className="w-10/12 mx-auto grid grid-cols-2 gap-4  md:grid-cols-4">
               
-                <div className="bg-customDarkBlue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto">
+                <div className="bg-custom-dark-blue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto">
                     <a
                         href={props.Link}
                         target="_blank"
@@ -23,7 +23,7 @@ const MainSponsor = (props: { Link: string | undefined; img: string | undefined;
                 </div>
 
                 
-                <div className="bg-customDarkBlue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto">
+                <div className="bg-custom-dark-blue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto">
                     <a
                         href={props.Link2}
                         target="_blank"
@@ -41,7 +41,7 @@ const MainSponsor = (props: { Link: string | undefined; img: string | undefined;
                 </div>
 
              
-                <div className="bg-customDarkBlue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto">
+                <div className="bg-custom-dark-blue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto">
                     <a
                         href={props.Link3}
                         target="_blank"
@@ -57,7 +57,7 @@ const MainSponsor = (props: { Link: string | undefined; img: string | undefined;
                         />
                     </a>
                 </div>
-                <div className="bg-customDarkBlue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto ">
+                <div className="bg-custom-dark-blue mb-6 w-36 sm:w-full max-w-sm h-32 md:h-40 rounded-lg shadow-lg flex items-center justify-center mx-auto ">
                     <a
                         href={props.Link4}
                         target="_blank"

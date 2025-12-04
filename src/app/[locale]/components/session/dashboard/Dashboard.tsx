@@ -73,7 +73,7 @@ export default function DashboardClient({ name, rol, links }: DashboardClientPro
                             href={link.href}
                             className="
                                 flex flex-col items-center justify-center
-                                bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800
+                                bg-linear-to-r from-gray-100 to-gray-200 text-gray-800
                                 transition-all duration-200 ease-in-out hover:opacity-90
                                 border border-gray-300 rounded-xl
                                 w-full max-w-xs aspect-square
@@ -98,7 +98,7 @@ export default function DashboardClient({ name, rol, links }: DashboardClientPro
                         onClick={handleLogout}
                         className="
                             flex flex-col items-center justify-center
-                            bg-gradient-to-r from-red-100 to-red-200 text-red-800
+                            bg-linear-to-r from-red-100 to-red-200 text-red-800
                             transition-all duration-300 ease-in-out hover:saturate-150
                             border border-red-300 rounded-xl
                             w-full max-w-xs aspect-square

@@ -116,13 +116,13 @@ export default function UsersTable({ users, currentUserRole }: UsersTableProps) 
                         <p className="text-gray-300 mb-6">Esta acción no se puede deshacer.</p>
                         <div className="flex justify-center gap-6 mt-4">
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-red-600 to-red-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 transition"
+                                className="px-6 py-2 bg-linear-to-r from-red-600 to-red-400 text-white rounded-xl font-bold shadow-lg hover:scale-105 transition"
                                 onClick={confirmDelete}
                             >
                                 Eliminar
                             </button>
                             <button
-                                className="px-6 py-2 bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 rounded-xl font-bold shadow-lg hover:scale-105 transition"
+                                className="px-6 py-2 bg-linear-to-r from-gray-300 to-gray-400 text-gray-800 rounded-xl font-bold shadow-lg hover:scale-105 transition"
                                 onClick={cancelDelete}
                             >
                                 Cancelar
@@ -238,14 +238,14 @@ export default function UsersTable({ users, currentUserRole }: UsersTableProps) 
                             <div className="flex justify-end gap-4 mt-6">
                                 <button
                                     type="submit"
-                                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
+                                    className="px-6 py-2 bg-linear-to-r from-blue-600 to-blue-400 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
                                 >
                                     Guardar
                                 </button>
                                 <button
                                     type="button"
                                     onClick={handleCloseForm}
-                                    className="px-6 py-2 bg-gradient-to-r from-gray-700 to-gray-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
+                                    className="px-6 py-2 bg-linear-to-r from-gray-700 to-gray-600 text-white rounded-lg font-semibold shadow-lg hover:shadow-xl hover:opacity-90"
                                 >
                                     Cancelar
                                 </button>

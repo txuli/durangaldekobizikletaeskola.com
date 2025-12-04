@@ -54,7 +54,7 @@ const NavBar: React.FC<nProps> = ({ className = "", color2 = "" }) => {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 w-screen bg-gradient-to-r ${className ? className : 'bg-customblue'} shadow-md z-30 font-fredoka`}>
+        <nav className={`fixed top-0 left-0 w-screen bg-linear-to-r ${className ? className : 'bg-customblue'} shadow-md z-30 font-fredoka`}>
 
             <div className="flex items-center justify-between px-6 py-4">
                 {/* Logo */}
@@ -87,7 +87,7 @@ const NavBar: React.FC<nProps> = ({ className = "", color2 = "" }) => {
                         <Link href="/cafedromedario" className="text-white hover:text-blue-200 transition duration-150">
                             CAFÉ DROMEDARIO-FLOTAMET
                         </Link>
-                        <Link href="/puntagalea" className="text-white hover:text-customPuntagaleaDarkOrange transition duration-150">
+                        <Link href="/puntagalea" className="text-white hover:text-custom-puntagalea-dark-orange transition duration-150">
                             P.GALEA DURANGALDEKO NESKAK
                         </Link>
                         <Link href="/galeria" className="text-white hover:text-blue-200 transition duration-150">
@@ -112,14 +112,14 @@ const NavBar: React.FC<nProps> = ({ className = "", color2 = "" }) => {
                         {session ? (
                             <Link
                                 href="/dashboard"
-                                className={`text-white px-4 py-2 rounded-lg ${color2 ? color2 : "bg-customDarkBlue"}`}
+                                className={`text-white px-4 py-2 rounded-lg ${color2 ? color2 : "bg-custom-dark-blue"}`}
                             >
                                 {t("dashboard")}
                             </Link>
                         ) : (
                             <Link
                                 href="/login"
-                                className={`text-white px-4 py-2 rounded-lg ${color2 ? color2 : "bg-customDarkBlue"}`}
+                                className={`text-white px-4 py-2 rounded-lg ${color2 ? color2 : "bg-custom-dark-blue"}`}
                             >
                                 {t("login")}
                             </Link>

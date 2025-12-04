@@ -30,7 +30,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
       
       <div
         onClick={() => changeLocale('eus')}
-        className={`cursor-pointer ${isPending && 'opacity-50'} ${currentLocale === 'eus' ? className || 'bg-customDarkBlue' : ''} p-2 rounded`}
+        className={`cursor-pointer ${isPending && 'opacity-50'} ${currentLocale === 'eus' ? className || 'bg-custom-dark-blue' : ''} p-2 rounded-sm`}
       >
         EUS
       </div>
@@ -40,7 +40,7 @@ export default function LocaleSwitcher({ className }: LocaleSwitcherProps) {
      
       <div
         onClick={() => changeLocale('es')}
-        className={`cursor-pointer ${isPending && 'opacity-50'} ${currentLocale === 'es' ? className || 'bg-customDarkBlue' : ''} p-2 rounded`}
+        className={`cursor-pointer ${isPending && 'opacity-50'} ${currentLocale === 'es' ? className || 'bg-custom-dark-blue' : ''} p-2 rounded-sm`}
       >
         ES
       </div>

@@ -6,7 +6,7 @@ export default function Page() {
 const t = useTranslations("PuntaGaleaPage");
     return (
         <>
-         <TopImage image = "https://photos.txuli.com/duranguesa/notices/noticiaNeskak.JPG" alt={t("altImage")} title={t("title")} subTitle={t("subtitle")} colors="bg-customPuntagaleaDarkOrange"/>
+         <TopImage image = "https://photos.txuli.com/duranguesa/notices/noticiaNeskak.JPG" alt={t("altImage")} title={t("title")} subTitle={t("subtitle")} colors="bg-custom-puntagalea-dark-orange"/>
         <NoticeContent 
 
 
@@ -16,6 +16,8 @@ const t = useTranslations("PuntaGaleaPage");
         p3={t("p3")}
         p4={t("p4")}
         p5={t("p5")}
+        p6={t("p6")}
+        p7={t("p7")}
         
         />
         </>
