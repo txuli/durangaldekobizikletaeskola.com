@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
             }));
             const options = {
                 from: process.env.EMAIL_USER,
-                to: /* process.env.EMAIL_RECIPIENT */ " EMAIL_REMOVIDO",
+                to:  process.env.EMAIL_RECIPIENT ,
                 subject: "Nuevo formulario recibido",
                 /*  text: `Nombre: ${name}
                          Fecha de Nacimiento: ${birthDate}
