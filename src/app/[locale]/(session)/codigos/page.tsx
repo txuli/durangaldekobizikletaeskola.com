@@ -33,7 +33,7 @@ export default async function Codigos() {
     data = await prisma.activation_codes.findMany({
         where: {
             OR: [
-                { expires_at: null },
+                { expires_at: undefined },
                 { expires_at: { gt: now } }
             ]
         },

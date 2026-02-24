@@ -81,8 +81,7 @@ export async function PUT(req: NextRequest) {
     try {
         const data = await req.json();
         const { role, dni, userId, name } = data;
-
-        if (!role||(role== "coach"||role=="runner"&&(!userId || !dni ))||(role=="user"||role=="staff"||role=="instructor"&&(!userId || !dni ))) {
+        if (!role||(["coach", "runner"].includes(role) && (!userId || !dni )) || (["user", "staff", "instructor"].includes(role)&& !userId)) {
             return NextResponse.json({ error: "Faltan datos para asociar el usuario" }, { status: 400 });
         }
 
@@ -114,7 +113,7 @@ export async function PUT(req: NextRequest) {
         });
         return NextResponse.json({ ok: true });
     } catch (error: any) {
-        console.error(error);
+        logger.error(error);
         return NextResponse.json({ error: "Error actualizando el usuario" }, { status: 500 });
     }
 }
