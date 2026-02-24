@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import MainSponsor from './mainSponsor';
 import Secondsponsor from './secondSponsor';
 import Helpers from './helpers';
-
+import cumenor  from 'public/media/CUMENOR 2.svg'
 import SubTitle from '../Titles/SubTitle';
 
 
@@ -13,7 +13,7 @@ const SECONDARY_SPONSORS = [
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-Betsaide.webp', link: 'https://www.betsaide.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-Tecoel.webp', link: 'https://tecoel.es/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-Maristas.webp', link: 'https://maristak.com/' },
-    { img: 'https://photos.txuli.com/duranguesa/sponsors/New-MaldaBikes.webp', link: 'https://www.maldabikes.com/', style: undefined },
+    { img: 'https://photos.txuli.com/duranguesa/sponsors/cumenor.webp', link: 'https://cumenor.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-Ingenia.webp', link: 'https://ingenia2014.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-SuministrosMugarra.webp', link: '', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-RuralKutxa.webp', link: 'https://www.ruralkutxa.com/', style: undefined },
