@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { logger } from "better-auth";
 
 export async function POST(req: NextRequest) {
     try {
@@ -46,7 +47,7 @@ export async function POST(req: NextRequest) {
                 _max: { id: true }
             });
             const nextId = (maxIdObj._max.id ?? 0) + 1;
-
+            //FEAT remove unnecessary data from coaches
             try {
                 await prisma.entrenadores.create({
                     data: {
@@ -70,7 +71,7 @@ export async function POST(req: NextRequest) {
         // Si todo va bien, responde ok (el frontend debe ahora crear el usuario y luego hacer un PUT para asociar el user_id)
         return NextResponse.json({ ok: true });
     } catch (error: any) {
-        console.error(error);
+        logger.error(error)
         return NextResponse.json({ error: "Error guardando los datos" }, { status: 500 });
     }
 }
@@ -80,8 +81,7 @@ export async function PUT(req: NextRequest) {
     try {
         const data = await req.json();
         const { role, dni, userId, name } = data;
-
-        if (!userId || !dni || !role) {
+        if (!role||(["coach", "runner"].includes(role) && (!userId || !dni )) || (["user", "staff", "instructor"].includes(role)&& !userId)) {
             return NextResponse.json({ error: "Faltan datos para asociar el usuario" }, { status: 400 });
         }
 
@@ -111,10 +111,9 @@ export async function PUT(req: NextRequest) {
                 role,
             },
         });
-
         return NextResponse.json({ ok: true });
     } catch (error: any) {
-        console.error(error);
+        logger.error(error);
         return NextResponse.json({ error: "Error actualizando el usuario" }, { status: 500 });
     }
 }
