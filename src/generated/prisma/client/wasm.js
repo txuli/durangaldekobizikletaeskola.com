@@ -232,6 +232,46 @@ exports.Prisma.Activation_codesScalarFieldEnum = {
   usos: 'usos'
 };
 
+exports.Prisma.YearsScalarFieldEnum = {
+  id: 'id',
+  year: 'year',
+  path: 'path'
+};
+
+exports.Prisma.ModalitiesScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  path: 'path',
+  year_id: 'year_id'
+};
+
+exports.Prisma.CategoriesScalarFieldEnum = {
+  id: 'id',
+  path: 'path',
+  name: 'name',
+  modality_id: 'modality_id'
+};
+
+exports.Prisma.Album_racesScalarFieldEnum = {
+  id: 'id',
+  path: 'path',
+  name: 'name',
+  category_id: 'category_id'
+};
+
+exports.Prisma.AlbumsScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  cover: 'cover',
+  race_id: 'race_id'
+};
+
+exports.Prisma.ImagesScalarFieldEnum = {
+  id: 'id',
+  path: 'path',
+  album_Id: 'album_Id'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -311,6 +351,34 @@ exports.Prisma.verificationOrderByRelevanceFieldEnum = {
 exports.Prisma.activation_codesOrderByRelevanceFieldEnum = {
   code: 'code'
 };
+
+exports.Prisma.yearsOrderByRelevanceFieldEnum = {
+  path: 'path'
+};
+
+exports.Prisma.modalitiesOrderByRelevanceFieldEnum = {
+  name: 'name',
+  path: 'path'
+};
+
+exports.Prisma.categoriesOrderByRelevanceFieldEnum = {
+  path: 'path',
+  name: 'name'
+};
+
+exports.Prisma.album_racesOrderByRelevanceFieldEnum = {
+  path: 'path',
+  name: 'name'
+};
+
+exports.Prisma.albumsOrderByRelevanceFieldEnum = {
+  name: 'name',
+  cover: 'cover'
+};
+
+exports.Prisma.imagesOrderByRelevanceFieldEnum = {
+  path: 'path'
+};
 exports.events_categoria = exports.$Enums.events_categoria = {
   Cadetes: 'Cadetes',
   Juveniles: 'Juveniles',
@@ -352,7 +420,13 @@ exports.Prisma.ModelName = {
   session: 'session',
   user: 'user',
   verification: 'verification',
-  activation_codes: 'activation_codes'
+  activation_codes: 'activation_codes',
+  years: 'years',
+  modalities: 'modalities',
+  categories: 'categories',
+  album_races: 'album_races',
+  albums: 'albums',
+  images: 'images'
 };
 
 /**

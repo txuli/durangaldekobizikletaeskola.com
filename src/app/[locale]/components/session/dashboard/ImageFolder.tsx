@@ -174,6 +174,7 @@ export default function ClientForm() {
     // currently not implemented, ignore this
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         console.log(" Submitting form data: Album de ", type, ": ", formData);
         const basePath = "/www/wwwroot/photos.txuli.com/duranguesa/"
         let path = ""
@@ -266,8 +267,7 @@ export default function ClientForm() {
             errorMsg = "Tipo de álbum no reconocido.";
         }
 
-        console.log("ARE YOU HERE ???????")
-        console.log(canCreateFolder, "can create folder");
+
 
         if (canCreateFolder) {
             // Folder and Thumbnail IMG Creation 
@@ -275,8 +275,10 @@ export default function ClientForm() {
                 folder: `${basePath + "covers" + path}/${folderName}`
             });
             const formDataToSend = new FormData();
+            formDataToSend.append("type", type)
             formDataToSend.append("dir", basePath + "covers" + path);
             formDataToSend.append("name", imageName);
+            formDataToSend.append("album", path)
             if (formData.fileUpload) {
                 formDataToSend.append("file", formData.fileUpload);
             }
@@ -285,39 +287,15 @@ export default function ClientForm() {
             let folderCreationSuccess = false;
             let folder2CreationSuccess = false;
 
-            // API CALLS
 
-            // CREATE FOLDER 1 (/covers)
-            try {
-                // Create Folder
-                console.log("Submitting form data:", { folder: `${basePath + "gallery" + path}/${folderName}` });
-                const response = await fetch(`${API_URL}/api/galleryManager/createFolder`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: bodyCovers,
-                });
-                const data = await response.json();
-                if (response.ok) {
-                    folderCreationSuccess = true;
-
-                } else {
-                    console.error("Error response:", data);
-                }
-
-            } catch (error) {
-                console.error("Error:", error);
-            }
-
-            // Change Path for gallery
-            const bodyGallery = JSON.stringify({
-                folder: `${basePath + "gallery" + path}/${folderName}`
-            });
 
             // CREATE FOLDER 2 (/gallery)
 
             try {
+                const bodyGallery = JSON.stringify({
+                    folder: `${basePath + "gallery" + path}/${folderName}`
+                });
+
                 // Create Folder
                 console.log("Submitting form data:", { folder: `${basePath + "gallery/" + path}/${folderName}` });
                 const response = await fetch(`${API_URL}/api/galleryManager/createFolder`, {
@@ -338,7 +316,7 @@ export default function ClientForm() {
                 console.error("Error:", error);
             }
 
-            // UPLOAD IMAGE to (/covers/...)
+            // UPLOAD IMAGE to (/covers)
             try {
                 // Upload image
 
@@ -346,22 +324,16 @@ export default function ClientForm() {
                     method: "POST",
                     body: formDataToSend,
                 });
-                const data = await response.json();
+
                 if (response.ok) {
-                    imageUploadSuccess = true;
+                    setInfo("Album Creado", `Álbum de ${type}: ${folderName} creado correctamente.`);
+
                 } else {
-                    console.error("Error response:", data);
+                    setError("Error interno al crear el álbum.");
                 }
             } catch (error) {
                 console.error("Error:", error);
             }
-            if (imageUploadSuccess && folderCreationSuccess && folder2CreationSuccess) {
-                setInfo("Album Creado", `Álbum de ${type}: ${folderName} creado correctamente.`)
-            } else {
-                setError("Error interno al crear el álbum.");
-            }
-
-
         } else {
             setError(errorMsg);
         }
@@ -402,7 +374,7 @@ export default function ClientForm() {
             <h2 className="text-3xl font-semibold text-white drop-shadow-sm text-center mb-4 uppercase font-fredoka">Categorías de galeria</h2>
 
             <form onSubmit={handleSubmit} className="w-full mx-auto px-2 sm:px-4 md:px-24 lg:px-52 xl:px-[33%] font-fredoka">
-                <p className='text-center'>Seleciona que apartado quieres crear</p> 
+                <p className='text-center'>Seleciona que apartado quieres crear</p>
                 <section className="flex justify-center mx-auto my-3 space-x-2">
                     <button
                         type="button"

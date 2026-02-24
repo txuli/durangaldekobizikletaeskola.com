@@ -1,29 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { mkdir } from 'fs/promises';
-
-export async function POST(req: NextRequest): Promise<NextResponse> {
+import {log} from 'discord-logify'
+export async function POST(req: NextRequest) {
+  const logger = new log()
   try {
     const body = await req.json();
-    const { folder } = body;
-
+    const folder = body?.folder;
+    logger.Info(folder)
     if (!folder || typeof folder !== "string") {
-      return new NextResponse("Error: Nombre de Album invalido", {
-        status: 400,
-        headers: { 'Content-Type': 'text/plain' },
-      });
+      return NextResponse.json(
+        { ok: false, message: "Nombre de álbum inválido" },
+        { status: 400 }
+      );
     }
 
     await mkdir(folder, { recursive: true });
 
-    return new NextResponse(`Album '${folder}' creado correctamente.`, {
-      status: 201,
-      headers: { 'Content-Type': 'text/plain' },
-    });
+    return NextResponse.json(
+      { ok: true, message: "Álbum creado correctamente.", folder },
+      { status: 201 }
+    );
   } catch (error: any) {
     console.error("Error al crear la carpeta:", error);
-    return new NextResponse("Error: No se pudo crear el album.", {
-      status: 500,
-      headers: { 'Content-Type': 'text/plain' },
-    });
+    return NextResponse.json(
+      { ok: false, message: "No se pudo crear el álbum.", error: String(error) },
+      { status: 500 }
+    );
   }
 }

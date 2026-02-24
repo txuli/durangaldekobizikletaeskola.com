@@ -63,6 +63,36 @@ export type verification = $Result.DefaultSelection<Prisma.$verificationPayload>
  * 
  */
 export type activation_codes = $Result.DefaultSelection<Prisma.$activation_codesPayload>
+/**
+ * Model years
+ * 
+ */
+export type years = $Result.DefaultSelection<Prisma.$yearsPayload>
+/**
+ * Model modalities
+ * 
+ */
+export type modalities = $Result.DefaultSelection<Prisma.$modalitiesPayload>
+/**
+ * Model categories
+ * 
+ */
+export type categories = $Result.DefaultSelection<Prisma.$categoriesPayload>
+/**
+ * Model album_races
+ * 
+ */
+export type album_races = $Result.DefaultSelection<Prisma.$album_racesPayload>
+/**
+ * Model albums
+ * 
+ */
+export type albums = $Result.DefaultSelection<Prisma.$albumsPayload>
+/**
+ * Model images
+ * 
+ */
+export type images = $Result.DefaultSelection<Prisma.$imagesPayload>
 
 /**
  * Enums
@@ -352,6 +382,66 @@ export class PrismaClient<
     * ```
     */
   get activation_codes(): Prisma.activation_codesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.years`: Exposes CRUD operations for the **years** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Years
+    * const years = await prisma.years.findMany()
+    * ```
+    */
+  get years(): Prisma.yearsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.modalities`: Exposes CRUD operations for the **modalities** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Modalities
+    * const modalities = await prisma.modalities.findMany()
+    * ```
+    */
+  get modalities(): Prisma.modalitiesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.categories`: Exposes CRUD operations for the **categories** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Categories
+    * const categories = await prisma.categories.findMany()
+    * ```
+    */
+  get categories(): Prisma.categoriesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.album_races`: Exposes CRUD operations for the **album_races** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Album_races
+    * const album_races = await prisma.album_races.findMany()
+    * ```
+    */
+  get album_races(): Prisma.album_racesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.albums`: Exposes CRUD operations for the **albums** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Albums
+    * const albums = await prisma.albums.findMany()
+    * ```
+    */
+  get albums(): Prisma.albumsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.images`: Exposes CRUD operations for the **images** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Images
+    * const images = await prisma.images.findMany()
+    * ```
+    */
+  get images(): Prisma.imagesDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -801,7 +891,13 @@ export namespace Prisma {
     session: 'session',
     user: 'user',
     verification: 'verification',
-    activation_codes: 'activation_codes'
+    activation_codes: 'activation_codes',
+    years: 'years',
+    modalities: 'modalities',
+    categories: 'categories',
+    album_races: 'album_races',
+    albums: 'albums',
+    images: 'images'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -820,7 +916,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "account" | "deportistas" | "entrenadores" | "events" | "events_resultado" | "listado_escuelas" | "session" | "user" | "verification" | "activation_codes"
+      modelProps: "account" | "deportistas" | "entrenadores" | "events" | "events_resultado" | "listado_escuelas" | "session" | "user" | "verification" | "activation_codes" | "years" | "modalities" | "categories" | "album_races" | "albums" | "images"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1484,6 +1580,402 @@ export namespace Prisma {
           }
         }
       }
+      years: {
+        payload: Prisma.$yearsPayload<ExtArgs>
+        fields: Prisma.yearsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.yearsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.yearsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>
+          }
+          findFirst: {
+            args: Prisma.yearsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.yearsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>
+          }
+          findMany: {
+            args: Prisma.yearsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>[]
+          }
+          create: {
+            args: Prisma.yearsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>
+          }
+          createMany: {
+            args: Prisma.yearsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.yearsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>
+          }
+          update: {
+            args: Prisma.yearsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>
+          }
+          deleteMany: {
+            args: Prisma.yearsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.yearsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.yearsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$yearsPayload>
+          }
+          aggregate: {
+            args: Prisma.YearsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateYears>
+          }
+          groupBy: {
+            args: Prisma.yearsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<YearsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.yearsCountArgs<ExtArgs>
+            result: $Utils.Optional<YearsCountAggregateOutputType> | number
+          }
+        }
+      }
+      modalities: {
+        payload: Prisma.$modalitiesPayload<ExtArgs>
+        fields: Prisma.modalitiesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.modalitiesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.modalitiesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>
+          }
+          findFirst: {
+            args: Prisma.modalitiesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.modalitiesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>
+          }
+          findMany: {
+            args: Prisma.modalitiesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>[]
+          }
+          create: {
+            args: Prisma.modalitiesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>
+          }
+          createMany: {
+            args: Prisma.modalitiesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.modalitiesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>
+          }
+          update: {
+            args: Prisma.modalitiesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>
+          }
+          deleteMany: {
+            args: Prisma.modalitiesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.modalitiesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.modalitiesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$modalitiesPayload>
+          }
+          aggregate: {
+            args: Prisma.ModalitiesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateModalities>
+          }
+          groupBy: {
+            args: Prisma.modalitiesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ModalitiesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.modalitiesCountArgs<ExtArgs>
+            result: $Utils.Optional<ModalitiesCountAggregateOutputType> | number
+          }
+        }
+      }
+      categories: {
+        payload: Prisma.$categoriesPayload<ExtArgs>
+        fields: Prisma.categoriesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.categoriesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.categoriesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>
+          }
+          findFirst: {
+            args: Prisma.categoriesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.categoriesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>
+          }
+          findMany: {
+            args: Prisma.categoriesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>[]
+          }
+          create: {
+            args: Prisma.categoriesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>
+          }
+          createMany: {
+            args: Prisma.categoriesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.categoriesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>
+          }
+          update: {
+            args: Prisma.categoriesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>
+          }
+          deleteMany: {
+            args: Prisma.categoriesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.categoriesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.categoriesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$categoriesPayload>
+          }
+          aggregate: {
+            args: Prisma.CategoriesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCategories>
+          }
+          groupBy: {
+            args: Prisma.categoriesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CategoriesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.categoriesCountArgs<ExtArgs>
+            result: $Utils.Optional<CategoriesCountAggregateOutputType> | number
+          }
+        }
+      }
+      album_races: {
+        payload: Prisma.$album_racesPayload<ExtArgs>
+        fields: Prisma.album_racesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.album_racesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.album_racesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>
+          }
+          findFirst: {
+            args: Prisma.album_racesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.album_racesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>
+          }
+          findMany: {
+            args: Prisma.album_racesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>[]
+          }
+          create: {
+            args: Prisma.album_racesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>
+          }
+          createMany: {
+            args: Prisma.album_racesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.album_racesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>
+          }
+          update: {
+            args: Prisma.album_racesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>
+          }
+          deleteMany: {
+            args: Prisma.album_racesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.album_racesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.album_racesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$album_racesPayload>
+          }
+          aggregate: {
+            args: Prisma.Album_racesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAlbum_races>
+          }
+          groupBy: {
+            args: Prisma.album_racesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Album_racesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.album_racesCountArgs<ExtArgs>
+            result: $Utils.Optional<Album_racesCountAggregateOutputType> | number
+          }
+        }
+      }
+      albums: {
+        payload: Prisma.$albumsPayload<ExtArgs>
+        fields: Prisma.albumsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.albumsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.albumsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>
+          }
+          findFirst: {
+            args: Prisma.albumsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.albumsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>
+          }
+          findMany: {
+            args: Prisma.albumsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>[]
+          }
+          create: {
+            args: Prisma.albumsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>
+          }
+          createMany: {
+            args: Prisma.albumsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.albumsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>
+          }
+          update: {
+            args: Prisma.albumsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>
+          }
+          deleteMany: {
+            args: Prisma.albumsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.albumsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.albumsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$albumsPayload>
+          }
+          aggregate: {
+            args: Prisma.AlbumsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateAlbums>
+          }
+          groupBy: {
+            args: Prisma.albumsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<AlbumsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.albumsCountArgs<ExtArgs>
+            result: $Utils.Optional<AlbumsCountAggregateOutputType> | number
+          }
+        }
+      }
+      images: {
+        payload: Prisma.$imagesPayload<ExtArgs>
+        fields: Prisma.imagesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.imagesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.imagesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>
+          }
+          findFirst: {
+            args: Prisma.imagesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.imagesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>
+          }
+          findMany: {
+            args: Prisma.imagesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>[]
+          }
+          create: {
+            args: Prisma.imagesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>
+          }
+          createMany: {
+            args: Prisma.imagesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.imagesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>
+          }
+          update: {
+            args: Prisma.imagesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>
+          }
+          deleteMany: {
+            args: Prisma.imagesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.imagesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.imagesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$imagesPayload>
+          }
+          aggregate: {
+            args: Prisma.ImagesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateImages>
+          }
+          groupBy: {
+            args: Prisma.imagesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ImagesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.imagesCountArgs<ExtArgs>
+            result: $Utils.Optional<ImagesCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1578,6 +2070,12 @@ export namespace Prisma {
     user?: userOmit
     verification?: verificationOmit
     activation_codes?: activation_codesOmit
+    years?: yearsOmit
+    modalities?: modalitiesOmit
+    categories?: categoriesOmit
+    album_races?: album_racesOmit
+    albums?: albumsOmit
+    images?: imagesOmit
   }
 
   /* Types for Logging */
@@ -1806,6 +2304,161 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountEntrenadoresArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: entrenadoresWhereInput
+  }
+
+
+  /**
+   * Count Type YearsCountOutputType
+   */
+
+  export type YearsCountOutputType = {
+    modalities: number
+  }
+
+  export type YearsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    modalities?: boolean | YearsCountOutputTypeCountModalitiesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * YearsCountOutputType without action
+   */
+  export type YearsCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the YearsCountOutputType
+     */
+    select?: YearsCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * YearsCountOutputType without action
+   */
+  export type YearsCountOutputTypeCountModalitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: modalitiesWhereInput
+  }
+
+
+  /**
+   * Count Type ModalitiesCountOutputType
+   */
+
+  export type ModalitiesCountOutputType = {
+    categories: number
+  }
+
+  export type ModalitiesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    categories?: boolean | ModalitiesCountOutputTypeCountCategoriesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * ModalitiesCountOutputType without action
+   */
+  export type ModalitiesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ModalitiesCountOutputType
+     */
+    select?: ModalitiesCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * ModalitiesCountOutputType without action
+   */
+  export type ModalitiesCountOutputTypeCountCategoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: categoriesWhereInput
+  }
+
+
+  /**
+   * Count Type CategoriesCountOutputType
+   */
+
+  export type CategoriesCountOutputType = {
+    album_races: number
+  }
+
+  export type CategoriesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    album_races?: boolean | CategoriesCountOutputTypeCountAlbum_racesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CategoriesCountOutputType without action
+   */
+  export type CategoriesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CategoriesCountOutputType
+     */
+    select?: CategoriesCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CategoriesCountOutputType without action
+   */
+  export type CategoriesCountOutputTypeCountAlbum_racesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: album_racesWhereInput
+  }
+
+
+  /**
+   * Count Type Album_racesCountOutputType
+   */
+
+  export type Album_racesCountOutputType = {
+    albums: number
+  }
+
+  export type Album_racesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    albums?: boolean | Album_racesCountOutputTypeCountAlbumsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Album_racesCountOutputType without action
+   */
+  export type Album_racesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Album_racesCountOutputType
+     */
+    select?: Album_racesCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Album_racesCountOutputType without action
+   */
+  export type Album_racesCountOutputTypeCountAlbumsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: albumsWhereInput
+  }
+
+
+  /**
+   * Count Type AlbumsCountOutputType
+   */
+
+  export type AlbumsCountOutputType = {
+    images: number
+  }
+
+  export type AlbumsCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    images?: boolean | AlbumsCountOutputTypeCountImagesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * AlbumsCountOutputType without action
+   */
+  export type AlbumsCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the AlbumsCountOutputType
+     */
+    select?: AlbumsCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * AlbumsCountOutputType without action
+   */
+  export type AlbumsCountOutputTypeCountImagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: imagesWhereInput
   }
 
 
@@ -4133,8 +4786,8 @@ export namespace Prisma {
     telefono?: boolean
     fecha_nacimiento?: boolean
     user_id?: boolean
-    user?: boolean | entrenadores$userArgs<ExtArgs>
     deportistas?: boolean | entrenadores$deportistasArgs<ExtArgs>
+    user?: boolean | entrenadores$userArgs<ExtArgs>
     _count?: boolean | EntrenadoresCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["entrenadores"]>
 
@@ -4152,16 +4805,16 @@ export namespace Prisma {
 
   export type entrenadoresOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nombre" | "apellidos" | "dni" | "telefono" | "fecha_nacimiento" | "user_id", ExtArgs["result"]["entrenadores"]>
   export type entrenadoresInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | entrenadores$userArgs<ExtArgs>
     deportistas?: boolean | entrenadores$deportistasArgs<ExtArgs>
+    user?: boolean | entrenadores$userArgs<ExtArgs>
     _count?: boolean | EntrenadoresCountOutputTypeDefaultArgs<ExtArgs>
   }
 
   export type $entrenadoresPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "entrenadores"
     objects: {
-      user: Prisma.$userPayload<ExtArgs> | null
       deportistas: Prisma.$deportistasPayload<ExtArgs>[]
+      user: Prisma.$userPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -4511,8 +5164,8 @@ export namespace Prisma {
    */
   export interface Prisma__entrenadoresClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends entrenadores$userArgs<ExtArgs> = {}>(args?: Subset<T, entrenadores$userArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     deportistas<T extends entrenadores$deportistasArgs<ExtArgs> = {}>(args?: Subset<T, entrenadores$deportistasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$deportistasPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    user<T extends entrenadores$userArgs<ExtArgs> = {}>(args?: Subset<T, entrenadores$userArgs<ExtArgs>>): Prisma__userClient<$Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4892,25 +5545,6 @@ export namespace Prisma {
   }
 
   /**
-   * entrenadores.user
-   */
-  export type entrenadores$userArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the user
-     */
-    select?: userSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the user
-     */
-    omit?: userOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: userInclude<ExtArgs> | null
-    where?: userWhereInput
-  }
-
-  /**
    * entrenadores.deportistas
    */
   export type entrenadores$deportistasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4932,6 +5566,25 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: DeportistasScalarFieldEnum | DeportistasScalarFieldEnum[]
+  }
+
+  /**
+   * entrenadores.user
+   */
+  export type entrenadores$userArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the user
+     */
+    select?: userSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the user
+     */
+    omit?: userOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: userInclude<ExtArgs> | null
+    where?: userWhereInput
   }
 
   /**
@@ -7057,27 +7710,25 @@ export namespace Prisma {
   export type Listado_escuelasAvgAggregateOutputType = {
     carrera_id: number | null
     dorsal: number | null
-    confirmado: number | null
   }
 
   export type Listado_escuelasSumAggregateOutputType = {
     carrera_id: number | null
     dorsal: number | null
-    confirmado: number | null
   }
 
   export type Listado_escuelasMinAggregateOutputType = {
     carrera_id: number | null
     dorsal: number | null
     nombre_apellido: string | null
-    confirmado: number | null
+    confirmado: boolean | null
   }
 
   export type Listado_escuelasMaxAggregateOutputType = {
     carrera_id: number | null
     dorsal: number | null
     nombre_apellido: string | null
-    confirmado: number | null
+    confirmado: boolean | null
   }
 
   export type Listado_escuelasCountAggregateOutputType = {
@@ -7092,13 +7743,11 @@ export namespace Prisma {
   export type Listado_escuelasAvgAggregateInputType = {
     carrera_id?: true
     dorsal?: true
-    confirmado?: true
   }
 
   export type Listado_escuelasSumAggregateInputType = {
     carrera_id?: true
     dorsal?: true
-    confirmado?: true
   }
 
   export type Listado_escuelasMinAggregateInputType = {
@@ -7213,7 +7862,7 @@ export namespace Prisma {
     carrera_id: number
     dorsal: number
     nombre_apellido: string | null
-    confirmado: number | null
+    confirmado: boolean | null
     _count: Listado_escuelasCountAggregateOutputType | null
     _avg: Listado_escuelasAvgAggregateOutputType | null
     _sum: Listado_escuelasSumAggregateOutputType | null
@@ -7266,7 +7915,7 @@ export namespace Prisma {
       carrera_id: number
       dorsal: number
       nombre_apellido: string | null
-      confirmado: number | null
+      confirmado: boolean | null
     }, ExtArgs["result"]["listado_escuelas"]>
     composites: {}
   }
@@ -7640,7 +8289,7 @@ export namespace Prisma {
     readonly carrera_id: FieldRef<"listado_escuelas", 'Int'>
     readonly dorsal: FieldRef<"listado_escuelas", 'Int'>
     readonly nombre_apellido: FieldRef<"listado_escuelas", 'String'>
-    readonly confirmado: FieldRef<"listado_escuelas", 'Int'>
+    readonly confirmado: FieldRef<"listado_escuelas", 'Boolean'>
   }
     
 
@@ -11080,9 +11729,9 @@ export namespace Prisma {
   export type Activation_codesGroupByOutputType = {
     id: number
     code: string
-    role: $Enums.activation_codes_role | null
-    expires_at: Date | null
-    usos: number
+    role: $Enums.activation_codes_role
+    expires_at: Date
+    usos: number | null
     _count: Activation_codesCountAggregateOutputType | null
     _avg: Activation_codesAvgAggregateOutputType | null
     _sum: Activation_codesSumAggregateOutputType | null
@@ -11130,9 +11779,9 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       code: string
-      role: $Enums.activation_codes_role | null
-      expires_at: Date | null
-      usos: number
+      role: $Enums.activation_codes_role
+      expires_at: Date
+      usos: number | null
     }, ExtArgs["result"]["activation_codes"]>
     composites: {}
   }
@@ -11829,6 +12478,5866 @@ export namespace Prisma {
 
 
   /**
+   * Model years
+   */
+
+  export type AggregateYears = {
+    _count: YearsCountAggregateOutputType | null
+    _avg: YearsAvgAggregateOutputType | null
+    _sum: YearsSumAggregateOutputType | null
+    _min: YearsMinAggregateOutputType | null
+    _max: YearsMaxAggregateOutputType | null
+  }
+
+  export type YearsAvgAggregateOutputType = {
+    id: number | null
+    year: number | null
+  }
+
+  export type YearsSumAggregateOutputType = {
+    id: number | null
+    year: number | null
+  }
+
+  export type YearsMinAggregateOutputType = {
+    id: number | null
+    year: number | null
+    path: string | null
+  }
+
+  export type YearsMaxAggregateOutputType = {
+    id: number | null
+    year: number | null
+    path: string | null
+  }
+
+  export type YearsCountAggregateOutputType = {
+    id: number
+    year: number
+    path: number
+    _all: number
+  }
+
+
+  export type YearsAvgAggregateInputType = {
+    id?: true
+    year?: true
+  }
+
+  export type YearsSumAggregateInputType = {
+    id?: true
+    year?: true
+  }
+
+  export type YearsMinAggregateInputType = {
+    id?: true
+    year?: true
+    path?: true
+  }
+
+  export type YearsMaxAggregateInputType = {
+    id?: true
+    year?: true
+    path?: true
+  }
+
+  export type YearsCountAggregateInputType = {
+    id?: true
+    year?: true
+    path?: true
+    _all?: true
+  }
+
+  export type YearsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which years to aggregate.
+     */
+    where?: yearsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of years to fetch.
+     */
+    orderBy?: yearsOrderByWithRelationInput | yearsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: yearsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` years from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` years.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned years
+    **/
+    _count?: true | YearsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: YearsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: YearsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: YearsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: YearsMaxAggregateInputType
+  }
+
+  export type GetYearsAggregateType<T extends YearsAggregateArgs> = {
+        [P in keyof T & keyof AggregateYears]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateYears[P]>
+      : GetScalarType<T[P], AggregateYears[P]>
+  }
+
+
+
+
+  export type yearsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: yearsWhereInput
+    orderBy?: yearsOrderByWithAggregationInput | yearsOrderByWithAggregationInput[]
+    by: YearsScalarFieldEnum[] | YearsScalarFieldEnum
+    having?: yearsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: YearsCountAggregateInputType | true
+    _avg?: YearsAvgAggregateInputType
+    _sum?: YearsSumAggregateInputType
+    _min?: YearsMinAggregateInputType
+    _max?: YearsMaxAggregateInputType
+  }
+
+  export type YearsGroupByOutputType = {
+    id: number
+    year: number
+    path: string
+    _count: YearsCountAggregateOutputType | null
+    _avg: YearsAvgAggregateOutputType | null
+    _sum: YearsSumAggregateOutputType | null
+    _min: YearsMinAggregateOutputType | null
+    _max: YearsMaxAggregateOutputType | null
+  }
+
+  type GetYearsGroupByPayload<T extends yearsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<YearsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof YearsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], YearsGroupByOutputType[P]>
+            : GetScalarType<T[P], YearsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type yearsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    year?: boolean
+    path?: boolean
+    modalities?: boolean | years$modalitiesArgs<ExtArgs>
+    _count?: boolean | YearsCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["years"]>
+
+
+
+  export type yearsSelectScalar = {
+    id?: boolean
+    year?: boolean
+    path?: boolean
+  }
+
+  export type yearsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "year" | "path", ExtArgs["result"]["years"]>
+  export type yearsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    modalities?: boolean | years$modalitiesArgs<ExtArgs>
+    _count?: boolean | YearsCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $yearsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "years"
+    objects: {
+      modalities: Prisma.$modalitiesPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      year: number
+      path: string
+    }, ExtArgs["result"]["years"]>
+    composites: {}
+  }
+
+  type yearsGetPayload<S extends boolean | null | undefined | yearsDefaultArgs> = $Result.GetResult<Prisma.$yearsPayload, S>
+
+  type yearsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<yearsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: YearsCountAggregateInputType | true
+    }
+
+  export interface yearsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['years'], meta: { name: 'years' } }
+    /**
+     * Find zero or one Years that matches the filter.
+     * @param {yearsFindUniqueArgs} args - Arguments to find a Years
+     * @example
+     * // Get one Years
+     * const years = await prisma.years.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends yearsFindUniqueArgs>(args: SelectSubset<T, yearsFindUniqueArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Years that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {yearsFindUniqueOrThrowArgs} args - Arguments to find a Years
+     * @example
+     * // Get one Years
+     * const years = await prisma.years.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends yearsFindUniqueOrThrowArgs>(args: SelectSubset<T, yearsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Years that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {yearsFindFirstArgs} args - Arguments to find a Years
+     * @example
+     * // Get one Years
+     * const years = await prisma.years.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends yearsFindFirstArgs>(args?: SelectSubset<T, yearsFindFirstArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Years that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {yearsFindFirstOrThrowArgs} args - Arguments to find a Years
+     * @example
+     * // Get one Years
+     * const years = await prisma.years.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends yearsFindFirstOrThrowArgs>(args?: SelectSubset<T, yearsFindFirstOrThrowArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Years that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {yearsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Years
+     * const years = await prisma.years.findMany()
+     * 
+     * // Get first 10 Years
+     * const years = await prisma.years.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const yearsWithIdOnly = await prisma.years.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends yearsFindManyArgs>(args?: SelectSubset<T, yearsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Years.
+     * @param {yearsCreateArgs} args - Arguments to create a Years.
+     * @example
+     * // Create one Years
+     * const Years = await prisma.years.create({
+     *   data: {
+     *     // ... data to create a Years
+     *   }
+     * })
+     * 
+     */
+    create<T extends yearsCreateArgs>(args: SelectSubset<T, yearsCreateArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Years.
+     * @param {yearsCreateManyArgs} args - Arguments to create many Years.
+     * @example
+     * // Create many Years
+     * const years = await prisma.years.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends yearsCreateManyArgs>(args?: SelectSubset<T, yearsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Years.
+     * @param {yearsDeleteArgs} args - Arguments to delete one Years.
+     * @example
+     * // Delete one Years
+     * const Years = await prisma.years.delete({
+     *   where: {
+     *     // ... filter to delete one Years
+     *   }
+     * })
+     * 
+     */
+    delete<T extends yearsDeleteArgs>(args: SelectSubset<T, yearsDeleteArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Years.
+     * @param {yearsUpdateArgs} args - Arguments to update one Years.
+     * @example
+     * // Update one Years
+     * const years = await prisma.years.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends yearsUpdateArgs>(args: SelectSubset<T, yearsUpdateArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Years.
+     * @param {yearsDeleteManyArgs} args - Arguments to filter Years to delete.
+     * @example
+     * // Delete a few Years
+     * const { count } = await prisma.years.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends yearsDeleteManyArgs>(args?: SelectSubset<T, yearsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Years.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {yearsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Years
+     * const years = await prisma.years.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends yearsUpdateManyArgs>(args: SelectSubset<T, yearsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Years.
+     * @param {yearsUpsertArgs} args - Arguments to update or create a Years.
+     * @example
+     * // Update or create a Years
+     * const years = await prisma.years.upsert({
+     *   create: {
+     *     // ... data to create a Years
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Years we want to update
+     *   }
+     * })
+     */
+    upsert<T extends yearsUpsertArgs>(args: SelectSubset<T, yearsUpsertArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Years.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {yearsCountArgs} args - Arguments to filter Years to count.
+     * @example
+     * // Count the number of Years
+     * const count = await prisma.years.count({
+     *   where: {
+     *     // ... the filter for the Years we want to count
+     *   }
+     * })
+    **/
+    count<T extends yearsCountArgs>(
+      args?: Subset<T, yearsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], YearsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Years.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {YearsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends YearsAggregateArgs>(args: Subset<T, YearsAggregateArgs>): Prisma.PrismaPromise<GetYearsAggregateType<T>>
+
+    /**
+     * Group by Years.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {yearsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends yearsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: yearsGroupByArgs['orderBy'] }
+        : { orderBy?: yearsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, yearsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetYearsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the years model
+   */
+  readonly fields: yearsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for years.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__yearsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    modalities<T extends years$modalitiesArgs<ExtArgs> = {}>(args?: Subset<T, years$modalitiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the years model
+   */
+  interface yearsFieldRefs {
+    readonly id: FieldRef<"years", 'Int'>
+    readonly year: FieldRef<"years", 'Int'>
+    readonly path: FieldRef<"years", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * years findUnique
+   */
+  export type yearsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * Filter, which years to fetch.
+     */
+    where: yearsWhereUniqueInput
+  }
+
+  /**
+   * years findUniqueOrThrow
+   */
+  export type yearsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * Filter, which years to fetch.
+     */
+    where: yearsWhereUniqueInput
+  }
+
+  /**
+   * years findFirst
+   */
+  export type yearsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * Filter, which years to fetch.
+     */
+    where?: yearsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of years to fetch.
+     */
+    orderBy?: yearsOrderByWithRelationInput | yearsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for years.
+     */
+    cursor?: yearsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` years from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` years.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of years.
+     */
+    distinct?: YearsScalarFieldEnum | YearsScalarFieldEnum[]
+  }
+
+  /**
+   * years findFirstOrThrow
+   */
+  export type yearsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * Filter, which years to fetch.
+     */
+    where?: yearsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of years to fetch.
+     */
+    orderBy?: yearsOrderByWithRelationInput | yearsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for years.
+     */
+    cursor?: yearsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` years from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` years.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of years.
+     */
+    distinct?: YearsScalarFieldEnum | YearsScalarFieldEnum[]
+  }
+
+  /**
+   * years findMany
+   */
+  export type yearsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * Filter, which years to fetch.
+     */
+    where?: yearsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of years to fetch.
+     */
+    orderBy?: yearsOrderByWithRelationInput | yearsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing years.
+     */
+    cursor?: yearsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` years from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` years.
+     */
+    skip?: number
+    distinct?: YearsScalarFieldEnum | YearsScalarFieldEnum[]
+  }
+
+  /**
+   * years create
+   */
+  export type yearsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a years.
+     */
+    data: XOR<yearsCreateInput, yearsUncheckedCreateInput>
+  }
+
+  /**
+   * years createMany
+   */
+  export type yearsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many years.
+     */
+    data: yearsCreateManyInput | yearsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * years update
+   */
+  export type yearsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a years.
+     */
+    data: XOR<yearsUpdateInput, yearsUncheckedUpdateInput>
+    /**
+     * Choose, which years to update.
+     */
+    where: yearsWhereUniqueInput
+  }
+
+  /**
+   * years updateMany
+   */
+  export type yearsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update years.
+     */
+    data: XOR<yearsUpdateManyMutationInput, yearsUncheckedUpdateManyInput>
+    /**
+     * Filter which years to update
+     */
+    where?: yearsWhereInput
+    /**
+     * Limit how many years to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * years upsert
+   */
+  export type yearsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the years to update in case it exists.
+     */
+    where: yearsWhereUniqueInput
+    /**
+     * In case the years found by the `where` argument doesn't exist, create a new years with this data.
+     */
+    create: XOR<yearsCreateInput, yearsUncheckedCreateInput>
+    /**
+     * In case the years was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<yearsUpdateInput, yearsUncheckedUpdateInput>
+  }
+
+  /**
+   * years delete
+   */
+  export type yearsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+    /**
+     * Filter which years to delete.
+     */
+    where: yearsWhereUniqueInput
+  }
+
+  /**
+   * years deleteMany
+   */
+  export type yearsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which years to delete
+     */
+    where?: yearsWhereInput
+    /**
+     * Limit how many years to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * years.modalities
+   */
+  export type years$modalitiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    where?: modalitiesWhereInput
+    orderBy?: modalitiesOrderByWithRelationInput | modalitiesOrderByWithRelationInput[]
+    cursor?: modalitiesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ModalitiesScalarFieldEnum | ModalitiesScalarFieldEnum[]
+  }
+
+  /**
+   * years without action
+   */
+  export type yearsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the years
+     */
+    select?: yearsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the years
+     */
+    omit?: yearsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: yearsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model modalities
+   */
+
+  export type AggregateModalities = {
+    _count: ModalitiesCountAggregateOutputType | null
+    _avg: ModalitiesAvgAggregateOutputType | null
+    _sum: ModalitiesSumAggregateOutputType | null
+    _min: ModalitiesMinAggregateOutputType | null
+    _max: ModalitiesMaxAggregateOutputType | null
+  }
+
+  export type ModalitiesAvgAggregateOutputType = {
+    id: number | null
+    year_id: number | null
+  }
+
+  export type ModalitiesSumAggregateOutputType = {
+    id: number | null
+    year_id: number | null
+  }
+
+  export type ModalitiesMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    path: string | null
+    year_id: number | null
+  }
+
+  export type ModalitiesMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    path: string | null
+    year_id: number | null
+  }
+
+  export type ModalitiesCountAggregateOutputType = {
+    id: number
+    name: number
+    path: number
+    year_id: number
+    _all: number
+  }
+
+
+  export type ModalitiesAvgAggregateInputType = {
+    id?: true
+    year_id?: true
+  }
+
+  export type ModalitiesSumAggregateInputType = {
+    id?: true
+    year_id?: true
+  }
+
+  export type ModalitiesMinAggregateInputType = {
+    id?: true
+    name?: true
+    path?: true
+    year_id?: true
+  }
+
+  export type ModalitiesMaxAggregateInputType = {
+    id?: true
+    name?: true
+    path?: true
+    year_id?: true
+  }
+
+  export type ModalitiesCountAggregateInputType = {
+    id?: true
+    name?: true
+    path?: true
+    year_id?: true
+    _all?: true
+  }
+
+  export type ModalitiesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which modalities to aggregate.
+     */
+    where?: modalitiesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of modalities to fetch.
+     */
+    orderBy?: modalitiesOrderByWithRelationInput | modalitiesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: modalitiesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` modalities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` modalities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned modalities
+    **/
+    _count?: true | ModalitiesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ModalitiesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ModalitiesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ModalitiesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ModalitiesMaxAggregateInputType
+  }
+
+  export type GetModalitiesAggregateType<T extends ModalitiesAggregateArgs> = {
+        [P in keyof T & keyof AggregateModalities]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateModalities[P]>
+      : GetScalarType<T[P], AggregateModalities[P]>
+  }
+
+
+
+
+  export type modalitiesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: modalitiesWhereInput
+    orderBy?: modalitiesOrderByWithAggregationInput | modalitiesOrderByWithAggregationInput[]
+    by: ModalitiesScalarFieldEnum[] | ModalitiesScalarFieldEnum
+    having?: modalitiesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ModalitiesCountAggregateInputType | true
+    _avg?: ModalitiesAvgAggregateInputType
+    _sum?: ModalitiesSumAggregateInputType
+    _min?: ModalitiesMinAggregateInputType
+    _max?: ModalitiesMaxAggregateInputType
+  }
+
+  export type ModalitiesGroupByOutputType = {
+    id: number
+    name: string
+    path: string
+    year_id: number
+    _count: ModalitiesCountAggregateOutputType | null
+    _avg: ModalitiesAvgAggregateOutputType | null
+    _sum: ModalitiesSumAggregateOutputType | null
+    _min: ModalitiesMinAggregateOutputType | null
+    _max: ModalitiesMaxAggregateOutputType | null
+  }
+
+  type GetModalitiesGroupByPayload<T extends modalitiesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ModalitiesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ModalitiesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ModalitiesGroupByOutputType[P]>
+            : GetScalarType<T[P], ModalitiesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type modalitiesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    path?: boolean
+    year_id?: boolean
+    categories?: boolean | modalities$categoriesArgs<ExtArgs>
+    year?: boolean | yearsDefaultArgs<ExtArgs>
+    _count?: boolean | ModalitiesCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["modalities"]>
+
+
+
+  export type modalitiesSelectScalar = {
+    id?: boolean
+    name?: boolean
+    path?: boolean
+    year_id?: boolean
+  }
+
+  export type modalitiesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "path" | "year_id", ExtArgs["result"]["modalities"]>
+  export type modalitiesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    categories?: boolean | modalities$categoriesArgs<ExtArgs>
+    year?: boolean | yearsDefaultArgs<ExtArgs>
+    _count?: boolean | ModalitiesCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $modalitiesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "modalities"
+    objects: {
+      categories: Prisma.$categoriesPayload<ExtArgs>[]
+      year: Prisma.$yearsPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string
+      path: string
+      year_id: number
+    }, ExtArgs["result"]["modalities"]>
+    composites: {}
+  }
+
+  type modalitiesGetPayload<S extends boolean | null | undefined | modalitiesDefaultArgs> = $Result.GetResult<Prisma.$modalitiesPayload, S>
+
+  type modalitiesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<modalitiesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ModalitiesCountAggregateInputType | true
+    }
+
+  export interface modalitiesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['modalities'], meta: { name: 'modalities' } }
+    /**
+     * Find zero or one Modalities that matches the filter.
+     * @param {modalitiesFindUniqueArgs} args - Arguments to find a Modalities
+     * @example
+     * // Get one Modalities
+     * const modalities = await prisma.modalities.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends modalitiesFindUniqueArgs>(args: SelectSubset<T, modalitiesFindUniqueArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Modalities that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {modalitiesFindUniqueOrThrowArgs} args - Arguments to find a Modalities
+     * @example
+     * // Get one Modalities
+     * const modalities = await prisma.modalities.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends modalitiesFindUniqueOrThrowArgs>(args: SelectSubset<T, modalitiesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Modalities that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {modalitiesFindFirstArgs} args - Arguments to find a Modalities
+     * @example
+     * // Get one Modalities
+     * const modalities = await prisma.modalities.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends modalitiesFindFirstArgs>(args?: SelectSubset<T, modalitiesFindFirstArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Modalities that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {modalitiesFindFirstOrThrowArgs} args - Arguments to find a Modalities
+     * @example
+     * // Get one Modalities
+     * const modalities = await prisma.modalities.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends modalitiesFindFirstOrThrowArgs>(args?: SelectSubset<T, modalitiesFindFirstOrThrowArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Modalities that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {modalitiesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Modalities
+     * const modalities = await prisma.modalities.findMany()
+     * 
+     * // Get first 10 Modalities
+     * const modalities = await prisma.modalities.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const modalitiesWithIdOnly = await prisma.modalities.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends modalitiesFindManyArgs>(args?: SelectSubset<T, modalitiesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Modalities.
+     * @param {modalitiesCreateArgs} args - Arguments to create a Modalities.
+     * @example
+     * // Create one Modalities
+     * const Modalities = await prisma.modalities.create({
+     *   data: {
+     *     // ... data to create a Modalities
+     *   }
+     * })
+     * 
+     */
+    create<T extends modalitiesCreateArgs>(args: SelectSubset<T, modalitiesCreateArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Modalities.
+     * @param {modalitiesCreateManyArgs} args - Arguments to create many Modalities.
+     * @example
+     * // Create many Modalities
+     * const modalities = await prisma.modalities.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends modalitiesCreateManyArgs>(args?: SelectSubset<T, modalitiesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Modalities.
+     * @param {modalitiesDeleteArgs} args - Arguments to delete one Modalities.
+     * @example
+     * // Delete one Modalities
+     * const Modalities = await prisma.modalities.delete({
+     *   where: {
+     *     // ... filter to delete one Modalities
+     *   }
+     * })
+     * 
+     */
+    delete<T extends modalitiesDeleteArgs>(args: SelectSubset<T, modalitiesDeleteArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Modalities.
+     * @param {modalitiesUpdateArgs} args - Arguments to update one Modalities.
+     * @example
+     * // Update one Modalities
+     * const modalities = await prisma.modalities.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends modalitiesUpdateArgs>(args: SelectSubset<T, modalitiesUpdateArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Modalities.
+     * @param {modalitiesDeleteManyArgs} args - Arguments to filter Modalities to delete.
+     * @example
+     * // Delete a few Modalities
+     * const { count } = await prisma.modalities.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends modalitiesDeleteManyArgs>(args?: SelectSubset<T, modalitiesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Modalities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {modalitiesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Modalities
+     * const modalities = await prisma.modalities.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends modalitiesUpdateManyArgs>(args: SelectSubset<T, modalitiesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Modalities.
+     * @param {modalitiesUpsertArgs} args - Arguments to update or create a Modalities.
+     * @example
+     * // Update or create a Modalities
+     * const modalities = await prisma.modalities.upsert({
+     *   create: {
+     *     // ... data to create a Modalities
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Modalities we want to update
+     *   }
+     * })
+     */
+    upsert<T extends modalitiesUpsertArgs>(args: SelectSubset<T, modalitiesUpsertArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Modalities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {modalitiesCountArgs} args - Arguments to filter Modalities to count.
+     * @example
+     * // Count the number of Modalities
+     * const count = await prisma.modalities.count({
+     *   where: {
+     *     // ... the filter for the Modalities we want to count
+     *   }
+     * })
+    **/
+    count<T extends modalitiesCountArgs>(
+      args?: Subset<T, modalitiesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ModalitiesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Modalities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ModalitiesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ModalitiesAggregateArgs>(args: Subset<T, ModalitiesAggregateArgs>): Prisma.PrismaPromise<GetModalitiesAggregateType<T>>
+
+    /**
+     * Group by Modalities.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {modalitiesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends modalitiesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: modalitiesGroupByArgs['orderBy'] }
+        : { orderBy?: modalitiesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, modalitiesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetModalitiesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the modalities model
+   */
+  readonly fields: modalitiesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for modalities.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__modalitiesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    categories<T extends modalities$categoriesArgs<ExtArgs> = {}>(args?: Subset<T, modalities$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    year<T extends yearsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, yearsDefaultArgs<ExtArgs>>): Prisma__yearsClient<$Result.GetResult<Prisma.$yearsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the modalities model
+   */
+  interface modalitiesFieldRefs {
+    readonly id: FieldRef<"modalities", 'Int'>
+    readonly name: FieldRef<"modalities", 'String'>
+    readonly path: FieldRef<"modalities", 'String'>
+    readonly year_id: FieldRef<"modalities", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * modalities findUnique
+   */
+  export type modalitiesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * Filter, which modalities to fetch.
+     */
+    where: modalitiesWhereUniqueInput
+  }
+
+  /**
+   * modalities findUniqueOrThrow
+   */
+  export type modalitiesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * Filter, which modalities to fetch.
+     */
+    where: modalitiesWhereUniqueInput
+  }
+
+  /**
+   * modalities findFirst
+   */
+  export type modalitiesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * Filter, which modalities to fetch.
+     */
+    where?: modalitiesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of modalities to fetch.
+     */
+    orderBy?: modalitiesOrderByWithRelationInput | modalitiesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for modalities.
+     */
+    cursor?: modalitiesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` modalities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` modalities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of modalities.
+     */
+    distinct?: ModalitiesScalarFieldEnum | ModalitiesScalarFieldEnum[]
+  }
+
+  /**
+   * modalities findFirstOrThrow
+   */
+  export type modalitiesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * Filter, which modalities to fetch.
+     */
+    where?: modalitiesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of modalities to fetch.
+     */
+    orderBy?: modalitiesOrderByWithRelationInput | modalitiesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for modalities.
+     */
+    cursor?: modalitiesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` modalities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` modalities.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of modalities.
+     */
+    distinct?: ModalitiesScalarFieldEnum | ModalitiesScalarFieldEnum[]
+  }
+
+  /**
+   * modalities findMany
+   */
+  export type modalitiesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * Filter, which modalities to fetch.
+     */
+    where?: modalitiesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of modalities to fetch.
+     */
+    orderBy?: modalitiesOrderByWithRelationInput | modalitiesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing modalities.
+     */
+    cursor?: modalitiesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` modalities from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` modalities.
+     */
+    skip?: number
+    distinct?: ModalitiesScalarFieldEnum | ModalitiesScalarFieldEnum[]
+  }
+
+  /**
+   * modalities create
+   */
+  export type modalitiesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a modalities.
+     */
+    data: XOR<modalitiesCreateInput, modalitiesUncheckedCreateInput>
+  }
+
+  /**
+   * modalities createMany
+   */
+  export type modalitiesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many modalities.
+     */
+    data: modalitiesCreateManyInput | modalitiesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * modalities update
+   */
+  export type modalitiesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a modalities.
+     */
+    data: XOR<modalitiesUpdateInput, modalitiesUncheckedUpdateInput>
+    /**
+     * Choose, which modalities to update.
+     */
+    where: modalitiesWhereUniqueInput
+  }
+
+  /**
+   * modalities updateMany
+   */
+  export type modalitiesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update modalities.
+     */
+    data: XOR<modalitiesUpdateManyMutationInput, modalitiesUncheckedUpdateManyInput>
+    /**
+     * Filter which modalities to update
+     */
+    where?: modalitiesWhereInput
+    /**
+     * Limit how many modalities to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * modalities upsert
+   */
+  export type modalitiesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the modalities to update in case it exists.
+     */
+    where: modalitiesWhereUniqueInput
+    /**
+     * In case the modalities found by the `where` argument doesn't exist, create a new modalities with this data.
+     */
+    create: XOR<modalitiesCreateInput, modalitiesUncheckedCreateInput>
+    /**
+     * In case the modalities was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<modalitiesUpdateInput, modalitiesUncheckedUpdateInput>
+  }
+
+  /**
+   * modalities delete
+   */
+  export type modalitiesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+    /**
+     * Filter which modalities to delete.
+     */
+    where: modalitiesWhereUniqueInput
+  }
+
+  /**
+   * modalities deleteMany
+   */
+  export type modalitiesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which modalities to delete
+     */
+    where?: modalitiesWhereInput
+    /**
+     * Limit how many modalities to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * modalities.categories
+   */
+  export type modalities$categoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    where?: categoriesWhereInput
+    orderBy?: categoriesOrderByWithRelationInput | categoriesOrderByWithRelationInput[]
+    cursor?: categoriesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CategoriesScalarFieldEnum | CategoriesScalarFieldEnum[]
+  }
+
+  /**
+   * modalities without action
+   */
+  export type modalitiesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the modalities
+     */
+    select?: modalitiesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the modalities
+     */
+    omit?: modalitiesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: modalitiesInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model categories
+   */
+
+  export type AggregateCategories = {
+    _count: CategoriesCountAggregateOutputType | null
+    _avg: CategoriesAvgAggregateOutputType | null
+    _sum: CategoriesSumAggregateOutputType | null
+    _min: CategoriesMinAggregateOutputType | null
+    _max: CategoriesMaxAggregateOutputType | null
+  }
+
+  export type CategoriesAvgAggregateOutputType = {
+    id: number | null
+    modality_id: number | null
+  }
+
+  export type CategoriesSumAggregateOutputType = {
+    id: number | null
+    modality_id: number | null
+  }
+
+  export type CategoriesMinAggregateOutputType = {
+    id: number | null
+    path: string | null
+    name: string | null
+    modality_id: number | null
+  }
+
+  export type CategoriesMaxAggregateOutputType = {
+    id: number | null
+    path: string | null
+    name: string | null
+    modality_id: number | null
+  }
+
+  export type CategoriesCountAggregateOutputType = {
+    id: number
+    path: number
+    name: number
+    modality_id: number
+    _all: number
+  }
+
+
+  export type CategoriesAvgAggregateInputType = {
+    id?: true
+    modality_id?: true
+  }
+
+  export type CategoriesSumAggregateInputType = {
+    id?: true
+    modality_id?: true
+  }
+
+  export type CategoriesMinAggregateInputType = {
+    id?: true
+    path?: true
+    name?: true
+    modality_id?: true
+  }
+
+  export type CategoriesMaxAggregateInputType = {
+    id?: true
+    path?: true
+    name?: true
+    modality_id?: true
+  }
+
+  export type CategoriesCountAggregateInputType = {
+    id?: true
+    path?: true
+    name?: true
+    modality_id?: true
+    _all?: true
+  }
+
+  export type CategoriesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which categories to aggregate.
+     */
+    where?: categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of categories to fetch.
+     */
+    orderBy?: categoriesOrderByWithRelationInput | categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` categories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned categories
+    **/
+    _count?: true | CategoriesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CategoriesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CategoriesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CategoriesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CategoriesMaxAggregateInputType
+  }
+
+  export type GetCategoriesAggregateType<T extends CategoriesAggregateArgs> = {
+        [P in keyof T & keyof AggregateCategories]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCategories[P]>
+      : GetScalarType<T[P], AggregateCategories[P]>
+  }
+
+
+
+
+  export type categoriesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: categoriesWhereInput
+    orderBy?: categoriesOrderByWithAggregationInput | categoriesOrderByWithAggregationInput[]
+    by: CategoriesScalarFieldEnum[] | CategoriesScalarFieldEnum
+    having?: categoriesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CategoriesCountAggregateInputType | true
+    _avg?: CategoriesAvgAggregateInputType
+    _sum?: CategoriesSumAggregateInputType
+    _min?: CategoriesMinAggregateInputType
+    _max?: CategoriesMaxAggregateInputType
+  }
+
+  export type CategoriesGroupByOutputType = {
+    id: number
+    path: string
+    name: string
+    modality_id: number
+    _count: CategoriesCountAggregateOutputType | null
+    _avg: CategoriesAvgAggregateOutputType | null
+    _sum: CategoriesSumAggregateOutputType | null
+    _min: CategoriesMinAggregateOutputType | null
+    _max: CategoriesMaxAggregateOutputType | null
+  }
+
+  type GetCategoriesGroupByPayload<T extends categoriesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CategoriesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CategoriesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CategoriesGroupByOutputType[P]>
+            : GetScalarType<T[P], CategoriesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type categoriesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    path?: boolean
+    name?: boolean
+    modality_id?: boolean
+    album_races?: boolean | categories$album_racesArgs<ExtArgs>
+    modality?: boolean | modalitiesDefaultArgs<ExtArgs>
+    _count?: boolean | CategoriesCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["categories"]>
+
+
+
+  export type categoriesSelectScalar = {
+    id?: boolean
+    path?: boolean
+    name?: boolean
+    modality_id?: boolean
+  }
+
+  export type categoriesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "path" | "name" | "modality_id", ExtArgs["result"]["categories"]>
+  export type categoriesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    album_races?: boolean | categories$album_racesArgs<ExtArgs>
+    modality?: boolean | modalitiesDefaultArgs<ExtArgs>
+    _count?: boolean | CategoriesCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $categoriesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "categories"
+    objects: {
+      album_races: Prisma.$album_racesPayload<ExtArgs>[]
+      modality: Prisma.$modalitiesPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      path: string
+      name: string
+      modality_id: number
+    }, ExtArgs["result"]["categories"]>
+    composites: {}
+  }
+
+  type categoriesGetPayload<S extends boolean | null | undefined | categoriesDefaultArgs> = $Result.GetResult<Prisma.$categoriesPayload, S>
+
+  type categoriesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<categoriesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CategoriesCountAggregateInputType | true
+    }
+
+  export interface categoriesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['categories'], meta: { name: 'categories' } }
+    /**
+     * Find zero or one Categories that matches the filter.
+     * @param {categoriesFindUniqueArgs} args - Arguments to find a Categories
+     * @example
+     * // Get one Categories
+     * const categories = await prisma.categories.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends categoriesFindUniqueArgs>(args: SelectSubset<T, categoriesFindUniqueArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Categories that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {categoriesFindUniqueOrThrowArgs} args - Arguments to find a Categories
+     * @example
+     * // Get one Categories
+     * const categories = await prisma.categories.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends categoriesFindUniqueOrThrowArgs>(args: SelectSubset<T, categoriesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Categories that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {categoriesFindFirstArgs} args - Arguments to find a Categories
+     * @example
+     * // Get one Categories
+     * const categories = await prisma.categories.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends categoriesFindFirstArgs>(args?: SelectSubset<T, categoriesFindFirstArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Categories that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {categoriesFindFirstOrThrowArgs} args - Arguments to find a Categories
+     * @example
+     * // Get one Categories
+     * const categories = await prisma.categories.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends categoriesFindFirstOrThrowArgs>(args?: SelectSubset<T, categoriesFindFirstOrThrowArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Categories that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {categoriesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Categories
+     * const categories = await prisma.categories.findMany()
+     * 
+     * // Get first 10 Categories
+     * const categories = await prisma.categories.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const categoriesWithIdOnly = await prisma.categories.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends categoriesFindManyArgs>(args?: SelectSubset<T, categoriesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Categories.
+     * @param {categoriesCreateArgs} args - Arguments to create a Categories.
+     * @example
+     * // Create one Categories
+     * const Categories = await prisma.categories.create({
+     *   data: {
+     *     // ... data to create a Categories
+     *   }
+     * })
+     * 
+     */
+    create<T extends categoriesCreateArgs>(args: SelectSubset<T, categoriesCreateArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Categories.
+     * @param {categoriesCreateManyArgs} args - Arguments to create many Categories.
+     * @example
+     * // Create many Categories
+     * const categories = await prisma.categories.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends categoriesCreateManyArgs>(args?: SelectSubset<T, categoriesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Categories.
+     * @param {categoriesDeleteArgs} args - Arguments to delete one Categories.
+     * @example
+     * // Delete one Categories
+     * const Categories = await prisma.categories.delete({
+     *   where: {
+     *     // ... filter to delete one Categories
+     *   }
+     * })
+     * 
+     */
+    delete<T extends categoriesDeleteArgs>(args: SelectSubset<T, categoriesDeleteArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Categories.
+     * @param {categoriesUpdateArgs} args - Arguments to update one Categories.
+     * @example
+     * // Update one Categories
+     * const categories = await prisma.categories.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends categoriesUpdateArgs>(args: SelectSubset<T, categoriesUpdateArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Categories.
+     * @param {categoriesDeleteManyArgs} args - Arguments to filter Categories to delete.
+     * @example
+     * // Delete a few Categories
+     * const { count } = await prisma.categories.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends categoriesDeleteManyArgs>(args?: SelectSubset<T, categoriesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {categoriesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Categories
+     * const categories = await prisma.categories.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends categoriesUpdateManyArgs>(args: SelectSubset<T, categoriesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Categories.
+     * @param {categoriesUpsertArgs} args - Arguments to update or create a Categories.
+     * @example
+     * // Update or create a Categories
+     * const categories = await prisma.categories.upsert({
+     *   create: {
+     *     // ... data to create a Categories
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Categories we want to update
+     *   }
+     * })
+     */
+    upsert<T extends categoriesUpsertArgs>(args: SelectSubset<T, categoriesUpsertArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {categoriesCountArgs} args - Arguments to filter Categories to count.
+     * @example
+     * // Count the number of Categories
+     * const count = await prisma.categories.count({
+     *   where: {
+     *     // ... the filter for the Categories we want to count
+     *   }
+     * })
+    **/
+    count<T extends categoriesCountArgs>(
+      args?: Subset<T, categoriesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CategoriesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CategoriesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CategoriesAggregateArgs>(args: Subset<T, CategoriesAggregateArgs>): Prisma.PrismaPromise<GetCategoriesAggregateType<T>>
+
+    /**
+     * Group by Categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {categoriesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends categoriesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: categoriesGroupByArgs['orderBy'] }
+        : { orderBy?: categoriesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, categoriesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCategoriesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the categories model
+   */
+  readonly fields: categoriesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for categories.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__categoriesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    album_races<T extends categories$album_racesArgs<ExtArgs> = {}>(args?: Subset<T, categories$album_racesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    modality<T extends modalitiesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, modalitiesDefaultArgs<ExtArgs>>): Prisma__modalitiesClient<$Result.GetResult<Prisma.$modalitiesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the categories model
+   */
+  interface categoriesFieldRefs {
+    readonly id: FieldRef<"categories", 'Int'>
+    readonly path: FieldRef<"categories", 'String'>
+    readonly name: FieldRef<"categories", 'String'>
+    readonly modality_id: FieldRef<"categories", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * categories findUnique
+   */
+  export type categoriesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which categories to fetch.
+     */
+    where: categoriesWhereUniqueInput
+  }
+
+  /**
+   * categories findUniqueOrThrow
+   */
+  export type categoriesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which categories to fetch.
+     */
+    where: categoriesWhereUniqueInput
+  }
+
+  /**
+   * categories findFirst
+   */
+  export type categoriesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which categories to fetch.
+     */
+    where?: categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of categories to fetch.
+     */
+    orderBy?: categoriesOrderByWithRelationInput | categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for categories.
+     */
+    cursor?: categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` categories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of categories.
+     */
+    distinct?: CategoriesScalarFieldEnum | CategoriesScalarFieldEnum[]
+  }
+
+  /**
+   * categories findFirstOrThrow
+   */
+  export type categoriesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which categories to fetch.
+     */
+    where?: categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of categories to fetch.
+     */
+    orderBy?: categoriesOrderByWithRelationInput | categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for categories.
+     */
+    cursor?: categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` categories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of categories.
+     */
+    distinct?: CategoriesScalarFieldEnum | CategoriesScalarFieldEnum[]
+  }
+
+  /**
+   * categories findMany
+   */
+  export type categoriesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which categories to fetch.
+     */
+    where?: categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of categories to fetch.
+     */
+    orderBy?: categoriesOrderByWithRelationInput | categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing categories.
+     */
+    cursor?: categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` categories.
+     */
+    skip?: number
+    distinct?: CategoriesScalarFieldEnum | CategoriesScalarFieldEnum[]
+  }
+
+  /**
+   * categories create
+   */
+  export type categoriesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a categories.
+     */
+    data: XOR<categoriesCreateInput, categoriesUncheckedCreateInput>
+  }
+
+  /**
+   * categories createMany
+   */
+  export type categoriesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many categories.
+     */
+    data: categoriesCreateManyInput | categoriesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * categories update
+   */
+  export type categoriesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a categories.
+     */
+    data: XOR<categoriesUpdateInput, categoriesUncheckedUpdateInput>
+    /**
+     * Choose, which categories to update.
+     */
+    where: categoriesWhereUniqueInput
+  }
+
+  /**
+   * categories updateMany
+   */
+  export type categoriesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update categories.
+     */
+    data: XOR<categoriesUpdateManyMutationInput, categoriesUncheckedUpdateManyInput>
+    /**
+     * Filter which categories to update
+     */
+    where?: categoriesWhereInput
+    /**
+     * Limit how many categories to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * categories upsert
+   */
+  export type categoriesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the categories to update in case it exists.
+     */
+    where: categoriesWhereUniqueInput
+    /**
+     * In case the categories found by the `where` argument doesn't exist, create a new categories with this data.
+     */
+    create: XOR<categoriesCreateInput, categoriesUncheckedCreateInput>
+    /**
+     * In case the categories was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<categoriesUpdateInput, categoriesUncheckedUpdateInput>
+  }
+
+  /**
+   * categories delete
+   */
+  export type categoriesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    /**
+     * Filter which categories to delete.
+     */
+    where: categoriesWhereUniqueInput
+  }
+
+  /**
+   * categories deleteMany
+   */
+  export type categoriesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which categories to delete
+     */
+    where?: categoriesWhereInput
+    /**
+     * Limit how many categories to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * categories.album_races
+   */
+  export type categories$album_racesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    where?: album_racesWhereInput
+    orderBy?: album_racesOrderByWithRelationInput | album_racesOrderByWithRelationInput[]
+    cursor?: album_racesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Album_racesScalarFieldEnum | Album_racesScalarFieldEnum[]
+  }
+
+  /**
+   * categories without action
+   */
+  export type categoriesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model album_races
+   */
+
+  export type AggregateAlbum_races = {
+    _count: Album_racesCountAggregateOutputType | null
+    _avg: Album_racesAvgAggregateOutputType | null
+    _sum: Album_racesSumAggregateOutputType | null
+    _min: Album_racesMinAggregateOutputType | null
+    _max: Album_racesMaxAggregateOutputType | null
+  }
+
+  export type Album_racesAvgAggregateOutputType = {
+    id: number | null
+    category_id: number | null
+  }
+
+  export type Album_racesSumAggregateOutputType = {
+    id: number | null
+    category_id: number | null
+  }
+
+  export type Album_racesMinAggregateOutputType = {
+    id: number | null
+    path: string | null
+    name: string | null
+    category_id: number | null
+  }
+
+  export type Album_racesMaxAggregateOutputType = {
+    id: number | null
+    path: string | null
+    name: string | null
+    category_id: number | null
+  }
+
+  export type Album_racesCountAggregateOutputType = {
+    id: number
+    path: number
+    name: number
+    category_id: number
+    _all: number
+  }
+
+
+  export type Album_racesAvgAggregateInputType = {
+    id?: true
+    category_id?: true
+  }
+
+  export type Album_racesSumAggregateInputType = {
+    id?: true
+    category_id?: true
+  }
+
+  export type Album_racesMinAggregateInputType = {
+    id?: true
+    path?: true
+    name?: true
+    category_id?: true
+  }
+
+  export type Album_racesMaxAggregateInputType = {
+    id?: true
+    path?: true
+    name?: true
+    category_id?: true
+  }
+
+  export type Album_racesCountAggregateInputType = {
+    id?: true
+    path?: true
+    name?: true
+    category_id?: true
+    _all?: true
+  }
+
+  export type Album_racesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which album_races to aggregate.
+     */
+    where?: album_racesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of album_races to fetch.
+     */
+    orderBy?: album_racesOrderByWithRelationInput | album_racesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: album_racesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` album_races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` album_races.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned album_races
+    **/
+    _count?: true | Album_racesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Album_racesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Album_racesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Album_racesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Album_racesMaxAggregateInputType
+  }
+
+  export type GetAlbum_racesAggregateType<T extends Album_racesAggregateArgs> = {
+        [P in keyof T & keyof AggregateAlbum_races]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAlbum_races[P]>
+      : GetScalarType<T[P], AggregateAlbum_races[P]>
+  }
+
+
+
+
+  export type album_racesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: album_racesWhereInput
+    orderBy?: album_racesOrderByWithAggregationInput | album_racesOrderByWithAggregationInput[]
+    by: Album_racesScalarFieldEnum[] | Album_racesScalarFieldEnum
+    having?: album_racesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Album_racesCountAggregateInputType | true
+    _avg?: Album_racesAvgAggregateInputType
+    _sum?: Album_racesSumAggregateInputType
+    _min?: Album_racesMinAggregateInputType
+    _max?: Album_racesMaxAggregateInputType
+  }
+
+  export type Album_racesGroupByOutputType = {
+    id: number
+    path: string
+    name: string
+    category_id: number
+    _count: Album_racesCountAggregateOutputType | null
+    _avg: Album_racesAvgAggregateOutputType | null
+    _sum: Album_racesSumAggregateOutputType | null
+    _min: Album_racesMinAggregateOutputType | null
+    _max: Album_racesMaxAggregateOutputType | null
+  }
+
+  type GetAlbum_racesGroupByPayload<T extends album_racesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Album_racesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Album_racesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Album_racesGroupByOutputType[P]>
+            : GetScalarType<T[P], Album_racesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type album_racesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    path?: boolean
+    name?: boolean
+    category_id?: boolean
+    category?: boolean | categoriesDefaultArgs<ExtArgs>
+    albums?: boolean | album_races$albumsArgs<ExtArgs>
+    _count?: boolean | Album_racesCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["album_races"]>
+
+
+
+  export type album_racesSelectScalar = {
+    id?: boolean
+    path?: boolean
+    name?: boolean
+    category_id?: boolean
+  }
+
+  export type album_racesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "path" | "name" | "category_id", ExtArgs["result"]["album_races"]>
+  export type album_racesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    category?: boolean | categoriesDefaultArgs<ExtArgs>
+    albums?: boolean | album_races$albumsArgs<ExtArgs>
+    _count?: boolean | Album_racesCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $album_racesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "album_races"
+    objects: {
+      category: Prisma.$categoriesPayload<ExtArgs>
+      albums: Prisma.$albumsPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      path: string
+      name: string
+      category_id: number
+    }, ExtArgs["result"]["album_races"]>
+    composites: {}
+  }
+
+  type album_racesGetPayload<S extends boolean | null | undefined | album_racesDefaultArgs> = $Result.GetResult<Prisma.$album_racesPayload, S>
+
+  type album_racesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<album_racesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Album_racesCountAggregateInputType | true
+    }
+
+  export interface album_racesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['album_races'], meta: { name: 'album_races' } }
+    /**
+     * Find zero or one Album_races that matches the filter.
+     * @param {album_racesFindUniqueArgs} args - Arguments to find a Album_races
+     * @example
+     * // Get one Album_races
+     * const album_races = await prisma.album_races.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends album_racesFindUniqueArgs>(args: SelectSubset<T, album_racesFindUniqueArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Album_races that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {album_racesFindUniqueOrThrowArgs} args - Arguments to find a Album_races
+     * @example
+     * // Get one Album_races
+     * const album_races = await prisma.album_races.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends album_racesFindUniqueOrThrowArgs>(args: SelectSubset<T, album_racesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Album_races that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {album_racesFindFirstArgs} args - Arguments to find a Album_races
+     * @example
+     * // Get one Album_races
+     * const album_races = await prisma.album_races.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends album_racesFindFirstArgs>(args?: SelectSubset<T, album_racesFindFirstArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Album_races that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {album_racesFindFirstOrThrowArgs} args - Arguments to find a Album_races
+     * @example
+     * // Get one Album_races
+     * const album_races = await prisma.album_races.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends album_racesFindFirstOrThrowArgs>(args?: SelectSubset<T, album_racesFindFirstOrThrowArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Album_races that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {album_racesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Album_races
+     * const album_races = await prisma.album_races.findMany()
+     * 
+     * // Get first 10 Album_races
+     * const album_races = await prisma.album_races.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const album_racesWithIdOnly = await prisma.album_races.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends album_racesFindManyArgs>(args?: SelectSubset<T, album_racesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Album_races.
+     * @param {album_racesCreateArgs} args - Arguments to create a Album_races.
+     * @example
+     * // Create one Album_races
+     * const Album_races = await prisma.album_races.create({
+     *   data: {
+     *     // ... data to create a Album_races
+     *   }
+     * })
+     * 
+     */
+    create<T extends album_racesCreateArgs>(args: SelectSubset<T, album_racesCreateArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Album_races.
+     * @param {album_racesCreateManyArgs} args - Arguments to create many Album_races.
+     * @example
+     * // Create many Album_races
+     * const album_races = await prisma.album_races.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends album_racesCreateManyArgs>(args?: SelectSubset<T, album_racesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Album_races.
+     * @param {album_racesDeleteArgs} args - Arguments to delete one Album_races.
+     * @example
+     * // Delete one Album_races
+     * const Album_races = await prisma.album_races.delete({
+     *   where: {
+     *     // ... filter to delete one Album_races
+     *   }
+     * })
+     * 
+     */
+    delete<T extends album_racesDeleteArgs>(args: SelectSubset<T, album_racesDeleteArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Album_races.
+     * @param {album_racesUpdateArgs} args - Arguments to update one Album_races.
+     * @example
+     * // Update one Album_races
+     * const album_races = await prisma.album_races.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends album_racesUpdateArgs>(args: SelectSubset<T, album_racesUpdateArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Album_races.
+     * @param {album_racesDeleteManyArgs} args - Arguments to filter Album_races to delete.
+     * @example
+     * // Delete a few Album_races
+     * const { count } = await prisma.album_races.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends album_racesDeleteManyArgs>(args?: SelectSubset<T, album_racesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Album_races.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {album_racesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Album_races
+     * const album_races = await prisma.album_races.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends album_racesUpdateManyArgs>(args: SelectSubset<T, album_racesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Album_races.
+     * @param {album_racesUpsertArgs} args - Arguments to update or create a Album_races.
+     * @example
+     * // Update or create a Album_races
+     * const album_races = await prisma.album_races.upsert({
+     *   create: {
+     *     // ... data to create a Album_races
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Album_races we want to update
+     *   }
+     * })
+     */
+    upsert<T extends album_racesUpsertArgs>(args: SelectSubset<T, album_racesUpsertArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Album_races.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {album_racesCountArgs} args - Arguments to filter Album_races to count.
+     * @example
+     * // Count the number of Album_races
+     * const count = await prisma.album_races.count({
+     *   where: {
+     *     // ... the filter for the Album_races we want to count
+     *   }
+     * })
+    **/
+    count<T extends album_racesCountArgs>(
+      args?: Subset<T, album_racesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Album_racesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Album_races.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Album_racesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Album_racesAggregateArgs>(args: Subset<T, Album_racesAggregateArgs>): Prisma.PrismaPromise<GetAlbum_racesAggregateType<T>>
+
+    /**
+     * Group by Album_races.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {album_racesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends album_racesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: album_racesGroupByArgs['orderBy'] }
+        : { orderBy?: album_racesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, album_racesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAlbum_racesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the album_races model
+   */
+  readonly fields: album_racesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for album_races.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__album_racesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    category<T extends categoriesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, categoriesDefaultArgs<ExtArgs>>): Prisma__categoriesClient<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    albums<T extends album_races$albumsArgs<ExtArgs> = {}>(args?: Subset<T, album_races$albumsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the album_races model
+   */
+  interface album_racesFieldRefs {
+    readonly id: FieldRef<"album_races", 'Int'>
+    readonly path: FieldRef<"album_races", 'String'>
+    readonly name: FieldRef<"album_races", 'String'>
+    readonly category_id: FieldRef<"album_races", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * album_races findUnique
+   */
+  export type album_racesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * Filter, which album_races to fetch.
+     */
+    where: album_racesWhereUniqueInput
+  }
+
+  /**
+   * album_races findUniqueOrThrow
+   */
+  export type album_racesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * Filter, which album_races to fetch.
+     */
+    where: album_racesWhereUniqueInput
+  }
+
+  /**
+   * album_races findFirst
+   */
+  export type album_racesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * Filter, which album_races to fetch.
+     */
+    where?: album_racesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of album_races to fetch.
+     */
+    orderBy?: album_racesOrderByWithRelationInput | album_racesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for album_races.
+     */
+    cursor?: album_racesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` album_races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` album_races.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of album_races.
+     */
+    distinct?: Album_racesScalarFieldEnum | Album_racesScalarFieldEnum[]
+  }
+
+  /**
+   * album_races findFirstOrThrow
+   */
+  export type album_racesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * Filter, which album_races to fetch.
+     */
+    where?: album_racesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of album_races to fetch.
+     */
+    orderBy?: album_racesOrderByWithRelationInput | album_racesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for album_races.
+     */
+    cursor?: album_racesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` album_races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` album_races.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of album_races.
+     */
+    distinct?: Album_racesScalarFieldEnum | Album_racesScalarFieldEnum[]
+  }
+
+  /**
+   * album_races findMany
+   */
+  export type album_racesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * Filter, which album_races to fetch.
+     */
+    where?: album_racesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of album_races to fetch.
+     */
+    orderBy?: album_racesOrderByWithRelationInput | album_racesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing album_races.
+     */
+    cursor?: album_racesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` album_races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` album_races.
+     */
+    skip?: number
+    distinct?: Album_racesScalarFieldEnum | Album_racesScalarFieldEnum[]
+  }
+
+  /**
+   * album_races create
+   */
+  export type album_racesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a album_races.
+     */
+    data: XOR<album_racesCreateInput, album_racesUncheckedCreateInput>
+  }
+
+  /**
+   * album_races createMany
+   */
+  export type album_racesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many album_races.
+     */
+    data: album_racesCreateManyInput | album_racesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * album_races update
+   */
+  export type album_racesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a album_races.
+     */
+    data: XOR<album_racesUpdateInput, album_racesUncheckedUpdateInput>
+    /**
+     * Choose, which album_races to update.
+     */
+    where: album_racesWhereUniqueInput
+  }
+
+  /**
+   * album_races updateMany
+   */
+  export type album_racesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update album_races.
+     */
+    data: XOR<album_racesUpdateManyMutationInput, album_racesUncheckedUpdateManyInput>
+    /**
+     * Filter which album_races to update
+     */
+    where?: album_racesWhereInput
+    /**
+     * Limit how many album_races to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * album_races upsert
+   */
+  export type album_racesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the album_races to update in case it exists.
+     */
+    where: album_racesWhereUniqueInput
+    /**
+     * In case the album_races found by the `where` argument doesn't exist, create a new album_races with this data.
+     */
+    create: XOR<album_racesCreateInput, album_racesUncheckedCreateInput>
+    /**
+     * In case the album_races was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<album_racesUpdateInput, album_racesUncheckedUpdateInput>
+  }
+
+  /**
+   * album_races delete
+   */
+  export type album_racesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+    /**
+     * Filter which album_races to delete.
+     */
+    where: album_racesWhereUniqueInput
+  }
+
+  /**
+   * album_races deleteMany
+   */
+  export type album_racesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which album_races to delete
+     */
+    where?: album_racesWhereInput
+    /**
+     * Limit how many album_races to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * album_races.albums
+   */
+  export type album_races$albumsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    where?: albumsWhereInput
+    orderBy?: albumsOrderByWithRelationInput | albumsOrderByWithRelationInput[]
+    cursor?: albumsWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: AlbumsScalarFieldEnum | AlbumsScalarFieldEnum[]
+  }
+
+  /**
+   * album_races without action
+   */
+  export type album_racesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the album_races
+     */
+    select?: album_racesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the album_races
+     */
+    omit?: album_racesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: album_racesInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model albums
+   */
+
+  export type AggregateAlbums = {
+    _count: AlbumsCountAggregateOutputType | null
+    _avg: AlbumsAvgAggregateOutputType | null
+    _sum: AlbumsSumAggregateOutputType | null
+    _min: AlbumsMinAggregateOutputType | null
+    _max: AlbumsMaxAggregateOutputType | null
+  }
+
+  export type AlbumsAvgAggregateOutputType = {
+    id: number | null
+    race_id: number | null
+  }
+
+  export type AlbumsSumAggregateOutputType = {
+    id: number | null
+    race_id: number | null
+  }
+
+  export type AlbumsMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    cover: string | null
+    race_id: number | null
+  }
+
+  export type AlbumsMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    cover: string | null
+    race_id: number | null
+  }
+
+  export type AlbumsCountAggregateOutputType = {
+    id: number
+    name: number
+    cover: number
+    race_id: number
+    _all: number
+  }
+
+
+  export type AlbumsAvgAggregateInputType = {
+    id?: true
+    race_id?: true
+  }
+
+  export type AlbumsSumAggregateInputType = {
+    id?: true
+    race_id?: true
+  }
+
+  export type AlbumsMinAggregateInputType = {
+    id?: true
+    name?: true
+    cover?: true
+    race_id?: true
+  }
+
+  export type AlbumsMaxAggregateInputType = {
+    id?: true
+    name?: true
+    cover?: true
+    race_id?: true
+  }
+
+  export type AlbumsCountAggregateInputType = {
+    id?: true
+    name?: true
+    cover?: true
+    race_id?: true
+    _all?: true
+  }
+
+  export type AlbumsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which albums to aggregate.
+     */
+    where?: albumsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of albums to fetch.
+     */
+    orderBy?: albumsOrderByWithRelationInput | albumsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: albumsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` albums from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` albums.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned albums
+    **/
+    _count?: true | AlbumsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: AlbumsAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: AlbumsSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: AlbumsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: AlbumsMaxAggregateInputType
+  }
+
+  export type GetAlbumsAggregateType<T extends AlbumsAggregateArgs> = {
+        [P in keyof T & keyof AggregateAlbums]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateAlbums[P]>
+      : GetScalarType<T[P], AggregateAlbums[P]>
+  }
+
+
+
+
+  export type albumsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: albumsWhereInput
+    orderBy?: albumsOrderByWithAggregationInput | albumsOrderByWithAggregationInput[]
+    by: AlbumsScalarFieldEnum[] | AlbumsScalarFieldEnum
+    having?: albumsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: AlbumsCountAggregateInputType | true
+    _avg?: AlbumsAvgAggregateInputType
+    _sum?: AlbumsSumAggregateInputType
+    _min?: AlbumsMinAggregateInputType
+    _max?: AlbumsMaxAggregateInputType
+  }
+
+  export type AlbumsGroupByOutputType = {
+    id: number
+    name: string
+    cover: string
+    race_id: number
+    _count: AlbumsCountAggregateOutputType | null
+    _avg: AlbumsAvgAggregateOutputType | null
+    _sum: AlbumsSumAggregateOutputType | null
+    _min: AlbumsMinAggregateOutputType | null
+    _max: AlbumsMaxAggregateOutputType | null
+  }
+
+  type GetAlbumsGroupByPayload<T extends albumsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<AlbumsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof AlbumsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], AlbumsGroupByOutputType[P]>
+            : GetScalarType<T[P], AlbumsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type albumsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    cover?: boolean
+    race_id?: boolean
+    race?: boolean | album_racesDefaultArgs<ExtArgs>
+    images?: boolean | albums$imagesArgs<ExtArgs>
+    _count?: boolean | AlbumsCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["albums"]>
+
+
+
+  export type albumsSelectScalar = {
+    id?: boolean
+    name?: boolean
+    cover?: boolean
+    race_id?: boolean
+  }
+
+  export type albumsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "cover" | "race_id", ExtArgs["result"]["albums"]>
+  export type albumsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | album_racesDefaultArgs<ExtArgs>
+    images?: boolean | albums$imagesArgs<ExtArgs>
+    _count?: boolean | AlbumsCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $albumsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "albums"
+    objects: {
+      race: Prisma.$album_racesPayload<ExtArgs>
+      images: Prisma.$imagesPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string
+      cover: string
+      race_id: number
+    }, ExtArgs["result"]["albums"]>
+    composites: {}
+  }
+
+  type albumsGetPayload<S extends boolean | null | undefined | albumsDefaultArgs> = $Result.GetResult<Prisma.$albumsPayload, S>
+
+  type albumsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<albumsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: AlbumsCountAggregateInputType | true
+    }
+
+  export interface albumsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['albums'], meta: { name: 'albums' } }
+    /**
+     * Find zero or one Albums that matches the filter.
+     * @param {albumsFindUniqueArgs} args - Arguments to find a Albums
+     * @example
+     * // Get one Albums
+     * const albums = await prisma.albums.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends albumsFindUniqueArgs>(args: SelectSubset<T, albumsFindUniqueArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Albums that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {albumsFindUniqueOrThrowArgs} args - Arguments to find a Albums
+     * @example
+     * // Get one Albums
+     * const albums = await prisma.albums.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends albumsFindUniqueOrThrowArgs>(args: SelectSubset<T, albumsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Albums that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {albumsFindFirstArgs} args - Arguments to find a Albums
+     * @example
+     * // Get one Albums
+     * const albums = await prisma.albums.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends albumsFindFirstArgs>(args?: SelectSubset<T, albumsFindFirstArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Albums that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {albumsFindFirstOrThrowArgs} args - Arguments to find a Albums
+     * @example
+     * // Get one Albums
+     * const albums = await prisma.albums.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends albumsFindFirstOrThrowArgs>(args?: SelectSubset<T, albumsFindFirstOrThrowArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Albums that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {albumsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Albums
+     * const albums = await prisma.albums.findMany()
+     * 
+     * // Get first 10 Albums
+     * const albums = await prisma.albums.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const albumsWithIdOnly = await prisma.albums.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends albumsFindManyArgs>(args?: SelectSubset<T, albumsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Albums.
+     * @param {albumsCreateArgs} args - Arguments to create a Albums.
+     * @example
+     * // Create one Albums
+     * const Albums = await prisma.albums.create({
+     *   data: {
+     *     // ... data to create a Albums
+     *   }
+     * })
+     * 
+     */
+    create<T extends albumsCreateArgs>(args: SelectSubset<T, albumsCreateArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Albums.
+     * @param {albumsCreateManyArgs} args - Arguments to create many Albums.
+     * @example
+     * // Create many Albums
+     * const albums = await prisma.albums.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends albumsCreateManyArgs>(args?: SelectSubset<T, albumsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Albums.
+     * @param {albumsDeleteArgs} args - Arguments to delete one Albums.
+     * @example
+     * // Delete one Albums
+     * const Albums = await prisma.albums.delete({
+     *   where: {
+     *     // ... filter to delete one Albums
+     *   }
+     * })
+     * 
+     */
+    delete<T extends albumsDeleteArgs>(args: SelectSubset<T, albumsDeleteArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Albums.
+     * @param {albumsUpdateArgs} args - Arguments to update one Albums.
+     * @example
+     * // Update one Albums
+     * const albums = await prisma.albums.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends albumsUpdateArgs>(args: SelectSubset<T, albumsUpdateArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Albums.
+     * @param {albumsDeleteManyArgs} args - Arguments to filter Albums to delete.
+     * @example
+     * // Delete a few Albums
+     * const { count } = await prisma.albums.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends albumsDeleteManyArgs>(args?: SelectSubset<T, albumsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Albums.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {albumsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Albums
+     * const albums = await prisma.albums.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends albumsUpdateManyArgs>(args: SelectSubset<T, albumsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Albums.
+     * @param {albumsUpsertArgs} args - Arguments to update or create a Albums.
+     * @example
+     * // Update or create a Albums
+     * const albums = await prisma.albums.upsert({
+     *   create: {
+     *     // ... data to create a Albums
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Albums we want to update
+     *   }
+     * })
+     */
+    upsert<T extends albumsUpsertArgs>(args: SelectSubset<T, albumsUpsertArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Albums.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {albumsCountArgs} args - Arguments to filter Albums to count.
+     * @example
+     * // Count the number of Albums
+     * const count = await prisma.albums.count({
+     *   where: {
+     *     // ... the filter for the Albums we want to count
+     *   }
+     * })
+    **/
+    count<T extends albumsCountArgs>(
+      args?: Subset<T, albumsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], AlbumsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Albums.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {AlbumsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends AlbumsAggregateArgs>(args: Subset<T, AlbumsAggregateArgs>): Prisma.PrismaPromise<GetAlbumsAggregateType<T>>
+
+    /**
+     * Group by Albums.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {albumsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends albumsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: albumsGroupByArgs['orderBy'] }
+        : { orderBy?: albumsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, albumsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetAlbumsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the albums model
+   */
+  readonly fields: albumsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for albums.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__albumsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    race<T extends album_racesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, album_racesDefaultArgs<ExtArgs>>): Prisma__album_racesClient<$Result.GetResult<Prisma.$album_racesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    images<T extends albums$imagesArgs<ExtArgs> = {}>(args?: Subset<T, albums$imagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the albums model
+   */
+  interface albumsFieldRefs {
+    readonly id: FieldRef<"albums", 'Int'>
+    readonly name: FieldRef<"albums", 'String'>
+    readonly cover: FieldRef<"albums", 'String'>
+    readonly race_id: FieldRef<"albums", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * albums findUnique
+   */
+  export type albumsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * Filter, which albums to fetch.
+     */
+    where: albumsWhereUniqueInput
+  }
+
+  /**
+   * albums findUniqueOrThrow
+   */
+  export type albumsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * Filter, which albums to fetch.
+     */
+    where: albumsWhereUniqueInput
+  }
+
+  /**
+   * albums findFirst
+   */
+  export type albumsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * Filter, which albums to fetch.
+     */
+    where?: albumsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of albums to fetch.
+     */
+    orderBy?: albumsOrderByWithRelationInput | albumsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for albums.
+     */
+    cursor?: albumsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` albums from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` albums.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of albums.
+     */
+    distinct?: AlbumsScalarFieldEnum | AlbumsScalarFieldEnum[]
+  }
+
+  /**
+   * albums findFirstOrThrow
+   */
+  export type albumsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * Filter, which albums to fetch.
+     */
+    where?: albumsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of albums to fetch.
+     */
+    orderBy?: albumsOrderByWithRelationInput | albumsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for albums.
+     */
+    cursor?: albumsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` albums from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` albums.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of albums.
+     */
+    distinct?: AlbumsScalarFieldEnum | AlbumsScalarFieldEnum[]
+  }
+
+  /**
+   * albums findMany
+   */
+  export type albumsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * Filter, which albums to fetch.
+     */
+    where?: albumsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of albums to fetch.
+     */
+    orderBy?: albumsOrderByWithRelationInput | albumsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing albums.
+     */
+    cursor?: albumsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` albums from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` albums.
+     */
+    skip?: number
+    distinct?: AlbumsScalarFieldEnum | AlbumsScalarFieldEnum[]
+  }
+
+  /**
+   * albums create
+   */
+  export type albumsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a albums.
+     */
+    data: XOR<albumsCreateInput, albumsUncheckedCreateInput>
+  }
+
+  /**
+   * albums createMany
+   */
+  export type albumsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many albums.
+     */
+    data: albumsCreateManyInput | albumsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * albums update
+   */
+  export type albumsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a albums.
+     */
+    data: XOR<albumsUpdateInput, albumsUncheckedUpdateInput>
+    /**
+     * Choose, which albums to update.
+     */
+    where: albumsWhereUniqueInput
+  }
+
+  /**
+   * albums updateMany
+   */
+  export type albumsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update albums.
+     */
+    data: XOR<albumsUpdateManyMutationInput, albumsUncheckedUpdateManyInput>
+    /**
+     * Filter which albums to update
+     */
+    where?: albumsWhereInput
+    /**
+     * Limit how many albums to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * albums upsert
+   */
+  export type albumsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the albums to update in case it exists.
+     */
+    where: albumsWhereUniqueInput
+    /**
+     * In case the albums found by the `where` argument doesn't exist, create a new albums with this data.
+     */
+    create: XOR<albumsCreateInput, albumsUncheckedCreateInput>
+    /**
+     * In case the albums was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<albumsUpdateInput, albumsUncheckedUpdateInput>
+  }
+
+  /**
+   * albums delete
+   */
+  export type albumsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+    /**
+     * Filter which albums to delete.
+     */
+    where: albumsWhereUniqueInput
+  }
+
+  /**
+   * albums deleteMany
+   */
+  export type albumsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which albums to delete
+     */
+    where?: albumsWhereInput
+    /**
+     * Limit how many albums to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * albums.images
+   */
+  export type albums$imagesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    where?: imagesWhereInput
+    orderBy?: imagesOrderByWithRelationInput | imagesOrderByWithRelationInput[]
+    cursor?: imagesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ImagesScalarFieldEnum | ImagesScalarFieldEnum[]
+  }
+
+  /**
+   * albums without action
+   */
+  export type albumsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the albums
+     */
+    select?: albumsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the albums
+     */
+    omit?: albumsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: albumsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model images
+   */
+
+  export type AggregateImages = {
+    _count: ImagesCountAggregateOutputType | null
+    _avg: ImagesAvgAggregateOutputType | null
+    _sum: ImagesSumAggregateOutputType | null
+    _min: ImagesMinAggregateOutputType | null
+    _max: ImagesMaxAggregateOutputType | null
+  }
+
+  export type ImagesAvgAggregateOutputType = {
+    id: number | null
+    album_Id: number | null
+  }
+
+  export type ImagesSumAggregateOutputType = {
+    id: number | null
+    album_Id: number | null
+  }
+
+  export type ImagesMinAggregateOutputType = {
+    id: number | null
+    path: string | null
+    album_Id: number | null
+  }
+
+  export type ImagesMaxAggregateOutputType = {
+    id: number | null
+    path: string | null
+    album_Id: number | null
+  }
+
+  export type ImagesCountAggregateOutputType = {
+    id: number
+    path: number
+    album_Id: number
+    _all: number
+  }
+
+
+  export type ImagesAvgAggregateInputType = {
+    id?: true
+    album_Id?: true
+  }
+
+  export type ImagesSumAggregateInputType = {
+    id?: true
+    album_Id?: true
+  }
+
+  export type ImagesMinAggregateInputType = {
+    id?: true
+    path?: true
+    album_Id?: true
+  }
+
+  export type ImagesMaxAggregateInputType = {
+    id?: true
+    path?: true
+    album_Id?: true
+  }
+
+  export type ImagesCountAggregateInputType = {
+    id?: true
+    path?: true
+    album_Id?: true
+    _all?: true
+  }
+
+  export type ImagesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which images to aggregate.
+     */
+    where?: imagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of images to fetch.
+     */
+    orderBy?: imagesOrderByWithRelationInput | imagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: imagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` images from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` images.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned images
+    **/
+    _count?: true | ImagesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ImagesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ImagesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ImagesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ImagesMaxAggregateInputType
+  }
+
+  export type GetImagesAggregateType<T extends ImagesAggregateArgs> = {
+        [P in keyof T & keyof AggregateImages]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateImages[P]>
+      : GetScalarType<T[P], AggregateImages[P]>
+  }
+
+
+
+
+  export type imagesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: imagesWhereInput
+    orderBy?: imagesOrderByWithAggregationInput | imagesOrderByWithAggregationInput[]
+    by: ImagesScalarFieldEnum[] | ImagesScalarFieldEnum
+    having?: imagesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ImagesCountAggregateInputType | true
+    _avg?: ImagesAvgAggregateInputType
+    _sum?: ImagesSumAggregateInputType
+    _min?: ImagesMinAggregateInputType
+    _max?: ImagesMaxAggregateInputType
+  }
+
+  export type ImagesGroupByOutputType = {
+    id: number
+    path: string
+    album_Id: number
+    _count: ImagesCountAggregateOutputType | null
+    _avg: ImagesAvgAggregateOutputType | null
+    _sum: ImagesSumAggregateOutputType | null
+    _min: ImagesMinAggregateOutputType | null
+    _max: ImagesMaxAggregateOutputType | null
+  }
+
+  type GetImagesGroupByPayload<T extends imagesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ImagesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ImagesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ImagesGroupByOutputType[P]>
+            : GetScalarType<T[P], ImagesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type imagesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    path?: boolean
+    album_Id?: boolean
+    album?: boolean | albumsDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["images"]>
+
+
+
+  export type imagesSelectScalar = {
+    id?: boolean
+    path?: boolean
+    album_Id?: boolean
+  }
+
+  export type imagesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "path" | "album_Id", ExtArgs["result"]["images"]>
+  export type imagesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    album?: boolean | albumsDefaultArgs<ExtArgs>
+  }
+
+  export type $imagesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "images"
+    objects: {
+      album: Prisma.$albumsPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      path: string
+      album_Id: number
+    }, ExtArgs["result"]["images"]>
+    composites: {}
+  }
+
+  type imagesGetPayload<S extends boolean | null | undefined | imagesDefaultArgs> = $Result.GetResult<Prisma.$imagesPayload, S>
+
+  type imagesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<imagesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ImagesCountAggregateInputType | true
+    }
+
+  export interface imagesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['images'], meta: { name: 'images' } }
+    /**
+     * Find zero or one Images that matches the filter.
+     * @param {imagesFindUniqueArgs} args - Arguments to find a Images
+     * @example
+     * // Get one Images
+     * const images = await prisma.images.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends imagesFindUniqueArgs>(args: SelectSubset<T, imagesFindUniqueArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Images that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {imagesFindUniqueOrThrowArgs} args - Arguments to find a Images
+     * @example
+     * // Get one Images
+     * const images = await prisma.images.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends imagesFindUniqueOrThrowArgs>(args: SelectSubset<T, imagesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Images that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {imagesFindFirstArgs} args - Arguments to find a Images
+     * @example
+     * // Get one Images
+     * const images = await prisma.images.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends imagesFindFirstArgs>(args?: SelectSubset<T, imagesFindFirstArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Images that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {imagesFindFirstOrThrowArgs} args - Arguments to find a Images
+     * @example
+     * // Get one Images
+     * const images = await prisma.images.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends imagesFindFirstOrThrowArgs>(args?: SelectSubset<T, imagesFindFirstOrThrowArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Images that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {imagesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Images
+     * const images = await prisma.images.findMany()
+     * 
+     * // Get first 10 Images
+     * const images = await prisma.images.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const imagesWithIdOnly = await prisma.images.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends imagesFindManyArgs>(args?: SelectSubset<T, imagesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Images.
+     * @param {imagesCreateArgs} args - Arguments to create a Images.
+     * @example
+     * // Create one Images
+     * const Images = await prisma.images.create({
+     *   data: {
+     *     // ... data to create a Images
+     *   }
+     * })
+     * 
+     */
+    create<T extends imagesCreateArgs>(args: SelectSubset<T, imagesCreateArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Images.
+     * @param {imagesCreateManyArgs} args - Arguments to create many Images.
+     * @example
+     * // Create many Images
+     * const images = await prisma.images.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends imagesCreateManyArgs>(args?: SelectSubset<T, imagesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Images.
+     * @param {imagesDeleteArgs} args - Arguments to delete one Images.
+     * @example
+     * // Delete one Images
+     * const Images = await prisma.images.delete({
+     *   where: {
+     *     // ... filter to delete one Images
+     *   }
+     * })
+     * 
+     */
+    delete<T extends imagesDeleteArgs>(args: SelectSubset<T, imagesDeleteArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Images.
+     * @param {imagesUpdateArgs} args - Arguments to update one Images.
+     * @example
+     * // Update one Images
+     * const images = await prisma.images.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends imagesUpdateArgs>(args: SelectSubset<T, imagesUpdateArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Images.
+     * @param {imagesDeleteManyArgs} args - Arguments to filter Images to delete.
+     * @example
+     * // Delete a few Images
+     * const { count } = await prisma.images.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends imagesDeleteManyArgs>(args?: SelectSubset<T, imagesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Images.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {imagesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Images
+     * const images = await prisma.images.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends imagesUpdateManyArgs>(args: SelectSubset<T, imagesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Images.
+     * @param {imagesUpsertArgs} args - Arguments to update or create a Images.
+     * @example
+     * // Update or create a Images
+     * const images = await prisma.images.upsert({
+     *   create: {
+     *     // ... data to create a Images
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Images we want to update
+     *   }
+     * })
+     */
+    upsert<T extends imagesUpsertArgs>(args: SelectSubset<T, imagesUpsertArgs<ExtArgs>>): Prisma__imagesClient<$Result.GetResult<Prisma.$imagesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Images.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {imagesCountArgs} args - Arguments to filter Images to count.
+     * @example
+     * // Count the number of Images
+     * const count = await prisma.images.count({
+     *   where: {
+     *     // ... the filter for the Images we want to count
+     *   }
+     * })
+    **/
+    count<T extends imagesCountArgs>(
+      args?: Subset<T, imagesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ImagesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Images.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImagesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ImagesAggregateArgs>(args: Subset<T, ImagesAggregateArgs>): Prisma.PrismaPromise<GetImagesAggregateType<T>>
+
+    /**
+     * Group by Images.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {imagesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends imagesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: imagesGroupByArgs['orderBy'] }
+        : { orderBy?: imagesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, imagesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetImagesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the images model
+   */
+  readonly fields: imagesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for images.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__imagesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    album<T extends albumsDefaultArgs<ExtArgs> = {}>(args?: Subset<T, albumsDefaultArgs<ExtArgs>>): Prisma__albumsClient<$Result.GetResult<Prisma.$albumsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the images model
+   */
+  interface imagesFieldRefs {
+    readonly id: FieldRef<"images", 'Int'>
+    readonly path: FieldRef<"images", 'String'>
+    readonly album_Id: FieldRef<"images", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * images findUnique
+   */
+  export type imagesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * Filter, which images to fetch.
+     */
+    where: imagesWhereUniqueInput
+  }
+
+  /**
+   * images findUniqueOrThrow
+   */
+  export type imagesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * Filter, which images to fetch.
+     */
+    where: imagesWhereUniqueInput
+  }
+
+  /**
+   * images findFirst
+   */
+  export type imagesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * Filter, which images to fetch.
+     */
+    where?: imagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of images to fetch.
+     */
+    orderBy?: imagesOrderByWithRelationInput | imagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for images.
+     */
+    cursor?: imagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` images from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` images.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of images.
+     */
+    distinct?: ImagesScalarFieldEnum | ImagesScalarFieldEnum[]
+  }
+
+  /**
+   * images findFirstOrThrow
+   */
+  export type imagesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * Filter, which images to fetch.
+     */
+    where?: imagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of images to fetch.
+     */
+    orderBy?: imagesOrderByWithRelationInput | imagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for images.
+     */
+    cursor?: imagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` images from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` images.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of images.
+     */
+    distinct?: ImagesScalarFieldEnum | ImagesScalarFieldEnum[]
+  }
+
+  /**
+   * images findMany
+   */
+  export type imagesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * Filter, which images to fetch.
+     */
+    where?: imagesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of images to fetch.
+     */
+    orderBy?: imagesOrderByWithRelationInput | imagesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing images.
+     */
+    cursor?: imagesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` images from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` images.
+     */
+    skip?: number
+    distinct?: ImagesScalarFieldEnum | ImagesScalarFieldEnum[]
+  }
+
+  /**
+   * images create
+   */
+  export type imagesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a images.
+     */
+    data: XOR<imagesCreateInput, imagesUncheckedCreateInput>
+  }
+
+  /**
+   * images createMany
+   */
+  export type imagesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many images.
+     */
+    data: imagesCreateManyInput | imagesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * images update
+   */
+  export type imagesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a images.
+     */
+    data: XOR<imagesUpdateInput, imagesUncheckedUpdateInput>
+    /**
+     * Choose, which images to update.
+     */
+    where: imagesWhereUniqueInput
+  }
+
+  /**
+   * images updateMany
+   */
+  export type imagesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update images.
+     */
+    data: XOR<imagesUpdateManyMutationInput, imagesUncheckedUpdateManyInput>
+    /**
+     * Filter which images to update
+     */
+    where?: imagesWhereInput
+    /**
+     * Limit how many images to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * images upsert
+   */
+  export type imagesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the images to update in case it exists.
+     */
+    where: imagesWhereUniqueInput
+    /**
+     * In case the images found by the `where` argument doesn't exist, create a new images with this data.
+     */
+    create: XOR<imagesCreateInput, imagesUncheckedCreateInput>
+    /**
+     * In case the images was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<imagesUpdateInput, imagesUncheckedUpdateInput>
+  }
+
+  /**
+   * images delete
+   */
+  export type imagesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+    /**
+     * Filter which images to delete.
+     */
+    where: imagesWhereUniqueInput
+  }
+
+  /**
+   * images deleteMany
+   */
+  export type imagesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which images to delete
+     */
+    where?: imagesWhereInput
+    /**
+     * Limit how many images to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * images without action
+   */
+  export type imagesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the images
+     */
+    select?: imagesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the images
+     */
+    omit?: imagesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: imagesInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -11984,6 +18493,64 @@ export namespace Prisma {
   export type Activation_codesScalarFieldEnum = (typeof Activation_codesScalarFieldEnum)[keyof typeof Activation_codesScalarFieldEnum]
 
 
+  export const YearsScalarFieldEnum: {
+    id: 'id',
+    year: 'year',
+    path: 'path'
+  };
+
+  export type YearsScalarFieldEnum = (typeof YearsScalarFieldEnum)[keyof typeof YearsScalarFieldEnum]
+
+
+  export const ModalitiesScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    path: 'path',
+    year_id: 'year_id'
+  };
+
+  export type ModalitiesScalarFieldEnum = (typeof ModalitiesScalarFieldEnum)[keyof typeof ModalitiesScalarFieldEnum]
+
+
+  export const CategoriesScalarFieldEnum: {
+    id: 'id',
+    path: 'path',
+    name: 'name',
+    modality_id: 'modality_id'
+  };
+
+  export type CategoriesScalarFieldEnum = (typeof CategoriesScalarFieldEnum)[keyof typeof CategoriesScalarFieldEnum]
+
+
+  export const Album_racesScalarFieldEnum: {
+    id: 'id',
+    path: 'path',
+    name: 'name',
+    category_id: 'category_id'
+  };
+
+  export type Album_racesScalarFieldEnum = (typeof Album_racesScalarFieldEnum)[keyof typeof Album_racesScalarFieldEnum]
+
+
+  export const AlbumsScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    cover: 'cover',
+    race_id: 'race_id'
+  };
+
+  export type AlbumsScalarFieldEnum = (typeof AlbumsScalarFieldEnum)[keyof typeof AlbumsScalarFieldEnum]
+
+
+  export const ImagesScalarFieldEnum: {
+    id: 'id',
+    path: 'path',
+    album_Id: 'album_Id'
+  };
+
+  export type ImagesScalarFieldEnum = (typeof ImagesScalarFieldEnum)[keyof typeof ImagesScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -12100,6 +18667,52 @@ export namespace Prisma {
   export type activation_codesOrderByRelevanceFieldEnum = (typeof activation_codesOrderByRelevanceFieldEnum)[keyof typeof activation_codesOrderByRelevanceFieldEnum]
 
 
+  export const yearsOrderByRelevanceFieldEnum: {
+    path: 'path'
+  };
+
+  export type yearsOrderByRelevanceFieldEnum = (typeof yearsOrderByRelevanceFieldEnum)[keyof typeof yearsOrderByRelevanceFieldEnum]
+
+
+  export const modalitiesOrderByRelevanceFieldEnum: {
+    name: 'name',
+    path: 'path'
+  };
+
+  export type modalitiesOrderByRelevanceFieldEnum = (typeof modalitiesOrderByRelevanceFieldEnum)[keyof typeof modalitiesOrderByRelevanceFieldEnum]
+
+
+  export const categoriesOrderByRelevanceFieldEnum: {
+    path: 'path',
+    name: 'name'
+  };
+
+  export type categoriesOrderByRelevanceFieldEnum = (typeof categoriesOrderByRelevanceFieldEnum)[keyof typeof categoriesOrderByRelevanceFieldEnum]
+
+
+  export const album_racesOrderByRelevanceFieldEnum: {
+    path: 'path',
+    name: 'name'
+  };
+
+  export type album_racesOrderByRelevanceFieldEnum = (typeof album_racesOrderByRelevanceFieldEnum)[keyof typeof album_racesOrderByRelevanceFieldEnum]
+
+
+  export const albumsOrderByRelevanceFieldEnum: {
+    name: 'name',
+    cover: 'cover'
+  };
+
+  export type albumsOrderByRelevanceFieldEnum = (typeof albumsOrderByRelevanceFieldEnum)[keyof typeof albumsOrderByRelevanceFieldEnum]
+
+
+  export const imagesOrderByRelevanceFieldEnum: {
+    path: 'path'
+  };
+
+  export type imagesOrderByRelevanceFieldEnum = (typeof imagesOrderByRelevanceFieldEnum)[keyof typeof imagesOrderByRelevanceFieldEnum]
+
+
   /**
    * Field references
    */
@@ -12151,6 +18764,13 @@ export namespace Prisma {
    * Reference to a field of type 'events_modalidad'
    */
   export type Enumevents_modalidadFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'events_modalidad'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -12381,8 +19001,8 @@ export namespace Prisma {
     telefono?: BigIntNullableFilter<"entrenadores"> | bigint | number | null
     fecha_nacimiento?: DateTimeNullableFilter<"entrenadores"> | Date | string | null
     user_id?: StringNullableFilter<"entrenadores"> | string | null
-    user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
     deportistas?: DeportistasListRelationFilter
+    user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
   }
 
   export type entrenadoresOrderByWithRelationInput = {
@@ -12393,8 +19013,8 @@ export namespace Prisma {
     telefono?: SortOrderInput | SortOrder
     fecha_nacimiento?: SortOrderInput | SortOrder
     user_id?: SortOrderInput | SortOrder
-    user?: userOrderByWithRelationInput
     deportistas?: deportistasOrderByRelationAggregateInput
+    user?: userOrderByWithRelationInput
     _relevance?: entrenadoresOrderByRelevanceInput
   }
 
@@ -12409,8 +19029,8 @@ export namespace Prisma {
     telefono?: BigIntNullableFilter<"entrenadores"> | bigint | number | null
     fecha_nacimiento?: DateTimeNullableFilter<"entrenadores"> | Date | string | null
     user_id?: StringNullableFilter<"entrenadores"> | string | null
-    user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
     deportistas?: DeportistasListRelationFilter
+    user?: XOR<UserNullableScalarRelationFilter, userWhereInput> | null
   }, "id" | "dni">
 
   export type entrenadoresOrderByWithAggregationInput = {
@@ -12595,7 +19215,7 @@ export namespace Prisma {
     carrera_id?: IntFilter<"listado_escuelas"> | number
     dorsal?: IntFilter<"listado_escuelas"> | number
     nombre_apellido?: StringNullableFilter<"listado_escuelas"> | string | null
-    confirmado?: IntNullableFilter<"listado_escuelas"> | number | null
+    confirmado?: BoolNullableFilter<"listado_escuelas"> | boolean | null
     events?: XOR<EventsScalarRelationFilter, eventsWhereInput>
   }
 
@@ -12609,16 +19229,16 @@ export namespace Prisma {
   }
 
   export type listado_escuelasWhereUniqueInput = Prisma.AtLeast<{
+    dorsal?: number
     carrera_id_dorsal?: listado_escuelasCarrera_idDorsalCompoundUniqueInput
     AND?: listado_escuelasWhereInput | listado_escuelasWhereInput[]
     OR?: listado_escuelasWhereInput[]
     NOT?: listado_escuelasWhereInput | listado_escuelasWhereInput[]
     carrera_id?: IntFilter<"listado_escuelas"> | number
-    dorsal?: IntFilter<"listado_escuelas"> | number
     nombre_apellido?: StringNullableFilter<"listado_escuelas"> | string | null
-    confirmado?: IntNullableFilter<"listado_escuelas"> | number | null
+    confirmado?: BoolNullableFilter<"listado_escuelas"> | boolean | null
     events?: XOR<EventsScalarRelationFilter, eventsWhereInput>
-  }, "carrera_id_dorsal">
+  }, "carrera_id_dorsal" | "dorsal">
 
   export type listado_escuelasOrderByWithAggregationInput = {
     carrera_id?: SortOrder
@@ -12639,7 +19259,7 @@ export namespace Prisma {
     carrera_id?: IntWithAggregatesFilter<"listado_escuelas"> | number
     dorsal?: IntWithAggregatesFilter<"listado_escuelas"> | number
     nombre_apellido?: StringNullableWithAggregatesFilter<"listado_escuelas"> | string | null
-    confirmado?: IntNullableWithAggregatesFilter<"listado_escuelas"> | number | null
+    confirmado?: BoolNullableWithAggregatesFilter<"listado_escuelas"> | boolean | null
   }
 
   export type sessionWhereInput = {
@@ -12870,17 +19490,17 @@ export namespace Prisma {
     NOT?: activation_codesWhereInput | activation_codesWhereInput[]
     id?: IntFilter<"activation_codes"> | number
     code?: StringFilter<"activation_codes"> | string
-    role?: Enumactivation_codes_roleNullableFilter<"activation_codes"> | $Enums.activation_codes_role | null
-    expires_at?: DateTimeNullableFilter<"activation_codes"> | Date | string | null
-    usos?: IntFilter<"activation_codes"> | number
+    role?: Enumactivation_codes_roleFilter<"activation_codes"> | $Enums.activation_codes_role
+    expires_at?: DateTimeFilter<"activation_codes"> | Date | string
+    usos?: IntNullableFilter<"activation_codes"> | number | null
   }
 
   export type activation_codesOrderByWithRelationInput = {
     id?: SortOrder
     code?: SortOrder
-    role?: SortOrderInput | SortOrder
-    expires_at?: SortOrderInput | SortOrder
-    usos?: SortOrder
+    role?: SortOrder
+    expires_at?: SortOrder
+    usos?: SortOrderInput | SortOrder
     _relevance?: activation_codesOrderByRelevanceInput
   }
 
@@ -12890,17 +19510,17 @@ export namespace Prisma {
     AND?: activation_codesWhereInput | activation_codesWhereInput[]
     OR?: activation_codesWhereInput[]
     NOT?: activation_codesWhereInput | activation_codesWhereInput[]
-    role?: Enumactivation_codes_roleNullableFilter<"activation_codes"> | $Enums.activation_codes_role | null
-    expires_at?: DateTimeNullableFilter<"activation_codes"> | Date | string | null
-    usos?: IntFilter<"activation_codes"> | number
+    role?: Enumactivation_codes_roleFilter<"activation_codes"> | $Enums.activation_codes_role
+    expires_at?: DateTimeFilter<"activation_codes"> | Date | string
+    usos?: IntNullableFilter<"activation_codes"> | number | null
   }, "id" | "code">
 
   export type activation_codesOrderByWithAggregationInput = {
     id?: SortOrder
     code?: SortOrder
-    role?: SortOrderInput | SortOrder
-    expires_at?: SortOrderInput | SortOrder
-    usos?: SortOrder
+    role?: SortOrder
+    expires_at?: SortOrder
+    usos?: SortOrderInput | SortOrder
     _count?: activation_codesCountOrderByAggregateInput
     _avg?: activation_codesAvgOrderByAggregateInput
     _max?: activation_codesMaxOrderByAggregateInput
@@ -12914,9 +19534,329 @@ export namespace Prisma {
     NOT?: activation_codesScalarWhereWithAggregatesInput | activation_codesScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"activation_codes"> | number
     code?: StringWithAggregatesFilter<"activation_codes"> | string
-    role?: Enumactivation_codes_roleNullableWithAggregatesFilter<"activation_codes"> | $Enums.activation_codes_role | null
-    expires_at?: DateTimeNullableWithAggregatesFilter<"activation_codes"> | Date | string | null
-    usos?: IntWithAggregatesFilter<"activation_codes"> | number
+    role?: Enumactivation_codes_roleWithAggregatesFilter<"activation_codes"> | $Enums.activation_codes_role
+    expires_at?: DateTimeWithAggregatesFilter<"activation_codes"> | Date | string
+    usos?: IntNullableWithAggregatesFilter<"activation_codes"> | number | null
+  }
+
+  export type yearsWhereInput = {
+    AND?: yearsWhereInput | yearsWhereInput[]
+    OR?: yearsWhereInput[]
+    NOT?: yearsWhereInput | yearsWhereInput[]
+    id?: IntFilter<"years"> | number
+    year?: IntFilter<"years"> | number
+    path?: StringFilter<"years"> | string
+    modalities?: ModalitiesListRelationFilter
+  }
+
+  export type yearsOrderByWithRelationInput = {
+    id?: SortOrder
+    year?: SortOrder
+    path?: SortOrder
+    modalities?: modalitiesOrderByRelationAggregateInput
+    _relevance?: yearsOrderByRelevanceInput
+  }
+
+  export type yearsWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    year?: number
+    AND?: yearsWhereInput | yearsWhereInput[]
+    OR?: yearsWhereInput[]
+    NOT?: yearsWhereInput | yearsWhereInput[]
+    path?: StringFilter<"years"> | string
+    modalities?: ModalitiesListRelationFilter
+  }, "id" | "year">
+
+  export type yearsOrderByWithAggregationInput = {
+    id?: SortOrder
+    year?: SortOrder
+    path?: SortOrder
+    _count?: yearsCountOrderByAggregateInput
+    _avg?: yearsAvgOrderByAggregateInput
+    _max?: yearsMaxOrderByAggregateInput
+    _min?: yearsMinOrderByAggregateInput
+    _sum?: yearsSumOrderByAggregateInput
+  }
+
+  export type yearsScalarWhereWithAggregatesInput = {
+    AND?: yearsScalarWhereWithAggregatesInput | yearsScalarWhereWithAggregatesInput[]
+    OR?: yearsScalarWhereWithAggregatesInput[]
+    NOT?: yearsScalarWhereWithAggregatesInput | yearsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"years"> | number
+    year?: IntWithAggregatesFilter<"years"> | number
+    path?: StringWithAggregatesFilter<"years"> | string
+  }
+
+  export type modalitiesWhereInput = {
+    AND?: modalitiesWhereInput | modalitiesWhereInput[]
+    OR?: modalitiesWhereInput[]
+    NOT?: modalitiesWhereInput | modalitiesWhereInput[]
+    id?: IntFilter<"modalities"> | number
+    name?: StringFilter<"modalities"> | string
+    path?: StringFilter<"modalities"> | string
+    year_id?: IntFilter<"modalities"> | number
+    categories?: CategoriesListRelationFilter
+    year?: XOR<YearsScalarRelationFilter, yearsWhereInput>
+  }
+
+  export type modalitiesOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    path?: SortOrder
+    year_id?: SortOrder
+    categories?: categoriesOrderByRelationAggregateInput
+    year?: yearsOrderByWithRelationInput
+    _relevance?: modalitiesOrderByRelevanceInput
+  }
+
+  export type modalitiesWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: modalitiesWhereInput | modalitiesWhereInput[]
+    OR?: modalitiesWhereInput[]
+    NOT?: modalitiesWhereInput | modalitiesWhereInput[]
+    name?: StringFilter<"modalities"> | string
+    path?: StringFilter<"modalities"> | string
+    year_id?: IntFilter<"modalities"> | number
+    categories?: CategoriesListRelationFilter
+    year?: XOR<YearsScalarRelationFilter, yearsWhereInput>
+  }, "id">
+
+  export type modalitiesOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    path?: SortOrder
+    year_id?: SortOrder
+    _count?: modalitiesCountOrderByAggregateInput
+    _avg?: modalitiesAvgOrderByAggregateInput
+    _max?: modalitiesMaxOrderByAggregateInput
+    _min?: modalitiesMinOrderByAggregateInput
+    _sum?: modalitiesSumOrderByAggregateInput
+  }
+
+  export type modalitiesScalarWhereWithAggregatesInput = {
+    AND?: modalitiesScalarWhereWithAggregatesInput | modalitiesScalarWhereWithAggregatesInput[]
+    OR?: modalitiesScalarWhereWithAggregatesInput[]
+    NOT?: modalitiesScalarWhereWithAggregatesInput | modalitiesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"modalities"> | number
+    name?: StringWithAggregatesFilter<"modalities"> | string
+    path?: StringWithAggregatesFilter<"modalities"> | string
+    year_id?: IntWithAggregatesFilter<"modalities"> | number
+  }
+
+  export type categoriesWhereInput = {
+    AND?: categoriesWhereInput | categoriesWhereInput[]
+    OR?: categoriesWhereInput[]
+    NOT?: categoriesWhereInput | categoriesWhereInput[]
+    id?: IntFilter<"categories"> | number
+    path?: StringFilter<"categories"> | string
+    name?: StringFilter<"categories"> | string
+    modality_id?: IntFilter<"categories"> | number
+    album_races?: Album_racesListRelationFilter
+    modality?: XOR<ModalitiesScalarRelationFilter, modalitiesWhereInput>
+  }
+
+  export type categoriesOrderByWithRelationInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    modality_id?: SortOrder
+    album_races?: album_racesOrderByRelationAggregateInput
+    modality?: modalitiesOrderByWithRelationInput
+    _relevance?: categoriesOrderByRelevanceInput
+  }
+
+  export type categoriesWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: categoriesWhereInput | categoriesWhereInput[]
+    OR?: categoriesWhereInput[]
+    NOT?: categoriesWhereInput | categoriesWhereInput[]
+    path?: StringFilter<"categories"> | string
+    name?: StringFilter<"categories"> | string
+    modality_id?: IntFilter<"categories"> | number
+    album_races?: Album_racesListRelationFilter
+    modality?: XOR<ModalitiesScalarRelationFilter, modalitiesWhereInput>
+  }, "id">
+
+  export type categoriesOrderByWithAggregationInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    modality_id?: SortOrder
+    _count?: categoriesCountOrderByAggregateInput
+    _avg?: categoriesAvgOrderByAggregateInput
+    _max?: categoriesMaxOrderByAggregateInput
+    _min?: categoriesMinOrderByAggregateInput
+    _sum?: categoriesSumOrderByAggregateInput
+  }
+
+  export type categoriesScalarWhereWithAggregatesInput = {
+    AND?: categoriesScalarWhereWithAggregatesInput | categoriesScalarWhereWithAggregatesInput[]
+    OR?: categoriesScalarWhereWithAggregatesInput[]
+    NOT?: categoriesScalarWhereWithAggregatesInput | categoriesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"categories"> | number
+    path?: StringWithAggregatesFilter<"categories"> | string
+    name?: StringWithAggregatesFilter<"categories"> | string
+    modality_id?: IntWithAggregatesFilter<"categories"> | number
+  }
+
+  export type album_racesWhereInput = {
+    AND?: album_racesWhereInput | album_racesWhereInput[]
+    OR?: album_racesWhereInput[]
+    NOT?: album_racesWhereInput | album_racesWhereInput[]
+    id?: IntFilter<"album_races"> | number
+    path?: StringFilter<"album_races"> | string
+    name?: StringFilter<"album_races"> | string
+    category_id?: IntFilter<"album_races"> | number
+    category?: XOR<CategoriesScalarRelationFilter, categoriesWhereInput>
+    albums?: AlbumsListRelationFilter
+  }
+
+  export type album_racesOrderByWithRelationInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    category_id?: SortOrder
+    category?: categoriesOrderByWithRelationInput
+    albums?: albumsOrderByRelationAggregateInput
+    _relevance?: album_racesOrderByRelevanceInput
+  }
+
+  export type album_racesWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: album_racesWhereInput | album_racesWhereInput[]
+    OR?: album_racesWhereInput[]
+    NOT?: album_racesWhereInput | album_racesWhereInput[]
+    path?: StringFilter<"album_races"> | string
+    name?: StringFilter<"album_races"> | string
+    category_id?: IntFilter<"album_races"> | number
+    category?: XOR<CategoriesScalarRelationFilter, categoriesWhereInput>
+    albums?: AlbumsListRelationFilter
+  }, "id">
+
+  export type album_racesOrderByWithAggregationInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    category_id?: SortOrder
+    _count?: album_racesCountOrderByAggregateInput
+    _avg?: album_racesAvgOrderByAggregateInput
+    _max?: album_racesMaxOrderByAggregateInput
+    _min?: album_racesMinOrderByAggregateInput
+    _sum?: album_racesSumOrderByAggregateInput
+  }
+
+  export type album_racesScalarWhereWithAggregatesInput = {
+    AND?: album_racesScalarWhereWithAggregatesInput | album_racesScalarWhereWithAggregatesInput[]
+    OR?: album_racesScalarWhereWithAggregatesInput[]
+    NOT?: album_racesScalarWhereWithAggregatesInput | album_racesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"album_races"> | number
+    path?: StringWithAggregatesFilter<"album_races"> | string
+    name?: StringWithAggregatesFilter<"album_races"> | string
+    category_id?: IntWithAggregatesFilter<"album_races"> | number
+  }
+
+  export type albumsWhereInput = {
+    AND?: albumsWhereInput | albumsWhereInput[]
+    OR?: albumsWhereInput[]
+    NOT?: albumsWhereInput | albumsWhereInput[]
+    id?: IntFilter<"albums"> | number
+    name?: StringFilter<"albums"> | string
+    cover?: StringFilter<"albums"> | string
+    race_id?: IntFilter<"albums"> | number
+    race?: XOR<Album_racesScalarRelationFilter, album_racesWhereInput>
+    images?: ImagesListRelationFilter
+  }
+
+  export type albumsOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    cover?: SortOrder
+    race_id?: SortOrder
+    race?: album_racesOrderByWithRelationInput
+    images?: imagesOrderByRelationAggregateInput
+    _relevance?: albumsOrderByRelevanceInput
+  }
+
+  export type albumsWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    name?: string
+    AND?: albumsWhereInput | albumsWhereInput[]
+    OR?: albumsWhereInput[]
+    NOT?: albumsWhereInput | albumsWhereInput[]
+    cover?: StringFilter<"albums"> | string
+    race_id?: IntFilter<"albums"> | number
+    race?: XOR<Album_racesScalarRelationFilter, album_racesWhereInput>
+    images?: ImagesListRelationFilter
+  }, "id" | "name">
+
+  export type albumsOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    cover?: SortOrder
+    race_id?: SortOrder
+    _count?: albumsCountOrderByAggregateInput
+    _avg?: albumsAvgOrderByAggregateInput
+    _max?: albumsMaxOrderByAggregateInput
+    _min?: albumsMinOrderByAggregateInput
+    _sum?: albumsSumOrderByAggregateInput
+  }
+
+  export type albumsScalarWhereWithAggregatesInput = {
+    AND?: albumsScalarWhereWithAggregatesInput | albumsScalarWhereWithAggregatesInput[]
+    OR?: albumsScalarWhereWithAggregatesInput[]
+    NOT?: albumsScalarWhereWithAggregatesInput | albumsScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"albums"> | number
+    name?: StringWithAggregatesFilter<"albums"> | string
+    cover?: StringWithAggregatesFilter<"albums"> | string
+    race_id?: IntWithAggregatesFilter<"albums"> | number
+  }
+
+  export type imagesWhereInput = {
+    AND?: imagesWhereInput | imagesWhereInput[]
+    OR?: imagesWhereInput[]
+    NOT?: imagesWhereInput | imagesWhereInput[]
+    id?: IntFilter<"images"> | number
+    path?: StringFilter<"images"> | string
+    album_Id?: IntFilter<"images"> | number
+    album?: XOR<AlbumsScalarRelationFilter, albumsWhereInput>
+  }
+
+  export type imagesOrderByWithRelationInput = {
+    id?: SortOrder
+    path?: SortOrder
+    album_Id?: SortOrder
+    album?: albumsOrderByWithRelationInput
+    _relevance?: imagesOrderByRelevanceInput
+  }
+
+  export type imagesWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: imagesWhereInput | imagesWhereInput[]
+    OR?: imagesWhereInput[]
+    NOT?: imagesWhereInput | imagesWhereInput[]
+    path?: StringFilter<"images"> | string
+    album_Id?: IntFilter<"images"> | number
+    album?: XOR<AlbumsScalarRelationFilter, albumsWhereInput>
+  }, "id">
+
+  export type imagesOrderByWithAggregationInput = {
+    id?: SortOrder
+    path?: SortOrder
+    album_Id?: SortOrder
+    _count?: imagesCountOrderByAggregateInput
+    _avg?: imagesAvgOrderByAggregateInput
+    _max?: imagesMaxOrderByAggregateInput
+    _min?: imagesMinOrderByAggregateInput
+    _sum?: imagesSumOrderByAggregateInput
+  }
+
+  export type imagesScalarWhereWithAggregatesInput = {
+    AND?: imagesScalarWhereWithAggregatesInput | imagesScalarWhereWithAggregatesInput[]
+    OR?: imagesScalarWhereWithAggregatesInput[]
+    NOT?: imagesScalarWhereWithAggregatesInput | imagesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"images"> | number
+    path?: StringWithAggregatesFilter<"images"> | string
+    album_Id?: IntWithAggregatesFilter<"images"> | number
   }
 
   export type accountCreateInput = {
@@ -13145,8 +20085,8 @@ export namespace Prisma {
     dni?: string | null
     telefono?: bigint | number | null
     fecha_nacimiento?: Date | string | null
-    user?: userCreateNestedOneWithoutEntrenadoresInput
     deportistas?: deportistasCreateNestedManyWithoutEntrenadoresInput
+    user?: userCreateNestedOneWithoutEntrenadoresInput
   }
 
   export type entrenadoresUncheckedCreateInput = {
@@ -13167,8 +20107,8 @@ export namespace Prisma {
     dni?: NullableStringFieldUpdateOperationsInput | string | null
     telefono?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     fecha_nacimiento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    user?: userUpdateOneWithoutEntrenadoresNestedInput
     deportistas?: deportistasUpdateManyWithoutEntrenadoresNestedInput
+    user?: userUpdateOneWithoutEntrenadoresNestedInput
   }
 
   export type entrenadoresUncheckedUpdateInput = {
@@ -13367,7 +20307,7 @@ export namespace Prisma {
   export type listado_escuelasCreateInput = {
     dorsal: number
     nombre_apellido?: string | null
-    confirmado?: number | null
+    confirmado?: boolean | null
     events: eventsCreateNestedOneWithoutListado_escuelasInput
   }
 
@@ -13375,13 +20315,13 @@ export namespace Prisma {
     carrera_id: number
     dorsal: number
     nombre_apellido?: string | null
-    confirmado?: number | null
+    confirmado?: boolean | null
   }
 
   export type listado_escuelasUpdateInput = {
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
     events?: eventsUpdateOneRequiredWithoutListado_escuelasNestedInput
   }
 
@@ -13389,27 +20329,27 @@ export namespace Prisma {
     carrera_id?: IntFieldUpdateOperationsInput | number
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type listado_escuelasCreateManyInput = {
     carrera_id: number
     dorsal: number
     nombre_apellido?: string | null
-    confirmado?: number | null
+    confirmado?: boolean | null
   }
 
   export type listado_escuelasUpdateManyMutationInput = {
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type listado_escuelasUncheckedUpdateManyInput = {
     carrera_id?: IntFieldUpdateOperationsInput | number
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type sessionCreateInput = {
@@ -13667,55 +20607,332 @@ export namespace Prisma {
 
   export type activation_codesCreateInput = {
     code: string
-    role?: $Enums.activation_codes_role | null
-    expires_at?: Date | string | null
-    usos?: number
+    role: $Enums.activation_codes_role
+    expires_at: Date | string
+    usos?: number | null
   }
 
   export type activation_codesUncheckedCreateInput = {
     id?: number
     code: string
-    role?: $Enums.activation_codes_role | null
-    expires_at?: Date | string | null
-    usos?: number
+    role: $Enums.activation_codes_role
+    expires_at: Date | string
+    usos?: number | null
   }
 
   export type activation_codesUpdateInput = {
     code?: StringFieldUpdateOperationsInput | string
-    role?: NullableEnumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role | null
-    expires_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    usos?: IntFieldUpdateOperationsInput | number
+    role?: Enumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    usos?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type activation_codesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    role?: NullableEnumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role | null
-    expires_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    usos?: IntFieldUpdateOperationsInput | number
+    role?: Enumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    usos?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type activation_codesCreateManyInput = {
     id?: number
     code: string
-    role?: $Enums.activation_codes_role | null
-    expires_at?: Date | string | null
-    usos?: number
+    role: $Enums.activation_codes_role
+    expires_at: Date | string
+    usos?: number | null
   }
 
   export type activation_codesUpdateManyMutationInput = {
     code?: StringFieldUpdateOperationsInput | string
-    role?: NullableEnumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role | null
-    expires_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    usos?: IntFieldUpdateOperationsInput | number
+    role?: Enumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    usos?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type activation_codesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    role?: NullableEnumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role | null
-    expires_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    usos?: IntFieldUpdateOperationsInput | number
+    role?: Enumactivation_codes_roleFieldUpdateOperationsInput | $Enums.activation_codes_role
+    expires_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    usos?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type yearsCreateInput = {
+    year: number
+    path: string
+    modalities?: modalitiesCreateNestedManyWithoutYearInput
+  }
+
+  export type yearsUncheckedCreateInput = {
+    id?: number
+    year: number
+    path: string
+    modalities?: modalitiesUncheckedCreateNestedManyWithoutYearInput
+  }
+
+  export type yearsUpdateInput = {
+    year?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    modalities?: modalitiesUpdateManyWithoutYearNestedInput
+  }
+
+  export type yearsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    year?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    modalities?: modalitiesUncheckedUpdateManyWithoutYearNestedInput
+  }
+
+  export type yearsCreateManyInput = {
+    id?: number
+    year: number
+    path: string
+  }
+
+  export type yearsUpdateManyMutationInput = {
+    year?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type yearsUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    year?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type modalitiesCreateInput = {
+    name: string
+    path: string
+    categories?: categoriesCreateNestedManyWithoutModalityInput
+    year: yearsCreateNestedOneWithoutModalitiesInput
+  }
+
+  export type modalitiesUncheckedCreateInput = {
+    id?: number
+    name: string
+    path: string
+    year_id: number
+    categories?: categoriesUncheckedCreateNestedManyWithoutModalityInput
+  }
+
+  export type modalitiesUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    categories?: categoriesUpdateManyWithoutModalityNestedInput
+    year?: yearsUpdateOneRequiredWithoutModalitiesNestedInput
+  }
+
+  export type modalitiesUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    year_id?: IntFieldUpdateOperationsInput | number
+    categories?: categoriesUncheckedUpdateManyWithoutModalityNestedInput
+  }
+
+  export type modalitiesCreateManyInput = {
+    id?: number
+    name: string
+    path: string
+    year_id: number
+  }
+
+  export type modalitiesUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type modalitiesUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    year_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type categoriesCreateInput = {
+    path: string
+    name: string
+    album_races?: album_racesCreateNestedManyWithoutCategoryInput
+    modality: modalitiesCreateNestedOneWithoutCategoriesInput
+  }
+
+  export type categoriesUncheckedCreateInput = {
+    id?: number
+    path: string
+    name: string
+    modality_id: number
+    album_races?: album_racesUncheckedCreateNestedManyWithoutCategoryInput
+  }
+
+  export type categoriesUpdateInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    album_races?: album_racesUpdateManyWithoutCategoryNestedInput
+    modality?: modalitiesUpdateOneRequiredWithoutCategoriesNestedInput
+  }
+
+  export type categoriesUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    modality_id?: IntFieldUpdateOperationsInput | number
+    album_races?: album_racesUncheckedUpdateManyWithoutCategoryNestedInput
+  }
+
+  export type categoriesCreateManyInput = {
+    id?: number
+    path: string
+    name: string
+    modality_id: number
+  }
+
+  export type categoriesUpdateManyMutationInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type categoriesUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    modality_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type album_racesCreateInput = {
+    path: string
+    name: string
+    category: categoriesCreateNestedOneWithoutAlbum_racesInput
+    albums?: albumsCreateNestedManyWithoutRaceInput
+  }
+
+  export type album_racesUncheckedCreateInput = {
+    id?: number
+    path: string
+    name: string
+    category_id: number
+    albums?: albumsUncheckedCreateNestedManyWithoutRaceInput
+  }
+
+  export type album_racesUpdateInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    category?: categoriesUpdateOneRequiredWithoutAlbum_racesNestedInput
+    albums?: albumsUpdateManyWithoutRaceNestedInput
+  }
+
+  export type album_racesUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    category_id?: IntFieldUpdateOperationsInput | number
+    albums?: albumsUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type album_racesCreateManyInput = {
+    id?: number
+    path: string
+    name: string
+    category_id: number
+  }
+
+  export type album_racesUpdateManyMutationInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type album_racesUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    category_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type albumsCreateInput = {
+    name: string
+    cover: string
+    race: album_racesCreateNestedOneWithoutAlbumsInput
+    images?: imagesCreateNestedManyWithoutAlbumInput
+  }
+
+  export type albumsUncheckedCreateInput = {
+    id?: number
+    name: string
+    cover: string
+    race_id: number
+    images?: imagesUncheckedCreateNestedManyWithoutAlbumInput
+  }
+
+  export type albumsUpdateInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    race?: album_racesUpdateOneRequiredWithoutAlbumsNestedInput
+    images?: imagesUpdateManyWithoutAlbumNestedInput
+  }
+
+  export type albumsUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    race_id?: IntFieldUpdateOperationsInput | number
+    images?: imagesUncheckedUpdateManyWithoutAlbumNestedInput
+  }
+
+  export type albumsCreateManyInput = {
+    id?: number
+    name: string
+    cover: string
+    race_id: number
+  }
+
+  export type albumsUpdateManyMutationInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type albumsUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    race_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type imagesCreateInput = {
+    path: string
+    album: albumsCreateNestedOneWithoutImagesInput
+  }
+
+  export type imagesUncheckedCreateInput = {
+    id?: number
+    path: string
+    album_Id: number
+  }
+
+  export type imagesUpdateInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    album?: albumsUpdateOneRequiredWithoutImagesNestedInput
+  }
+
+  export type imagesUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    album_Id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type imagesCreateManyInput = {
+    id?: number
+    path: string
+    album_Id: number
+  }
+
+  export type imagesUpdateManyMutationInput = {
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type imagesUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    album_Id?: IntFieldUpdateOperationsInput | number
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -14297,6 +21514,11 @@ export namespace Prisma {
     evento_id?: SortOrder
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type EventsScalarRelationFilter = {
     is?: eventsWhereInput
     isNot?: eventsWhereInput
@@ -14323,7 +21545,6 @@ export namespace Prisma {
   export type listado_escuelasAvgOrderByAggregateInput = {
     carrera_id?: SortOrder
     dorsal?: SortOrder
-    confirmado?: SortOrder
   }
 
   export type listado_escuelasMaxOrderByAggregateInput = {
@@ -14343,7 +21564,14 @@ export namespace Prisma {
   export type listado_escuelasSumOrderByAggregateInput = {
     carrera_id?: SortOrder
     dorsal?: SortOrder
-    confirmado?: SortOrder
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type sessionOrderByRelevanceInput = {
@@ -14506,11 +21734,11 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type Enumactivation_codes_roleNullableFilter<$PrismaModel = never> = {
-    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel> | null
-    in?: $Enums.activation_codes_role[] | null
-    notIn?: $Enums.activation_codes_role[] | null
-    not?: NestedEnumactivation_codes_roleNullableFilter<$PrismaModel> | $Enums.activation_codes_role | null
+  export type Enumactivation_codes_roleFilter<$PrismaModel = never> = {
+    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel>
+    in?: $Enums.activation_codes_role[]
+    notIn?: $Enums.activation_codes_role[]
+    not?: NestedEnumactivation_codes_roleFilter<$PrismaModel> | $Enums.activation_codes_role
   }
 
   export type activation_codesOrderByRelevanceInput = {
@@ -14553,14 +21781,305 @@ export namespace Prisma {
     usos?: SortOrder
   }
 
-  export type Enumactivation_codes_roleNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel> | null
-    in?: $Enums.activation_codes_role[] | null
-    notIn?: $Enums.activation_codes_role[] | null
-    not?: NestedEnumactivation_codes_roleNullableWithAggregatesFilter<$PrismaModel> | $Enums.activation_codes_role | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedEnumactivation_codes_roleNullableFilter<$PrismaModel>
-    _max?: NestedEnumactivation_codes_roleNullableFilter<$PrismaModel>
+  export type Enumactivation_codes_roleWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel>
+    in?: $Enums.activation_codes_role[]
+    notIn?: $Enums.activation_codes_role[]
+    not?: NestedEnumactivation_codes_roleWithAggregatesFilter<$PrismaModel> | $Enums.activation_codes_role
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumactivation_codes_roleFilter<$PrismaModel>
+    _max?: NestedEnumactivation_codes_roleFilter<$PrismaModel>
+  }
+
+  export type ModalitiesListRelationFilter = {
+    every?: modalitiesWhereInput
+    some?: modalitiesWhereInput
+    none?: modalitiesWhereInput
+  }
+
+  export type modalitiesOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type yearsOrderByRelevanceInput = {
+    fields: yearsOrderByRelevanceFieldEnum | yearsOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type yearsCountOrderByAggregateInput = {
+    id?: SortOrder
+    year?: SortOrder
+    path?: SortOrder
+  }
+
+  export type yearsAvgOrderByAggregateInput = {
+    id?: SortOrder
+    year?: SortOrder
+  }
+
+  export type yearsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    year?: SortOrder
+    path?: SortOrder
+  }
+
+  export type yearsMinOrderByAggregateInput = {
+    id?: SortOrder
+    year?: SortOrder
+    path?: SortOrder
+  }
+
+  export type yearsSumOrderByAggregateInput = {
+    id?: SortOrder
+    year?: SortOrder
+  }
+
+  export type CategoriesListRelationFilter = {
+    every?: categoriesWhereInput
+    some?: categoriesWhereInput
+    none?: categoriesWhereInput
+  }
+
+  export type YearsScalarRelationFilter = {
+    is?: yearsWhereInput
+    isNot?: yearsWhereInput
+  }
+
+  export type categoriesOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type modalitiesOrderByRelevanceInput = {
+    fields: modalitiesOrderByRelevanceFieldEnum | modalitiesOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type modalitiesCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    path?: SortOrder
+    year_id?: SortOrder
+  }
+
+  export type modalitiesAvgOrderByAggregateInput = {
+    id?: SortOrder
+    year_id?: SortOrder
+  }
+
+  export type modalitiesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    path?: SortOrder
+    year_id?: SortOrder
+  }
+
+  export type modalitiesMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    path?: SortOrder
+    year_id?: SortOrder
+  }
+
+  export type modalitiesSumOrderByAggregateInput = {
+    id?: SortOrder
+    year_id?: SortOrder
+  }
+
+  export type Album_racesListRelationFilter = {
+    every?: album_racesWhereInput
+    some?: album_racesWhereInput
+    none?: album_racesWhereInput
+  }
+
+  export type ModalitiesScalarRelationFilter = {
+    is?: modalitiesWhereInput
+    isNot?: modalitiesWhereInput
+  }
+
+  export type album_racesOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type categoriesOrderByRelevanceInput = {
+    fields: categoriesOrderByRelevanceFieldEnum | categoriesOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type categoriesCountOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    modality_id?: SortOrder
+  }
+
+  export type categoriesAvgOrderByAggregateInput = {
+    id?: SortOrder
+    modality_id?: SortOrder
+  }
+
+  export type categoriesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    modality_id?: SortOrder
+  }
+
+  export type categoriesMinOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    modality_id?: SortOrder
+  }
+
+  export type categoriesSumOrderByAggregateInput = {
+    id?: SortOrder
+    modality_id?: SortOrder
+  }
+
+  export type CategoriesScalarRelationFilter = {
+    is?: categoriesWhereInput
+    isNot?: categoriesWhereInput
+  }
+
+  export type AlbumsListRelationFilter = {
+    every?: albumsWhereInput
+    some?: albumsWhereInput
+    none?: albumsWhereInput
+  }
+
+  export type albumsOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type album_racesOrderByRelevanceInput = {
+    fields: album_racesOrderByRelevanceFieldEnum | album_racesOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type album_racesCountOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    category_id?: SortOrder
+  }
+
+  export type album_racesAvgOrderByAggregateInput = {
+    id?: SortOrder
+    category_id?: SortOrder
+  }
+
+  export type album_racesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    category_id?: SortOrder
+  }
+
+  export type album_racesMinOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    name?: SortOrder
+    category_id?: SortOrder
+  }
+
+  export type album_racesSumOrderByAggregateInput = {
+    id?: SortOrder
+    category_id?: SortOrder
+  }
+
+  export type Album_racesScalarRelationFilter = {
+    is?: album_racesWhereInput
+    isNot?: album_racesWhereInput
+  }
+
+  export type ImagesListRelationFilter = {
+    every?: imagesWhereInput
+    some?: imagesWhereInput
+    none?: imagesWhereInput
+  }
+
+  export type imagesOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type albumsOrderByRelevanceInput = {
+    fields: albumsOrderByRelevanceFieldEnum | albumsOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type albumsCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    cover?: SortOrder
+    race_id?: SortOrder
+  }
+
+  export type albumsAvgOrderByAggregateInput = {
+    id?: SortOrder
+    race_id?: SortOrder
+  }
+
+  export type albumsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    cover?: SortOrder
+    race_id?: SortOrder
+  }
+
+  export type albumsMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    cover?: SortOrder
+    race_id?: SortOrder
+  }
+
+  export type albumsSumOrderByAggregateInput = {
+    id?: SortOrder
+    race_id?: SortOrder
+  }
+
+  export type AlbumsScalarRelationFilter = {
+    is?: albumsWhereInput
+    isNot?: albumsWhereInput
+  }
+
+  export type imagesOrderByRelevanceInput = {
+    fields: imagesOrderByRelevanceFieldEnum | imagesOrderByRelevanceFieldEnum[]
+    sort: SortOrder
+    search: string
+  }
+
+  export type imagesCountOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    album_Id?: SortOrder
+  }
+
+  export type imagesAvgOrderByAggregateInput = {
+    id?: SortOrder
+    album_Id?: SortOrder
+  }
+
+  export type imagesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    album_Id?: SortOrder
+  }
+
+  export type imagesMinOrderByAggregateInput = {
+    id?: SortOrder
+    path?: SortOrder
+    album_Id?: SortOrder
+  }
+
+  export type imagesSumOrderByAggregateInput = {
+    id?: SortOrder
+    album_Id?: SortOrder
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -14677,17 +22196,17 @@ export namespace Prisma {
     deleteMany?: events_resultadoScalarWhereInput | events_resultadoScalarWhereInput[]
   }
 
-  export type userCreateNestedOneWithoutEntrenadoresInput = {
-    create?: XOR<userCreateWithoutEntrenadoresInput, userUncheckedCreateWithoutEntrenadoresInput>
-    connectOrCreate?: userCreateOrConnectWithoutEntrenadoresInput
-    connect?: userWhereUniqueInput
-  }
-
   export type deportistasCreateNestedManyWithoutEntrenadoresInput = {
     create?: XOR<deportistasCreateWithoutEntrenadoresInput, deportistasUncheckedCreateWithoutEntrenadoresInput> | deportistasCreateWithoutEntrenadoresInput[] | deportistasUncheckedCreateWithoutEntrenadoresInput[]
     connectOrCreate?: deportistasCreateOrConnectWithoutEntrenadoresInput | deportistasCreateOrConnectWithoutEntrenadoresInput[]
     createMany?: deportistasCreateManyEntrenadoresInputEnvelope
     connect?: deportistasWhereUniqueInput | deportistasWhereUniqueInput[]
+  }
+
+  export type userCreateNestedOneWithoutEntrenadoresInput = {
+    create?: XOR<userCreateWithoutEntrenadoresInput, userUncheckedCreateWithoutEntrenadoresInput>
+    connectOrCreate?: userCreateOrConnectWithoutEntrenadoresInput
+    connect?: userWhereUniqueInput
   }
 
   export type deportistasUncheckedCreateNestedManyWithoutEntrenadoresInput = {
@@ -14705,16 +22224,6 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type userUpdateOneWithoutEntrenadoresNestedInput = {
-    create?: XOR<userCreateWithoutEntrenadoresInput, userUncheckedCreateWithoutEntrenadoresInput>
-    connectOrCreate?: userCreateOrConnectWithoutEntrenadoresInput
-    upsert?: userUpsertWithoutEntrenadoresInput
-    disconnect?: userWhereInput | boolean
-    delete?: userWhereInput | boolean
-    connect?: userWhereUniqueInput
-    update?: XOR<XOR<userUpdateToOneWithWhereWithoutEntrenadoresInput, userUpdateWithoutEntrenadoresInput>, userUncheckedUpdateWithoutEntrenadoresInput>
-  }
-
   export type deportistasUpdateManyWithoutEntrenadoresNestedInput = {
     create?: XOR<deportistasCreateWithoutEntrenadoresInput, deportistasUncheckedCreateWithoutEntrenadoresInput> | deportistasCreateWithoutEntrenadoresInput[] | deportistasUncheckedCreateWithoutEntrenadoresInput[]
     connectOrCreate?: deportistasCreateOrConnectWithoutEntrenadoresInput | deportistasCreateOrConnectWithoutEntrenadoresInput[]
@@ -14727,6 +22236,16 @@ export namespace Prisma {
     update?: deportistasUpdateWithWhereUniqueWithoutEntrenadoresInput | deportistasUpdateWithWhereUniqueWithoutEntrenadoresInput[]
     updateMany?: deportistasUpdateManyWithWhereWithoutEntrenadoresInput | deportistasUpdateManyWithWhereWithoutEntrenadoresInput[]
     deleteMany?: deportistasScalarWhereInput | deportistasScalarWhereInput[]
+  }
+
+  export type userUpdateOneWithoutEntrenadoresNestedInput = {
+    create?: XOR<userCreateWithoutEntrenadoresInput, userUncheckedCreateWithoutEntrenadoresInput>
+    connectOrCreate?: userCreateOrConnectWithoutEntrenadoresInput
+    upsert?: userUpsertWithoutEntrenadoresInput
+    disconnect?: userWhereInput | boolean
+    delete?: userWhereInput | boolean
+    connect?: userWhereUniqueInput
+    update?: XOR<XOR<userUpdateToOneWithWhereWithoutEntrenadoresInput, userUpdateWithoutEntrenadoresInput>, userUncheckedUpdateWithoutEntrenadoresInput>
   }
 
   export type deportistasUncheckedUpdateManyWithoutEntrenadoresNestedInput = {
@@ -14873,6 +22392,10 @@ export namespace Prisma {
     connect?: eventsWhereUniqueInput
   }
 
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
   export type eventsUpdateOneRequiredWithoutListado_escuelasNestedInput = {
     create?: XOR<eventsCreateWithoutListado_escuelasInput, eventsUncheckedCreateWithoutListado_escuelasInput>
     connectOrCreate?: eventsCreateOrConnectWithoutListado_escuelasInput
@@ -14969,8 +22492,288 @@ export namespace Prisma {
     deleteMany?: entrenadoresScalarWhereInput | entrenadoresScalarWhereInput[]
   }
 
-  export type NullableEnumactivation_codes_roleFieldUpdateOperationsInput = {
-    set?: $Enums.activation_codes_role | null
+  export type Enumactivation_codes_roleFieldUpdateOperationsInput = {
+    set?: $Enums.activation_codes_role
+  }
+
+  export type modalitiesCreateNestedManyWithoutYearInput = {
+    create?: XOR<modalitiesCreateWithoutYearInput, modalitiesUncheckedCreateWithoutYearInput> | modalitiesCreateWithoutYearInput[] | modalitiesUncheckedCreateWithoutYearInput[]
+    connectOrCreate?: modalitiesCreateOrConnectWithoutYearInput | modalitiesCreateOrConnectWithoutYearInput[]
+    createMany?: modalitiesCreateManyYearInputEnvelope
+    connect?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+  }
+
+  export type modalitiesUncheckedCreateNestedManyWithoutYearInput = {
+    create?: XOR<modalitiesCreateWithoutYearInput, modalitiesUncheckedCreateWithoutYearInput> | modalitiesCreateWithoutYearInput[] | modalitiesUncheckedCreateWithoutYearInput[]
+    connectOrCreate?: modalitiesCreateOrConnectWithoutYearInput | modalitiesCreateOrConnectWithoutYearInput[]
+    createMany?: modalitiesCreateManyYearInputEnvelope
+    connect?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+  }
+
+  export type modalitiesUpdateManyWithoutYearNestedInput = {
+    create?: XOR<modalitiesCreateWithoutYearInput, modalitiesUncheckedCreateWithoutYearInput> | modalitiesCreateWithoutYearInput[] | modalitiesUncheckedCreateWithoutYearInput[]
+    connectOrCreate?: modalitiesCreateOrConnectWithoutYearInput | modalitiesCreateOrConnectWithoutYearInput[]
+    upsert?: modalitiesUpsertWithWhereUniqueWithoutYearInput | modalitiesUpsertWithWhereUniqueWithoutYearInput[]
+    createMany?: modalitiesCreateManyYearInputEnvelope
+    set?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    disconnect?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    delete?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    connect?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    update?: modalitiesUpdateWithWhereUniqueWithoutYearInput | modalitiesUpdateWithWhereUniqueWithoutYearInput[]
+    updateMany?: modalitiesUpdateManyWithWhereWithoutYearInput | modalitiesUpdateManyWithWhereWithoutYearInput[]
+    deleteMany?: modalitiesScalarWhereInput | modalitiesScalarWhereInput[]
+  }
+
+  export type modalitiesUncheckedUpdateManyWithoutYearNestedInput = {
+    create?: XOR<modalitiesCreateWithoutYearInput, modalitiesUncheckedCreateWithoutYearInput> | modalitiesCreateWithoutYearInput[] | modalitiesUncheckedCreateWithoutYearInput[]
+    connectOrCreate?: modalitiesCreateOrConnectWithoutYearInput | modalitiesCreateOrConnectWithoutYearInput[]
+    upsert?: modalitiesUpsertWithWhereUniqueWithoutYearInput | modalitiesUpsertWithWhereUniqueWithoutYearInput[]
+    createMany?: modalitiesCreateManyYearInputEnvelope
+    set?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    disconnect?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    delete?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    connect?: modalitiesWhereUniqueInput | modalitiesWhereUniqueInput[]
+    update?: modalitiesUpdateWithWhereUniqueWithoutYearInput | modalitiesUpdateWithWhereUniqueWithoutYearInput[]
+    updateMany?: modalitiesUpdateManyWithWhereWithoutYearInput | modalitiesUpdateManyWithWhereWithoutYearInput[]
+    deleteMany?: modalitiesScalarWhereInput | modalitiesScalarWhereInput[]
+  }
+
+  export type categoriesCreateNestedManyWithoutModalityInput = {
+    create?: XOR<categoriesCreateWithoutModalityInput, categoriesUncheckedCreateWithoutModalityInput> | categoriesCreateWithoutModalityInput[] | categoriesUncheckedCreateWithoutModalityInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutModalityInput | categoriesCreateOrConnectWithoutModalityInput[]
+    createMany?: categoriesCreateManyModalityInputEnvelope
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+  }
+
+  export type yearsCreateNestedOneWithoutModalitiesInput = {
+    create?: XOR<yearsCreateWithoutModalitiesInput, yearsUncheckedCreateWithoutModalitiesInput>
+    connectOrCreate?: yearsCreateOrConnectWithoutModalitiesInput
+    connect?: yearsWhereUniqueInput
+  }
+
+  export type categoriesUncheckedCreateNestedManyWithoutModalityInput = {
+    create?: XOR<categoriesCreateWithoutModalityInput, categoriesUncheckedCreateWithoutModalityInput> | categoriesCreateWithoutModalityInput[] | categoriesUncheckedCreateWithoutModalityInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutModalityInput | categoriesCreateOrConnectWithoutModalityInput[]
+    createMany?: categoriesCreateManyModalityInputEnvelope
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+  }
+
+  export type categoriesUpdateManyWithoutModalityNestedInput = {
+    create?: XOR<categoriesCreateWithoutModalityInput, categoriesUncheckedCreateWithoutModalityInput> | categoriesCreateWithoutModalityInput[] | categoriesUncheckedCreateWithoutModalityInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutModalityInput | categoriesCreateOrConnectWithoutModalityInput[]
+    upsert?: categoriesUpsertWithWhereUniqueWithoutModalityInput | categoriesUpsertWithWhereUniqueWithoutModalityInput[]
+    createMany?: categoriesCreateManyModalityInputEnvelope
+    set?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    disconnect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    delete?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    update?: categoriesUpdateWithWhereUniqueWithoutModalityInput | categoriesUpdateWithWhereUniqueWithoutModalityInput[]
+    updateMany?: categoriesUpdateManyWithWhereWithoutModalityInput | categoriesUpdateManyWithWhereWithoutModalityInput[]
+    deleteMany?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+  }
+
+  export type yearsUpdateOneRequiredWithoutModalitiesNestedInput = {
+    create?: XOR<yearsCreateWithoutModalitiesInput, yearsUncheckedCreateWithoutModalitiesInput>
+    connectOrCreate?: yearsCreateOrConnectWithoutModalitiesInput
+    upsert?: yearsUpsertWithoutModalitiesInput
+    connect?: yearsWhereUniqueInput
+    update?: XOR<XOR<yearsUpdateToOneWithWhereWithoutModalitiesInput, yearsUpdateWithoutModalitiesInput>, yearsUncheckedUpdateWithoutModalitiesInput>
+  }
+
+  export type categoriesUncheckedUpdateManyWithoutModalityNestedInput = {
+    create?: XOR<categoriesCreateWithoutModalityInput, categoriesUncheckedCreateWithoutModalityInput> | categoriesCreateWithoutModalityInput[] | categoriesUncheckedCreateWithoutModalityInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutModalityInput | categoriesCreateOrConnectWithoutModalityInput[]
+    upsert?: categoriesUpsertWithWhereUniqueWithoutModalityInput | categoriesUpsertWithWhereUniqueWithoutModalityInput[]
+    createMany?: categoriesCreateManyModalityInputEnvelope
+    set?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    disconnect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    delete?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    update?: categoriesUpdateWithWhereUniqueWithoutModalityInput | categoriesUpdateWithWhereUniqueWithoutModalityInput[]
+    updateMany?: categoriesUpdateManyWithWhereWithoutModalityInput | categoriesUpdateManyWithWhereWithoutModalityInput[]
+    deleteMany?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+  }
+
+  export type album_racesCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<album_racesCreateWithoutCategoryInput, album_racesUncheckedCreateWithoutCategoryInput> | album_racesCreateWithoutCategoryInput[] | album_racesUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: album_racesCreateOrConnectWithoutCategoryInput | album_racesCreateOrConnectWithoutCategoryInput[]
+    createMany?: album_racesCreateManyCategoryInputEnvelope
+    connect?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+  }
+
+  export type modalitiesCreateNestedOneWithoutCategoriesInput = {
+    create?: XOR<modalitiesCreateWithoutCategoriesInput, modalitiesUncheckedCreateWithoutCategoriesInput>
+    connectOrCreate?: modalitiesCreateOrConnectWithoutCategoriesInput
+    connect?: modalitiesWhereUniqueInput
+  }
+
+  export type album_racesUncheckedCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<album_racesCreateWithoutCategoryInput, album_racesUncheckedCreateWithoutCategoryInput> | album_racesCreateWithoutCategoryInput[] | album_racesUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: album_racesCreateOrConnectWithoutCategoryInput | album_racesCreateOrConnectWithoutCategoryInput[]
+    createMany?: album_racesCreateManyCategoryInputEnvelope
+    connect?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+  }
+
+  export type album_racesUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<album_racesCreateWithoutCategoryInput, album_racesUncheckedCreateWithoutCategoryInput> | album_racesCreateWithoutCategoryInput[] | album_racesUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: album_racesCreateOrConnectWithoutCategoryInput | album_racesCreateOrConnectWithoutCategoryInput[]
+    upsert?: album_racesUpsertWithWhereUniqueWithoutCategoryInput | album_racesUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: album_racesCreateManyCategoryInputEnvelope
+    set?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    disconnect?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    delete?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    connect?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    update?: album_racesUpdateWithWhereUniqueWithoutCategoryInput | album_racesUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: album_racesUpdateManyWithWhereWithoutCategoryInput | album_racesUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: album_racesScalarWhereInput | album_racesScalarWhereInput[]
+  }
+
+  export type modalitiesUpdateOneRequiredWithoutCategoriesNestedInput = {
+    create?: XOR<modalitiesCreateWithoutCategoriesInput, modalitiesUncheckedCreateWithoutCategoriesInput>
+    connectOrCreate?: modalitiesCreateOrConnectWithoutCategoriesInput
+    upsert?: modalitiesUpsertWithoutCategoriesInput
+    connect?: modalitiesWhereUniqueInput
+    update?: XOR<XOR<modalitiesUpdateToOneWithWhereWithoutCategoriesInput, modalitiesUpdateWithoutCategoriesInput>, modalitiesUncheckedUpdateWithoutCategoriesInput>
+  }
+
+  export type album_racesUncheckedUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<album_racesCreateWithoutCategoryInput, album_racesUncheckedCreateWithoutCategoryInput> | album_racesCreateWithoutCategoryInput[] | album_racesUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: album_racesCreateOrConnectWithoutCategoryInput | album_racesCreateOrConnectWithoutCategoryInput[]
+    upsert?: album_racesUpsertWithWhereUniqueWithoutCategoryInput | album_racesUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: album_racesCreateManyCategoryInputEnvelope
+    set?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    disconnect?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    delete?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    connect?: album_racesWhereUniqueInput | album_racesWhereUniqueInput[]
+    update?: album_racesUpdateWithWhereUniqueWithoutCategoryInput | album_racesUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: album_racesUpdateManyWithWhereWithoutCategoryInput | album_racesUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: album_racesScalarWhereInput | album_racesScalarWhereInput[]
+  }
+
+  export type categoriesCreateNestedOneWithoutAlbum_racesInput = {
+    create?: XOR<categoriesCreateWithoutAlbum_racesInput, categoriesUncheckedCreateWithoutAlbum_racesInput>
+    connectOrCreate?: categoriesCreateOrConnectWithoutAlbum_racesInput
+    connect?: categoriesWhereUniqueInput
+  }
+
+  export type albumsCreateNestedManyWithoutRaceInput = {
+    create?: XOR<albumsCreateWithoutRaceInput, albumsUncheckedCreateWithoutRaceInput> | albumsCreateWithoutRaceInput[] | albumsUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: albumsCreateOrConnectWithoutRaceInput | albumsCreateOrConnectWithoutRaceInput[]
+    createMany?: albumsCreateManyRaceInputEnvelope
+    connect?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+  }
+
+  export type albumsUncheckedCreateNestedManyWithoutRaceInput = {
+    create?: XOR<albumsCreateWithoutRaceInput, albumsUncheckedCreateWithoutRaceInput> | albumsCreateWithoutRaceInput[] | albumsUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: albumsCreateOrConnectWithoutRaceInput | albumsCreateOrConnectWithoutRaceInput[]
+    createMany?: albumsCreateManyRaceInputEnvelope
+    connect?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+  }
+
+  export type categoriesUpdateOneRequiredWithoutAlbum_racesNestedInput = {
+    create?: XOR<categoriesCreateWithoutAlbum_racesInput, categoriesUncheckedCreateWithoutAlbum_racesInput>
+    connectOrCreate?: categoriesCreateOrConnectWithoutAlbum_racesInput
+    upsert?: categoriesUpsertWithoutAlbum_racesInput
+    connect?: categoriesWhereUniqueInput
+    update?: XOR<XOR<categoriesUpdateToOneWithWhereWithoutAlbum_racesInput, categoriesUpdateWithoutAlbum_racesInput>, categoriesUncheckedUpdateWithoutAlbum_racesInput>
+  }
+
+  export type albumsUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<albumsCreateWithoutRaceInput, albumsUncheckedCreateWithoutRaceInput> | albumsCreateWithoutRaceInput[] | albumsUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: albumsCreateOrConnectWithoutRaceInput | albumsCreateOrConnectWithoutRaceInput[]
+    upsert?: albumsUpsertWithWhereUniqueWithoutRaceInput | albumsUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: albumsCreateManyRaceInputEnvelope
+    set?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    disconnect?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    delete?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    connect?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    update?: albumsUpdateWithWhereUniqueWithoutRaceInput | albumsUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: albumsUpdateManyWithWhereWithoutRaceInput | albumsUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: albumsScalarWhereInput | albumsScalarWhereInput[]
+  }
+
+  export type albumsUncheckedUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<albumsCreateWithoutRaceInput, albumsUncheckedCreateWithoutRaceInput> | albumsCreateWithoutRaceInput[] | albumsUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: albumsCreateOrConnectWithoutRaceInput | albumsCreateOrConnectWithoutRaceInput[]
+    upsert?: albumsUpsertWithWhereUniqueWithoutRaceInput | albumsUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: albumsCreateManyRaceInputEnvelope
+    set?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    disconnect?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    delete?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    connect?: albumsWhereUniqueInput | albumsWhereUniqueInput[]
+    update?: albumsUpdateWithWhereUniqueWithoutRaceInput | albumsUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: albumsUpdateManyWithWhereWithoutRaceInput | albumsUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: albumsScalarWhereInput | albumsScalarWhereInput[]
+  }
+
+  export type album_racesCreateNestedOneWithoutAlbumsInput = {
+    create?: XOR<album_racesCreateWithoutAlbumsInput, album_racesUncheckedCreateWithoutAlbumsInput>
+    connectOrCreate?: album_racesCreateOrConnectWithoutAlbumsInput
+    connect?: album_racesWhereUniqueInput
+  }
+
+  export type imagesCreateNestedManyWithoutAlbumInput = {
+    create?: XOR<imagesCreateWithoutAlbumInput, imagesUncheckedCreateWithoutAlbumInput> | imagesCreateWithoutAlbumInput[] | imagesUncheckedCreateWithoutAlbumInput[]
+    connectOrCreate?: imagesCreateOrConnectWithoutAlbumInput | imagesCreateOrConnectWithoutAlbumInput[]
+    createMany?: imagesCreateManyAlbumInputEnvelope
+    connect?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+  }
+
+  export type imagesUncheckedCreateNestedManyWithoutAlbumInput = {
+    create?: XOR<imagesCreateWithoutAlbumInput, imagesUncheckedCreateWithoutAlbumInput> | imagesCreateWithoutAlbumInput[] | imagesUncheckedCreateWithoutAlbumInput[]
+    connectOrCreate?: imagesCreateOrConnectWithoutAlbumInput | imagesCreateOrConnectWithoutAlbumInput[]
+    createMany?: imagesCreateManyAlbumInputEnvelope
+    connect?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+  }
+
+  export type album_racesUpdateOneRequiredWithoutAlbumsNestedInput = {
+    create?: XOR<album_racesCreateWithoutAlbumsInput, album_racesUncheckedCreateWithoutAlbumsInput>
+    connectOrCreate?: album_racesCreateOrConnectWithoutAlbumsInput
+    upsert?: album_racesUpsertWithoutAlbumsInput
+    connect?: album_racesWhereUniqueInput
+    update?: XOR<XOR<album_racesUpdateToOneWithWhereWithoutAlbumsInput, album_racesUpdateWithoutAlbumsInput>, album_racesUncheckedUpdateWithoutAlbumsInput>
+  }
+
+  export type imagesUpdateManyWithoutAlbumNestedInput = {
+    create?: XOR<imagesCreateWithoutAlbumInput, imagesUncheckedCreateWithoutAlbumInput> | imagesCreateWithoutAlbumInput[] | imagesUncheckedCreateWithoutAlbumInput[]
+    connectOrCreate?: imagesCreateOrConnectWithoutAlbumInput | imagesCreateOrConnectWithoutAlbumInput[]
+    upsert?: imagesUpsertWithWhereUniqueWithoutAlbumInput | imagesUpsertWithWhereUniqueWithoutAlbumInput[]
+    createMany?: imagesCreateManyAlbumInputEnvelope
+    set?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    disconnect?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    delete?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    connect?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    update?: imagesUpdateWithWhereUniqueWithoutAlbumInput | imagesUpdateWithWhereUniqueWithoutAlbumInput[]
+    updateMany?: imagesUpdateManyWithWhereWithoutAlbumInput | imagesUpdateManyWithWhereWithoutAlbumInput[]
+    deleteMany?: imagesScalarWhereInput | imagesScalarWhereInput[]
+  }
+
+  export type imagesUncheckedUpdateManyWithoutAlbumNestedInput = {
+    create?: XOR<imagesCreateWithoutAlbumInput, imagesUncheckedCreateWithoutAlbumInput> | imagesCreateWithoutAlbumInput[] | imagesUncheckedCreateWithoutAlbumInput[]
+    connectOrCreate?: imagesCreateOrConnectWithoutAlbumInput | imagesCreateOrConnectWithoutAlbumInput[]
+    upsert?: imagesUpsertWithWhereUniqueWithoutAlbumInput | imagesUpsertWithWhereUniqueWithoutAlbumInput[]
+    createMany?: imagesCreateManyAlbumInputEnvelope
+    set?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    disconnect?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    delete?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    connect?: imagesWhereUniqueInput | imagesWhereUniqueInput[]
+    update?: imagesUpdateWithWhereUniqueWithoutAlbumInput | imagesUpdateWithWhereUniqueWithoutAlbumInput[]
+    updateMany?: imagesUpdateManyWithWhereWithoutAlbumInput | imagesUpdateManyWithWhereWithoutAlbumInput[]
+    deleteMany?: imagesScalarWhereInput | imagesScalarWhereInput[]
+  }
+
+  export type albumsCreateNestedOneWithoutImagesInput = {
+    create?: XOR<albumsCreateWithoutImagesInput, albumsUncheckedCreateWithoutImagesInput>
+    connectOrCreate?: albumsCreateOrConnectWithoutImagesInput
+    connect?: albumsWhereUniqueInput
+  }
+
+  export type albumsUpdateOneRequiredWithoutImagesNestedInput = {
+    create?: XOR<albumsCreateWithoutImagesInput, albumsUncheckedCreateWithoutImagesInput>
+    connectOrCreate?: albumsCreateOrConnectWithoutImagesInput
+    upsert?: albumsUpsertWithoutImagesInput
+    connect?: albumsWhereUniqueInput
+    update?: XOR<XOR<albumsUpdateToOneWithWhereWithoutImagesInput, albumsUpdateWithoutImagesInput>, albumsUncheckedUpdateWithoutImagesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -15253,6 +23056,19 @@ export namespace Prisma {
     _max?: NestedEnumevents_modalidadNullableFilter<$PrismaModel>
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
   export type NestedEnumuser_roleNullableFilter<$PrismaModel = never> = {
     equals?: $Enums.user_role | Enumuser_roleFieldRefInput<$PrismaModel> | null
     in?: $Enums.user_role[] | null
@@ -15270,21 +23086,21 @@ export namespace Prisma {
     _max?: NestedEnumuser_roleNullableFilter<$PrismaModel>
   }
 
-  export type NestedEnumactivation_codes_roleNullableFilter<$PrismaModel = never> = {
-    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel> | null
-    in?: $Enums.activation_codes_role[] | null
-    notIn?: $Enums.activation_codes_role[] | null
-    not?: NestedEnumactivation_codes_roleNullableFilter<$PrismaModel> | $Enums.activation_codes_role | null
+  export type NestedEnumactivation_codes_roleFilter<$PrismaModel = never> = {
+    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel>
+    in?: $Enums.activation_codes_role[]
+    notIn?: $Enums.activation_codes_role[]
+    not?: NestedEnumactivation_codes_roleFilter<$PrismaModel> | $Enums.activation_codes_role
   }
 
-  export type NestedEnumactivation_codes_roleNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel> | null
-    in?: $Enums.activation_codes_role[] | null
-    notIn?: $Enums.activation_codes_role[] | null
-    not?: NestedEnumactivation_codes_roleNullableWithAggregatesFilter<$PrismaModel> | $Enums.activation_codes_role | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedEnumactivation_codes_roleNullableFilter<$PrismaModel>
-    _max?: NestedEnumactivation_codes_roleNullableFilter<$PrismaModel>
+  export type NestedEnumactivation_codes_roleWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.activation_codes_role | Enumactivation_codes_roleFieldRefInput<$PrismaModel>
+    in?: $Enums.activation_codes_role[]
+    notIn?: $Enums.activation_codes_role[]
+    not?: NestedEnumactivation_codes_roleWithAggregatesFilter<$PrismaModel> | $Enums.activation_codes_role
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumactivation_codes_roleFilter<$PrismaModel>
+    _max?: NestedEnumactivation_codes_roleFilter<$PrismaModel>
   }
 
   export type userCreateWithoutDeportistasInput = {
@@ -15479,41 +23295,6 @@ export namespace Prisma {
     deportista_id?: StringNullableFilter<"events_resultado"> | string | null
   }
 
-  export type userCreateWithoutEntrenadoresInput = {
-    id: string
-    name: string
-    email: string
-    emailVerified: number
-    image?: string | null
-    createdAt: Date | string
-    updatedAt: Date | string
-    role?: $Enums.user_role | null
-    banned?: number | null
-    banReason?: string | null
-    banExpires?: Date | string | null
-    deportistas?: deportistasCreateNestedManyWithoutUserInput
-  }
-
-  export type userUncheckedCreateWithoutEntrenadoresInput = {
-    id: string
-    name: string
-    email: string
-    emailVerified: number
-    image?: string | null
-    createdAt: Date | string
-    updatedAt: Date | string
-    role?: $Enums.user_role | null
-    banned?: number | null
-    banReason?: string | null
-    banExpires?: Date | string | null
-    deportistas?: deportistasUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type userCreateOrConnectWithoutEntrenadoresInput = {
-    where: userWhereUniqueInput
-    create: XOR<userCreateWithoutEntrenadoresInput, userUncheckedCreateWithoutEntrenadoresInput>
-  }
-
   export type deportistasCreateWithoutEntrenadoresInput = {
     numero_licencia: string
     nombre?: string | null
@@ -15552,6 +23333,75 @@ export namespace Prisma {
   export type deportistasCreateManyEntrenadoresInputEnvelope = {
     data: deportistasCreateManyEntrenadoresInput | deportistasCreateManyEntrenadoresInput[]
     skipDuplicates?: boolean
+  }
+
+  export type userCreateWithoutEntrenadoresInput = {
+    id: string
+    name: string
+    email: string
+    emailVerified: number
+    image?: string | null
+    createdAt: Date | string
+    updatedAt: Date | string
+    role?: $Enums.user_role | null
+    banned?: number | null
+    banReason?: string | null
+    banExpires?: Date | string | null
+    deportistas?: deportistasCreateNestedManyWithoutUserInput
+  }
+
+  export type userUncheckedCreateWithoutEntrenadoresInput = {
+    id: string
+    name: string
+    email: string
+    emailVerified: number
+    image?: string | null
+    createdAt: Date | string
+    updatedAt: Date | string
+    role?: $Enums.user_role | null
+    banned?: number | null
+    banReason?: string | null
+    banExpires?: Date | string | null
+    deportistas?: deportistasUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type userCreateOrConnectWithoutEntrenadoresInput = {
+    where: userWhereUniqueInput
+    create: XOR<userCreateWithoutEntrenadoresInput, userUncheckedCreateWithoutEntrenadoresInput>
+  }
+
+  export type deportistasUpsertWithWhereUniqueWithoutEntrenadoresInput = {
+    where: deportistasWhereUniqueInput
+    update: XOR<deportistasUpdateWithoutEntrenadoresInput, deportistasUncheckedUpdateWithoutEntrenadoresInput>
+    create: XOR<deportistasCreateWithoutEntrenadoresInput, deportistasUncheckedCreateWithoutEntrenadoresInput>
+  }
+
+  export type deportistasUpdateWithWhereUniqueWithoutEntrenadoresInput = {
+    where: deportistasWhereUniqueInput
+    data: XOR<deportistasUpdateWithoutEntrenadoresInput, deportistasUncheckedUpdateWithoutEntrenadoresInput>
+  }
+
+  export type deportistasUpdateManyWithWhereWithoutEntrenadoresInput = {
+    where: deportistasScalarWhereInput
+    data: XOR<deportistasUpdateManyMutationInput, deportistasUncheckedUpdateManyWithoutEntrenadoresInput>
+  }
+
+  export type deportistasScalarWhereInput = {
+    AND?: deportistasScalarWhereInput | deportistasScalarWhereInput[]
+    OR?: deportistasScalarWhereInput[]
+    NOT?: deportistasScalarWhereInput | deportistasScalarWhereInput[]
+    numero_licencia?: StringFilter<"deportistas"> | string
+    nombre?: StringNullableFilter<"deportistas"> | string | null
+    apellidos?: StringNullableFilter<"deportistas"> | string | null
+    dni?: StringNullableFilter<"deportistas"> | string | null
+    telefono?: BigIntNullableFilter<"deportistas"> | bigint | number | null
+    fecha_nacimiento?: DateTimeNullableFilter<"deportistas"> | Date | string | null
+    peso?: DecimalNullableFilter<"deportistas"> | Decimal | DecimalJsLike | number | string | null
+    altura?: DecimalNullableFilter<"deportistas"> | Decimal | DecimalJsLike | number | string | null
+    ftp?: DecimalNullableFilter<"deportistas"> | Decimal | DecimalJsLike | number | string | null
+    pulso?: IntNullableFilter<"deportistas"> | number | null
+    user_id?: StringNullableFilter<"deportistas"> | string | null
+    entrenador_id?: IntNullableFilter<"deportistas"> | number | null
   }
 
   export type userUpsertWithoutEntrenadoresInput = {
@@ -15595,40 +23445,6 @@ export namespace Prisma {
     deportistas?: deportistasUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type deportistasUpsertWithWhereUniqueWithoutEntrenadoresInput = {
-    where: deportistasWhereUniqueInput
-    update: XOR<deportistasUpdateWithoutEntrenadoresInput, deportistasUncheckedUpdateWithoutEntrenadoresInput>
-    create: XOR<deportistasCreateWithoutEntrenadoresInput, deportistasUncheckedCreateWithoutEntrenadoresInput>
-  }
-
-  export type deportistasUpdateWithWhereUniqueWithoutEntrenadoresInput = {
-    where: deportistasWhereUniqueInput
-    data: XOR<deportistasUpdateWithoutEntrenadoresInput, deportistasUncheckedUpdateWithoutEntrenadoresInput>
-  }
-
-  export type deportistasUpdateManyWithWhereWithoutEntrenadoresInput = {
-    where: deportistasScalarWhereInput
-    data: XOR<deportistasUpdateManyMutationInput, deportistasUncheckedUpdateManyWithoutEntrenadoresInput>
-  }
-
-  export type deportistasScalarWhereInput = {
-    AND?: deportistasScalarWhereInput | deportistasScalarWhereInput[]
-    OR?: deportistasScalarWhereInput[]
-    NOT?: deportistasScalarWhereInput | deportistasScalarWhereInput[]
-    numero_licencia?: StringFilter<"deportistas"> | string
-    nombre?: StringNullableFilter<"deportistas"> | string | null
-    apellidos?: StringNullableFilter<"deportistas"> | string | null
-    dni?: StringNullableFilter<"deportistas"> | string | null
-    telefono?: BigIntNullableFilter<"deportistas"> | bigint | number | null
-    fecha_nacimiento?: DateTimeNullableFilter<"deportistas"> | Date | string | null
-    peso?: DecimalNullableFilter<"deportistas"> | Decimal | DecimalJsLike | number | string | null
-    altura?: DecimalNullableFilter<"deportistas"> | Decimal | DecimalJsLike | number | string | null
-    ftp?: DecimalNullableFilter<"deportistas"> | Decimal | DecimalJsLike | number | string | null
-    pulso?: IntNullableFilter<"deportistas"> | number | null
-    user_id?: StringNullableFilter<"deportistas"> | string | null
-    entrenador_id?: IntNullableFilter<"deportistas"> | number | null
-  }
-
   export type events_resultadoCreateWithoutEventsInput = {
     id: number
     tiempo?: Date | string | null
@@ -15662,13 +23478,13 @@ export namespace Prisma {
   export type listado_escuelasCreateWithoutEventsInput = {
     dorsal: number
     nombre_apellido?: string | null
-    confirmado?: number | null
+    confirmado?: boolean | null
   }
 
   export type listado_escuelasUncheckedCreateWithoutEventsInput = {
     dorsal: number
     nombre_apellido?: string | null
-    confirmado?: number | null
+    confirmado?: boolean | null
   }
 
   export type listado_escuelasCreateOrConnectWithoutEventsInput = {
@@ -15720,7 +23536,7 @@ export namespace Prisma {
     carrera_id?: IntFilter<"listado_escuelas"> | number
     dorsal?: IntFilter<"listado_escuelas"> | number
     nombre_apellido?: StringNullableFilter<"listado_escuelas"> | string | null
-    confirmado?: IntNullableFilter<"listado_escuelas"> | number | null
+    confirmado?: BoolNullableFilter<"listado_escuelas"> | boolean | null
   }
 
   export type eventsCreateWithoutEvents_resultadoInput = {
@@ -16034,6 +23850,452 @@ export namespace Prisma {
     user_id?: StringNullableFilter<"entrenadores"> | string | null
   }
 
+  export type modalitiesCreateWithoutYearInput = {
+    name: string
+    path: string
+    categories?: categoriesCreateNestedManyWithoutModalityInput
+  }
+
+  export type modalitiesUncheckedCreateWithoutYearInput = {
+    id?: number
+    name: string
+    path: string
+    categories?: categoriesUncheckedCreateNestedManyWithoutModalityInput
+  }
+
+  export type modalitiesCreateOrConnectWithoutYearInput = {
+    where: modalitiesWhereUniqueInput
+    create: XOR<modalitiesCreateWithoutYearInput, modalitiesUncheckedCreateWithoutYearInput>
+  }
+
+  export type modalitiesCreateManyYearInputEnvelope = {
+    data: modalitiesCreateManyYearInput | modalitiesCreateManyYearInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type modalitiesUpsertWithWhereUniqueWithoutYearInput = {
+    where: modalitiesWhereUniqueInput
+    update: XOR<modalitiesUpdateWithoutYearInput, modalitiesUncheckedUpdateWithoutYearInput>
+    create: XOR<modalitiesCreateWithoutYearInput, modalitiesUncheckedCreateWithoutYearInput>
+  }
+
+  export type modalitiesUpdateWithWhereUniqueWithoutYearInput = {
+    where: modalitiesWhereUniqueInput
+    data: XOR<modalitiesUpdateWithoutYearInput, modalitiesUncheckedUpdateWithoutYearInput>
+  }
+
+  export type modalitiesUpdateManyWithWhereWithoutYearInput = {
+    where: modalitiesScalarWhereInput
+    data: XOR<modalitiesUpdateManyMutationInput, modalitiesUncheckedUpdateManyWithoutYearInput>
+  }
+
+  export type modalitiesScalarWhereInput = {
+    AND?: modalitiesScalarWhereInput | modalitiesScalarWhereInput[]
+    OR?: modalitiesScalarWhereInput[]
+    NOT?: modalitiesScalarWhereInput | modalitiesScalarWhereInput[]
+    id?: IntFilter<"modalities"> | number
+    name?: StringFilter<"modalities"> | string
+    path?: StringFilter<"modalities"> | string
+    year_id?: IntFilter<"modalities"> | number
+  }
+
+  export type categoriesCreateWithoutModalityInput = {
+    path: string
+    name: string
+    album_races?: album_racesCreateNestedManyWithoutCategoryInput
+  }
+
+  export type categoriesUncheckedCreateWithoutModalityInput = {
+    id?: number
+    path: string
+    name: string
+    album_races?: album_racesUncheckedCreateNestedManyWithoutCategoryInput
+  }
+
+  export type categoriesCreateOrConnectWithoutModalityInput = {
+    where: categoriesWhereUniqueInput
+    create: XOR<categoriesCreateWithoutModalityInput, categoriesUncheckedCreateWithoutModalityInput>
+  }
+
+  export type categoriesCreateManyModalityInputEnvelope = {
+    data: categoriesCreateManyModalityInput | categoriesCreateManyModalityInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type yearsCreateWithoutModalitiesInput = {
+    year: number
+    path: string
+  }
+
+  export type yearsUncheckedCreateWithoutModalitiesInput = {
+    id?: number
+    year: number
+    path: string
+  }
+
+  export type yearsCreateOrConnectWithoutModalitiesInput = {
+    where: yearsWhereUniqueInput
+    create: XOR<yearsCreateWithoutModalitiesInput, yearsUncheckedCreateWithoutModalitiesInput>
+  }
+
+  export type categoriesUpsertWithWhereUniqueWithoutModalityInput = {
+    where: categoriesWhereUniqueInput
+    update: XOR<categoriesUpdateWithoutModalityInput, categoriesUncheckedUpdateWithoutModalityInput>
+    create: XOR<categoriesCreateWithoutModalityInput, categoriesUncheckedCreateWithoutModalityInput>
+  }
+
+  export type categoriesUpdateWithWhereUniqueWithoutModalityInput = {
+    where: categoriesWhereUniqueInput
+    data: XOR<categoriesUpdateWithoutModalityInput, categoriesUncheckedUpdateWithoutModalityInput>
+  }
+
+  export type categoriesUpdateManyWithWhereWithoutModalityInput = {
+    where: categoriesScalarWhereInput
+    data: XOR<categoriesUpdateManyMutationInput, categoriesUncheckedUpdateManyWithoutModalityInput>
+  }
+
+  export type categoriesScalarWhereInput = {
+    AND?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+    OR?: categoriesScalarWhereInput[]
+    NOT?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+    id?: IntFilter<"categories"> | number
+    path?: StringFilter<"categories"> | string
+    name?: StringFilter<"categories"> | string
+    modality_id?: IntFilter<"categories"> | number
+  }
+
+  export type yearsUpsertWithoutModalitiesInput = {
+    update: XOR<yearsUpdateWithoutModalitiesInput, yearsUncheckedUpdateWithoutModalitiesInput>
+    create: XOR<yearsCreateWithoutModalitiesInput, yearsUncheckedCreateWithoutModalitiesInput>
+    where?: yearsWhereInput
+  }
+
+  export type yearsUpdateToOneWithWhereWithoutModalitiesInput = {
+    where?: yearsWhereInput
+    data: XOR<yearsUpdateWithoutModalitiesInput, yearsUncheckedUpdateWithoutModalitiesInput>
+  }
+
+  export type yearsUpdateWithoutModalitiesInput = {
+    year?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type yearsUncheckedUpdateWithoutModalitiesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    year?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type album_racesCreateWithoutCategoryInput = {
+    path: string
+    name: string
+    albums?: albumsCreateNestedManyWithoutRaceInput
+  }
+
+  export type album_racesUncheckedCreateWithoutCategoryInput = {
+    id?: number
+    path: string
+    name: string
+    albums?: albumsUncheckedCreateNestedManyWithoutRaceInput
+  }
+
+  export type album_racesCreateOrConnectWithoutCategoryInput = {
+    where: album_racesWhereUniqueInput
+    create: XOR<album_racesCreateWithoutCategoryInput, album_racesUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type album_racesCreateManyCategoryInputEnvelope = {
+    data: album_racesCreateManyCategoryInput | album_racesCreateManyCategoryInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type modalitiesCreateWithoutCategoriesInput = {
+    name: string
+    path: string
+    year: yearsCreateNestedOneWithoutModalitiesInput
+  }
+
+  export type modalitiesUncheckedCreateWithoutCategoriesInput = {
+    id?: number
+    name: string
+    path: string
+    year_id: number
+  }
+
+  export type modalitiesCreateOrConnectWithoutCategoriesInput = {
+    where: modalitiesWhereUniqueInput
+    create: XOR<modalitiesCreateWithoutCategoriesInput, modalitiesUncheckedCreateWithoutCategoriesInput>
+  }
+
+  export type album_racesUpsertWithWhereUniqueWithoutCategoryInput = {
+    where: album_racesWhereUniqueInput
+    update: XOR<album_racesUpdateWithoutCategoryInput, album_racesUncheckedUpdateWithoutCategoryInput>
+    create: XOR<album_racesCreateWithoutCategoryInput, album_racesUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type album_racesUpdateWithWhereUniqueWithoutCategoryInput = {
+    where: album_racesWhereUniqueInput
+    data: XOR<album_racesUpdateWithoutCategoryInput, album_racesUncheckedUpdateWithoutCategoryInput>
+  }
+
+  export type album_racesUpdateManyWithWhereWithoutCategoryInput = {
+    where: album_racesScalarWhereInput
+    data: XOR<album_racesUpdateManyMutationInput, album_racesUncheckedUpdateManyWithoutCategoryInput>
+  }
+
+  export type album_racesScalarWhereInput = {
+    AND?: album_racesScalarWhereInput | album_racesScalarWhereInput[]
+    OR?: album_racesScalarWhereInput[]
+    NOT?: album_racesScalarWhereInput | album_racesScalarWhereInput[]
+    id?: IntFilter<"album_races"> | number
+    path?: StringFilter<"album_races"> | string
+    name?: StringFilter<"album_races"> | string
+    category_id?: IntFilter<"album_races"> | number
+  }
+
+  export type modalitiesUpsertWithoutCategoriesInput = {
+    update: XOR<modalitiesUpdateWithoutCategoriesInput, modalitiesUncheckedUpdateWithoutCategoriesInput>
+    create: XOR<modalitiesCreateWithoutCategoriesInput, modalitiesUncheckedCreateWithoutCategoriesInput>
+    where?: modalitiesWhereInput
+  }
+
+  export type modalitiesUpdateToOneWithWhereWithoutCategoriesInput = {
+    where?: modalitiesWhereInput
+    data: XOR<modalitiesUpdateWithoutCategoriesInput, modalitiesUncheckedUpdateWithoutCategoriesInput>
+  }
+
+  export type modalitiesUpdateWithoutCategoriesInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    year?: yearsUpdateOneRequiredWithoutModalitiesNestedInput
+  }
+
+  export type modalitiesUncheckedUpdateWithoutCategoriesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    year_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type categoriesCreateWithoutAlbum_racesInput = {
+    path: string
+    name: string
+    modality: modalitiesCreateNestedOneWithoutCategoriesInput
+  }
+
+  export type categoriesUncheckedCreateWithoutAlbum_racesInput = {
+    id?: number
+    path: string
+    name: string
+    modality_id: number
+  }
+
+  export type categoriesCreateOrConnectWithoutAlbum_racesInput = {
+    where: categoriesWhereUniqueInput
+    create: XOR<categoriesCreateWithoutAlbum_racesInput, categoriesUncheckedCreateWithoutAlbum_racesInput>
+  }
+
+  export type albumsCreateWithoutRaceInput = {
+    name: string
+    cover: string
+    images?: imagesCreateNestedManyWithoutAlbumInput
+  }
+
+  export type albumsUncheckedCreateWithoutRaceInput = {
+    id?: number
+    name: string
+    cover: string
+    images?: imagesUncheckedCreateNestedManyWithoutAlbumInput
+  }
+
+  export type albumsCreateOrConnectWithoutRaceInput = {
+    where: albumsWhereUniqueInput
+    create: XOR<albumsCreateWithoutRaceInput, albumsUncheckedCreateWithoutRaceInput>
+  }
+
+  export type albumsCreateManyRaceInputEnvelope = {
+    data: albumsCreateManyRaceInput | albumsCreateManyRaceInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type categoriesUpsertWithoutAlbum_racesInput = {
+    update: XOR<categoriesUpdateWithoutAlbum_racesInput, categoriesUncheckedUpdateWithoutAlbum_racesInput>
+    create: XOR<categoriesCreateWithoutAlbum_racesInput, categoriesUncheckedCreateWithoutAlbum_racesInput>
+    where?: categoriesWhereInput
+  }
+
+  export type categoriesUpdateToOneWithWhereWithoutAlbum_racesInput = {
+    where?: categoriesWhereInput
+    data: XOR<categoriesUpdateWithoutAlbum_racesInput, categoriesUncheckedUpdateWithoutAlbum_racesInput>
+  }
+
+  export type categoriesUpdateWithoutAlbum_racesInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    modality?: modalitiesUpdateOneRequiredWithoutCategoriesNestedInput
+  }
+
+  export type categoriesUncheckedUpdateWithoutAlbum_racesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    modality_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type albumsUpsertWithWhereUniqueWithoutRaceInput = {
+    where: albumsWhereUniqueInput
+    update: XOR<albumsUpdateWithoutRaceInput, albumsUncheckedUpdateWithoutRaceInput>
+    create: XOR<albumsCreateWithoutRaceInput, albumsUncheckedCreateWithoutRaceInput>
+  }
+
+  export type albumsUpdateWithWhereUniqueWithoutRaceInput = {
+    where: albumsWhereUniqueInput
+    data: XOR<albumsUpdateWithoutRaceInput, albumsUncheckedUpdateWithoutRaceInput>
+  }
+
+  export type albumsUpdateManyWithWhereWithoutRaceInput = {
+    where: albumsScalarWhereInput
+    data: XOR<albumsUpdateManyMutationInput, albumsUncheckedUpdateManyWithoutRaceInput>
+  }
+
+  export type albumsScalarWhereInput = {
+    AND?: albumsScalarWhereInput | albumsScalarWhereInput[]
+    OR?: albumsScalarWhereInput[]
+    NOT?: albumsScalarWhereInput | albumsScalarWhereInput[]
+    id?: IntFilter<"albums"> | number
+    name?: StringFilter<"albums"> | string
+    cover?: StringFilter<"albums"> | string
+    race_id?: IntFilter<"albums"> | number
+  }
+
+  export type album_racesCreateWithoutAlbumsInput = {
+    path: string
+    name: string
+    category: categoriesCreateNestedOneWithoutAlbum_racesInput
+  }
+
+  export type album_racesUncheckedCreateWithoutAlbumsInput = {
+    id?: number
+    path: string
+    name: string
+    category_id: number
+  }
+
+  export type album_racesCreateOrConnectWithoutAlbumsInput = {
+    where: album_racesWhereUniqueInput
+    create: XOR<album_racesCreateWithoutAlbumsInput, album_racesUncheckedCreateWithoutAlbumsInput>
+  }
+
+  export type imagesCreateWithoutAlbumInput = {
+    path: string
+  }
+
+  export type imagesUncheckedCreateWithoutAlbumInput = {
+    id?: number
+    path: string
+  }
+
+  export type imagesCreateOrConnectWithoutAlbumInput = {
+    where: imagesWhereUniqueInput
+    create: XOR<imagesCreateWithoutAlbumInput, imagesUncheckedCreateWithoutAlbumInput>
+  }
+
+  export type imagesCreateManyAlbumInputEnvelope = {
+    data: imagesCreateManyAlbumInput | imagesCreateManyAlbumInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type album_racesUpsertWithoutAlbumsInput = {
+    update: XOR<album_racesUpdateWithoutAlbumsInput, album_racesUncheckedUpdateWithoutAlbumsInput>
+    create: XOR<album_racesCreateWithoutAlbumsInput, album_racesUncheckedCreateWithoutAlbumsInput>
+    where?: album_racesWhereInput
+  }
+
+  export type album_racesUpdateToOneWithWhereWithoutAlbumsInput = {
+    where?: album_racesWhereInput
+    data: XOR<album_racesUpdateWithoutAlbumsInput, album_racesUncheckedUpdateWithoutAlbumsInput>
+  }
+
+  export type album_racesUpdateWithoutAlbumsInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    category?: categoriesUpdateOneRequiredWithoutAlbum_racesNestedInput
+  }
+
+  export type album_racesUncheckedUpdateWithoutAlbumsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    category_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type imagesUpsertWithWhereUniqueWithoutAlbumInput = {
+    where: imagesWhereUniqueInput
+    update: XOR<imagesUpdateWithoutAlbumInput, imagesUncheckedUpdateWithoutAlbumInput>
+    create: XOR<imagesCreateWithoutAlbumInput, imagesUncheckedCreateWithoutAlbumInput>
+  }
+
+  export type imagesUpdateWithWhereUniqueWithoutAlbumInput = {
+    where: imagesWhereUniqueInput
+    data: XOR<imagesUpdateWithoutAlbumInput, imagesUncheckedUpdateWithoutAlbumInput>
+  }
+
+  export type imagesUpdateManyWithWhereWithoutAlbumInput = {
+    where: imagesScalarWhereInput
+    data: XOR<imagesUpdateManyMutationInput, imagesUncheckedUpdateManyWithoutAlbumInput>
+  }
+
+  export type imagesScalarWhereInput = {
+    AND?: imagesScalarWhereInput | imagesScalarWhereInput[]
+    OR?: imagesScalarWhereInput[]
+    NOT?: imagesScalarWhereInput | imagesScalarWhereInput[]
+    id?: IntFilter<"images"> | number
+    path?: StringFilter<"images"> | string
+    album_Id?: IntFilter<"images"> | number
+  }
+
+  export type albumsCreateWithoutImagesInput = {
+    name: string
+    cover: string
+    race: album_racesCreateNestedOneWithoutAlbumsInput
+  }
+
+  export type albumsUncheckedCreateWithoutImagesInput = {
+    id?: number
+    name: string
+    cover: string
+    race_id: number
+  }
+
+  export type albumsCreateOrConnectWithoutImagesInput = {
+    where: albumsWhereUniqueInput
+    create: XOR<albumsCreateWithoutImagesInput, albumsUncheckedCreateWithoutImagesInput>
+  }
+
+  export type albumsUpsertWithoutImagesInput = {
+    update: XOR<albumsUpdateWithoutImagesInput, albumsUncheckedUpdateWithoutImagesInput>
+    create: XOR<albumsCreateWithoutImagesInput, albumsUncheckedCreateWithoutImagesInput>
+    where?: albumsWhereInput
+  }
+
+  export type albumsUpdateToOneWithWhereWithoutImagesInput = {
+    where?: albumsWhereInput
+    data: XOR<albumsUpdateWithoutImagesInput, albumsUncheckedUpdateWithoutImagesInput>
+  }
+
+  export type albumsUpdateWithoutImagesInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    race?: album_racesUpdateOneRequiredWithoutAlbumsNestedInput
+  }
+
+  export type albumsUncheckedUpdateWithoutImagesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    race_id?: IntFieldUpdateOperationsInput | number
+  }
+
   export type events_resultadoCreateManyDeportistasInput = {
     id: number
     tiempo?: Date | string | null
@@ -16145,7 +24407,7 @@ export namespace Prisma {
   export type listado_escuelasCreateManyEventsInput = {
     dorsal: number
     nombre_apellido?: string | null
-    confirmado?: number | null
+    confirmado?: boolean | null
   }
 
   export type events_resultadoUpdateWithoutEventsInput = {
@@ -16181,19 +24443,19 @@ export namespace Prisma {
   export type listado_escuelasUpdateWithoutEventsInput = {
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type listado_escuelasUncheckedUpdateWithoutEventsInput = {
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type listado_escuelasUncheckedUpdateManyWithoutEventsInput = {
     dorsal?: IntFieldUpdateOperationsInput | number
     nombre_apellido?: NullableStringFieldUpdateOperationsInput | string | null
-    confirmado?: NullableIntFieldUpdateOperationsInput | number | null
+    confirmado?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type deportistasCreateManyUserInput = {
@@ -16290,6 +24552,125 @@ export namespace Prisma {
     dni?: NullableStringFieldUpdateOperationsInput | string | null
     telefono?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     fecha_nacimiento?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type modalitiesCreateManyYearInput = {
+    id?: number
+    name: string
+    path: string
+  }
+
+  export type modalitiesUpdateWithoutYearInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    categories?: categoriesUpdateManyWithoutModalityNestedInput
+  }
+
+  export type modalitiesUncheckedUpdateWithoutYearInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+    categories?: categoriesUncheckedUpdateManyWithoutModalityNestedInput
+  }
+
+  export type modalitiesUncheckedUpdateManyWithoutYearInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type categoriesCreateManyModalityInput = {
+    id?: number
+    path: string
+    name: string
+  }
+
+  export type categoriesUpdateWithoutModalityInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    album_races?: album_racesUpdateManyWithoutCategoryNestedInput
+  }
+
+  export type categoriesUncheckedUpdateWithoutModalityInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    album_races?: album_racesUncheckedUpdateManyWithoutCategoryNestedInput
+  }
+
+  export type categoriesUncheckedUpdateManyWithoutModalityInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type album_racesCreateManyCategoryInput = {
+    id?: number
+    path: string
+    name: string
+  }
+
+  export type album_racesUpdateWithoutCategoryInput = {
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    albums?: albumsUpdateManyWithoutRaceNestedInput
+  }
+
+  export type album_racesUncheckedUpdateWithoutCategoryInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    albums?: albumsUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type album_racesUncheckedUpdateManyWithoutCategoryInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type albumsCreateManyRaceInput = {
+    id?: number
+    name: string
+    cover: string
+  }
+
+  export type albumsUpdateWithoutRaceInput = {
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    images?: imagesUpdateManyWithoutAlbumNestedInput
+  }
+
+  export type albumsUncheckedUpdateWithoutRaceInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+    images?: imagesUncheckedUpdateManyWithoutAlbumNestedInput
+  }
+
+  export type albumsUncheckedUpdateManyWithoutRaceInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    cover?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type imagesCreateManyAlbumInput = {
+    id?: number
+    path: string
+  }
+
+  export type imagesUpdateWithoutAlbumInput = {
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type imagesUncheckedUpdateWithoutAlbumInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type imagesUncheckedUpdateManyWithoutAlbumInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    path?: StringFieldUpdateOperationsInput | string
   }
 
 

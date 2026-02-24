@@ -1,86 +1,91 @@
-import { NextRequest } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-import Busboy from 'busboy';
-import { Readable } from 'stream';
+import { NextRequest, NextResponse } from "next/server";
+import { log } from "discord-logify";
+import path from "path";
+import fs from "fs";
+import prisma from "@/lib/prisma";
 
-export async function POST(req: NextRequest): Promise<Response> {
-  return new Promise((resolve) => {
-    const uploads: string[] = [];
+export async function POST(req: NextRequest) {
+  const logger = new log();
 
-    const busboy = Busboy({ headers: Object.fromEntries(req.headers) });
+  try {
+    const formData = await req.formData();
+    const files = formData.getAll("file");
+    const dir = formData.get("dir")?.toString();
+    const type = formData.get("type")?.toString();
+    const album = formData.get("album")?.toString().split("/");
 
-    let dir = "/www/wwwroot/photos.txuli.com/duranguesa/gallery-v2";
-    let baseFileName = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    let fileExtension = ".webp";
-    let fileIndex = 0;
+    if (!dir) {
+      return NextResponse.json({ message: "Missing dir" }, { status: 400 });
+    }
 
-    busboy.on('field', (fieldname, value) => {
-      if (fieldname === 'name') {
-        baseFileName = value;
-        console.log(baseFileName, "NOMBRE BASE DEL ARCHIVO");
-      }
-      if (fieldname === 'dir') {
-        dir = value;
-        if (!fs.existsSync(dir)) {
-          fs.mkdirSync(dir, { recursive: true });
+ 
+   if (files.length === 0) return NextResponse.json({ message: "No files" }, { status: 400 });
+
+    for (const element of files) {
+      if (!(element instanceof File)) continue;
+
+      const bytes = await element.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+
+   
+      const filePath = path.join(dir, formData.get("name")?.toString()+".webp" as string);
+
+      
+       await fs.promises.writeFile(filePath, buffer);
+
+      switch (type) {
+        case "Año": {
+          const name = formData.get("name")?.toString();
+          if (name) {
+            await prisma.years.create({
+              data: {
+                year: parseInt(name, 10),
+                path: `${dir.slice(13)}/${name}.webp`,
+              },
+            });
+          }
+          logger.Info("year correctly created");
+          break;
         }
-      }
-    });
 
-    busboy.on('file', (fieldname: string, file: NodeJS.ReadableStream, filename: string, encoding: string, mimetype: string) => {
-      let currentName = fileIndex === 0 ? `${baseFileName}${fileExtension}` : `${baseFileName}_${fileIndex}${fileExtension}`;
-      let destPath = path.join(dir, currentName);
+        case "Modalidad": {
+          const name = formData.get("name")?.toString();
+          if (album?.[1] && name) {
+            const albumId = await prisma.years.findUnique({
+              where: { year: parseInt(album[1], 10) },
+            });
 
-      // Prevent accidental overwrite if file exists (edge case)
-      while (fs.existsSync(destPath)) {
-        fileIndex++;
-        currentName = `${baseFileName}_${fileIndex}${fileExtension}`;
-        destPath = path.join(dir, currentName);
-      }
-
-      const stream = fs.createWriteStream(destPath);
-      file.pipe(stream);
-
-      file.on('end', () => {
-        fs.chmodSync(destPath, 0o644);
-        uploads.push(destPath);
-        fileIndex++; // Increment index for the next file
-      });
-    });
-
-    busboy.on('finish', () => {
-      if (uploads.length > 0) {
-        resolve(
-          new Response(`Imágenes subidas correctamente.`, {
-            status: 201,
-            headers: { 'Content-Type': 'text/plain' },
-          })
-        );
-      } else {
-        resolve(
-          new Response("No se subió ninguna imagen.", {
-            status: 400,
-            headers: { 'Content-Type': 'text/plain' },
-          })
-        );
-      }
-    });
-
-
-    const reader = req.body?.getReader();
-    const nodeStream = new Readable({
-      async read() {
-        if (!reader) return this.push(null);
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          this.push(value);
+            if (albumId?.id != null) {
+              await prisma.modalities.create({
+                data: {
+                  path: dir.slice(13),
+                  name: name,
+                  year: { connect: { id: albumId.id } },
+                },
+              });
+            }
+          }
+          logger.Info("modality correctly created");
+          break;
         }
-        this.push(null);
-      },
-    });
+        case "Categoria":
+          
+          break
 
-    nodeStream.pipe(busboy);
-  });
+        default:
+          logger.Error("Invalid type")
+          return NextResponse.json({ message: "Invalid type" }, { status: 400 });
+      }
+    }
+
+    
+    return NextResponse.json({ message: "success" }, { status: 200 });
+  } catch (error) {
+    logger.Error(String(error));
+  
+    return NextResponse.json(
+      { message: "Internal error", error: String(error) },
+      { status: 500 }
+    );
+  }
 }
