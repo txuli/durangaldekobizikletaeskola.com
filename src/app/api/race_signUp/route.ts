@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
             data: {
                 dorsal: Number(dorsal),
                 nombre_apellido,
-                confirmado: 1,
+                confirmado: true,
                 events: {
                     connect: { id: Number(carrera_id) }
                 }
