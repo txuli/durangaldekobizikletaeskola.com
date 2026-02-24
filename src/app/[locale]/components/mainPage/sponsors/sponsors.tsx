@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import MainSponsor from './mainSponsor';
 import Secondsponsor from './secondSponsor';
 import Helpers from './helpers';
-import cumenor  from 'public/media/CUMENOR 2.svg'
+
 import SubTitle from '../Titles/SubTitle';
 
 
@@ -22,7 +22,7 @@ const SECONDARY_SPONSORS = [
 
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-EuskadiLowCost.webp', link: 'https://www.euskadilowcost.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-ControlPack.webp', link: 'https://www.controlpack.com/', style: undefined },
-
+    { img: 'https://photos.txuli.com/duranguesa/sponsors/ocamino.webp', link: 'https://www.ocaminohotel.es/', style: "row-start-2" },
 ];
 
 const HELPERS = [
@@ -59,9 +59,11 @@ const Sponsor = () => {
     const renderSecondarySponsors = () => (
         <>
 
-            <div className=" grid w-10/12 md:w-9/12 mx-auto grid-cols-3 lg:grid-cols-4  place-items-center gap-2 sm:gap-5  justify-items-center mb-6">
+            <div className="flex flex-wrap w-10/12 md:w-9/12 mx-auto justify-center gap-2 sm:gap-5 mb-6">
                 {SECONDARY_SPONSORS.map(({ img, link, style }, idx) => (
-                    <Secondsponsor key={idx} img={img} Link={link} style={style} />
+                    <div key={idx} className="w-[30%] lg:w-[22%] flex justify-center">
+                        <Secondsponsor img={img} Link={link} style={style} />
+                    </div>
                 ))}
             </div>
 
@@ -81,13 +83,13 @@ const Sponsor = () => {
 
         </>
     );
-    if (pathname == '/eus/bttTxapelduna' || pathname == '/es/bttTxapelduna' || pathname == 'es/irrisarriNotice' || pathname == 'eus/irrisarriNotice' || pathname == '/eus/espainakoTxapelketa' || pathname == '/es/espainakoTxapelketa'|| pathname == '/eus/tenporadaAsiera' || pathname == '/es/tenporadaAsiera' ) {
+    if (pathname == '/eus/bttTxapelduna' || pathname == '/es/bttTxapelduna' || pathname == 'es/irrisarriNotice' || pathname == 'eus/irrisarriNotice' || pathname == '/eus/espainakoTxapelketa' || pathname == '/es/espainakoTxapelketa' || pathname == '/eus/tenporadaAsiera' || pathname == '/es/tenporadaAsiera') {
         return null;
     }
 
     return (
         <div className='w-full'>
-            {pathname === '/eus/cafedromedario'  && (
+            {pathname === '/eus/cafedromedario' && (
                 <>
                     <SubTitle subTitle="BABESLEAK" />
                     {renderMainSponsors()}
@@ -115,7 +117,7 @@ const Sponsor = () => {
 
                 </>
             )}
-            {(pathname !== '/es/cafedromedario' && pathname !== '/es/eskola' && pathname !== '/eus/cafedromedario' && pathname !== '/eus/eskola' && pathname === '/es' ) && (
+            {(pathname !== '/es/cafedromedario' && pathname !== '/es/eskola' && pathname !== '/eus/cafedromedario' && pathname !== '/eus/eskola' && pathname === '/es') && (
                 <>
                     <SubTitle subTitle="PATROCINADORES" />
                     {renderMainSponsors()}
