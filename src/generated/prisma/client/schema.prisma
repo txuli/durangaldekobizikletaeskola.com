@@ -28,7 +28,7 @@ model deportistas {
   numero_licencia  String             @id @db.VarChar(50)
   nombre           String?            @db.VarChar(100)
   apellidos        String?            @db.VarChar(100)
-  dni              String?            @unique(map: "dni") @db.VarChar(20)
+  dni              String?            @unique(map: "dni_UNIQUE") @db.VarChar(20)
   telefono         BigInt?
   fecha_nacimiento DateTime?          @db.Date
   peso             Decimal?           @db.Decimal(10, 2)
@@ -38,23 +38,23 @@ model deportistas {
   user_id          String?            @db.VarChar(36)
   entrenador_id    Int?
   user             user?              @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "deportistas_ibfk_1")
-  entrenadores     entrenadores?      @relation(fields: [entrenador_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "deportistas_ibfk_2")
+  entrenadores     entrenadores?      @relation(fields: [entrenador_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "deportistas_ibfk_2")
   events_resultado events_resultado[]
 
-  @@index([entrenador_id], map: "entrenador_id")
   @@index([user_id], map: "user_id")
+  @@index([entrenador_id], map: "deportistas_ibfk_2_idx")
 }
 
 model entrenadores {
   id               Int           @id
   nombre           String?       @db.VarChar(100)
   apellidos        String?       @db.VarChar(100)
-  dni              String?       @unique(map: "dni") @db.VarChar(20)
+  dni              String?       @unique(map: "dni_UNIQUE") @db.VarChar(20)
   telefono         BigInt?
   fecha_nacimiento DateTime?     @db.Date
   user_id          String?       @db.VarChar(36)
-  user             user?         @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "entrenadores_ibfk_1")
   deportistas      deportistas[]
+  user             user?         @relation(fields: [user_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "entrenadores_ibfk_1")
 
   @@index([user_id], map: "user_id")
 }
@@ -68,7 +68,7 @@ model events {
   modalidad        events_modalidad?
   descripcion      String?            @db.Text
   events_resultado events_resultado[]
-  listado_escuelas listado_escuelas[] @relation(map: "listado_escuelas_ibfk_1")
+  listado_escuelas listado_escuelas[]
 }
 
 model events_resultado {
@@ -89,10 +89,10 @@ model events_resultado {
 
 model listado_escuelas {
   carrera_id      Int
-  dorsal          Int
-  nombre_apellido String? @db.VarChar(100)
-  confirmado      Int?    @db.TinyInt
-  events          events  @relation(fields: [carrera_id], references: [id], onDelete: Cascade, onUpdate: Cascade, map: "listado_escuelas_ibfk_1")
+  dorsal          Int      @unique(map: "dorsal_UNIQUE")
+  nombre_apellido String?  @db.VarChar(100)
+  confirmado      Boolean? @default(true)
+  events          events   @relation(fields: [carrera_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "listado_escuelas_ibfk_1")
 
   @@id([carrera_id, dorsal])
   @@map("listado_escuelas")
@@ -136,11 +136,71 @@ model verification {
 }
 
 model activation_codes {
-  id         Int                    @id @default(autoincrement())
-  code       String                 @unique
-  role       activation_codes_role?
-  expires_at DateTime?              @db.DateTime(0)
-  usos       Int                    @default(0)
+  id         Int                   @id @default(autoincrement())
+  code       String                @unique(map: "code") @db.VarChar(255)
+  role       activation_codes_role
+  expires_at DateTime              @db.DateTime(0)
+  usos       Int?                  @default(0)
+}
+
+model years {
+  id         Int          @id @default(autoincrement())
+  year       Int          @unique
+  path       String
+  modalities modalities[]
+}
+
+model modalities {
+  id         Int          @id @default(autoincrement())
+  name       String
+  path       String
+  year_id    Int
+  categories categories[]
+  year       years        @relation(fields: [year_id], references: [id], onDelete: Cascade, onUpdate: Restrict)
+
+  @@index([year_id], map: "modalities_year_id_fkey")
+}
+
+model categories {
+  id          Int           @id @default(autoincrement())
+  path        String
+  name        String
+  modality_id Int
+  album_races album_races[]
+  modality    modalities    @relation(fields: [modality_id], references: [id], onDelete: Cascade, onUpdate: Restrict)
+
+  @@index([modality_id], map: "categories_modality_id_fkey")
+}
+
+model album_races {
+  id          Int        @id @default(autoincrement())
+  path        String
+  name        String
+  category_id Int
+  category    categories @relation(fields: [category_id], references: [id], onDelete: Cascade, onUpdate: Restrict)
+  albums      albums[]
+
+  @@index([category_id], map: "album_races_category_id_fkey")
+}
+
+model albums {
+  id      Int         @id @default(autoincrement())
+  name    String      @unique
+  cover   String
+  race_id Int
+  race    album_races @relation(fields: [race_id], references: [id], onDelete: Cascade, onUpdate: Restrict)
+  images  images[]
+
+  @@index([race_id], map: "albums_race_id_fkey")
+}
+
+model images {
+  id       Int    @id @default(autoincrement())
+  path     String
+  album_Id Int
+  album    albums @relation(fields: [album_Id], references: [id], onDelete: Cascade, onUpdate: Restrict)
+
+  @@index([album_Id], map: "images_album_Id_fkey")
 }
 
 enum events_categoria {
