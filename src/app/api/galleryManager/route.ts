@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { withAuth } from "@/lib/api-auth";
 
 export async function POST(req: NextRequest) {
+  const { response } = await withAuth(req);
+  if (response) return response;
+
   console.log("Request:", req);
   try {
     const body = await req.json();

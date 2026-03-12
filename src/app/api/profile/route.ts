@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { auth } from "@/lib/auth";
+import { withAuth } from "@/lib/api-auth";
 
 export async function PUT(req: NextRequest) {
-    const session = await auth.api.getSession({ headers: req.headers });
-    if (!session) {
-        return NextResponse.json({ error: "No autorizado" }, { status: 401 });
-    }
+    const { session, response } = await withAuth(req);
+    if (response) return response;
 
     const data = await req.json();
 

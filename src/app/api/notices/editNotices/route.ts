@@ -1,8 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
-
+import { withRoleAuth  } from "@/lib/api-auth";
+//TODO use th correct handler
 export async function POST(request: NextRequest) {
+  const { response } = await withRoleAuth(request,["admin","staff"]);
+  if (response) return response;
+
   try {
     
     const body = await request.json();

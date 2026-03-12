@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { withAuth } from "@/lib/api-auth";
 
 export async function POST(req: NextRequest) {
+    const { session, response } = await withAuth(req);
+    if (response) return response;
+
     try {
         const body = await req.json();
         const { carrera, valoracion_deportista, valoracion_entrenador } = body;

@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { withAuth } from "@/lib/api-auth";
 
 export async function GET(req: NextRequest) {
+    const { response } = await withAuth(req);
+    if (response) return response;
     const { searchParams } = new URL(req.url);
     const carrera_id = Number(searchParams.get("carrera_id"));
     if (!carrera_id) return NextResponse.json([], { status: 200 });
@@ -15,6 +18,9 @@ export async function GET(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
+    const { response } = await withAuth(req);
+    if (response) return response;
+
     const { carrera_id, dorsal, confirmado } = await req.json();
     await prisma.listado_escuelas.update({
         where: { carrera_id_dorsal: { carrera_id, dorsal } },

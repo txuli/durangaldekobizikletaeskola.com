@@ -14,10 +14,7 @@ export default async function Page() {
     return null; // Ensure the function exits after redirect
   }
 
-  if (session.user.role !== 'admin' && session.user.role !== 'staff') {
-    redirect({ href: "/dashboard", locale: "es" });
-    return null; // Ensure the function exits after redirect
-  }
-  //role={session.user.role} 
+  
+
   return <ImageContent/>;
 }

@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
+import { withAuth } from "@/lib/api-auth";
 
 function replacerBigInt(_: string, value: any) {
     return typeof value === "bigint" ? value.toString() : value;
@@ -12,12 +11,11 @@ export async function GET(req: NextRequest) {
     const url = new URL(req.url);
     const available = url.searchParams.get("available");
 
-    const session = await auth.api.getSession({
-        headers: await headers()
-    });
+    const { session, response } = await withAuth(req);
+    if (response) return response;
 
-    const userId = session?.user?.id;
-    const rol = session?.user?.role;
+    const userId = session.user.id;
+    const rol = session.user.role;
 
     let deportistas;
     if (available === "true") {
@@ -51,11 +49,10 @@ export async function GET(req: NextRequest) {
 
 // Editar o asignar deportistas (PUT)
 export async function PUT(req: NextRequest) {
-    const session = await auth.api.getSession({
-        headers: await headers()
-    });
+    const { session, response } = await withAuth(req);
+    if (response) return response;
 
-    const userId = session?.user?.id;
+    const userId = session.user.id;
 
     const data = await req.json();
 

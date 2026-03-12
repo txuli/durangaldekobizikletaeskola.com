@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { withAuth } from "@/lib/api-auth";
 
 export async function POST(req: NextRequest) {
+    const { response } = await withAuth(req);
+    if (response) return response;
+
     try {
         const { carrera_id, nombre_apellido, dorsal } = await req.json();
 

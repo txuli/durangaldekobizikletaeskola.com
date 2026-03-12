@@ -70,6 +70,10 @@ export default async function PerfilPage() {
             extraData = {
                 ...deportista,
                 licencia: deportista.numero_licencia,
+                peso: deportista.peso !== null ? Number(deportista.peso) : null,
+                altura: deportista.altura !== null ? Number(deportista.altura) : null,
+                ftp: deportista.ftp !== null ? Number(deportista.ftp) : null,
+                pulso: deportista.pulso !== null ? Number(deportista.pulso) : null,
             };
             delete (extraData as any).numero_licencia;
         }

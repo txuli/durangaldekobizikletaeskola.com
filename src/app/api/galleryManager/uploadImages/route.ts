@@ -3,8 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import Busboy from 'busboy';
 import { Readable } from 'stream';
+import { withAdminAuth } from '@/lib/api-auth';
 
 export async function POST(req: NextRequest): Promise<Response> {
+  const { response } = await withAdminAuth(req);
+  if (response) return response;
+
   return new Promise((resolve) => {
     const uploads: string[] = [];
 

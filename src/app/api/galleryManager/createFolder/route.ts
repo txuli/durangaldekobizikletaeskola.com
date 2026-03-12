@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { mkdir } from 'fs/promises';
+import { withAdminAuth } from '@/lib/api-auth';
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
+  const { response } = await withAdminAuth(req);
+  if (response) return response;
+
   try {
     const body = await req.json();
     const { folder } = body;

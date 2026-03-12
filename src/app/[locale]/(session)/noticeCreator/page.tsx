@@ -21,7 +21,7 @@ export default async function Page(props: any) {
     if (rol !== "admin" && rol !== "staff") {
         redirect("/es/dashboard");
     }
-
+    //BUG solve the error
     const selected = await searchParams?.option;
 
     const renderContent = () => {

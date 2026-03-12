@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { NextRequest } from "next/server";
+import { withAdminAuth } from "@/lib/api-auth";
 
 // Función para generar un código aleatorio
 function generateCode(length = 8) {
@@ -13,6 +15,9 @@ function generateCode(length = 8) {
 
 // GET: Solo códigos no expirados
 export async function GET(req: Request) {
+    const { response } = await withAdminAuth(req as NextRequest);
+    if (response) return response;
+
     const url = new URL(req.url!);
     const expired = url.searchParams.get("expired");
     const now = new Date();
@@ -41,6 +46,9 @@ export async function GET(req: Request) {
 
 // POST: Generar código aleatorio
 export async function POST(req: Request) {
+    const { response } = await withAdminAuth(req as NextRequest);
+    if (response) return response;
+
     const { role } = await req.json();
 
     if (!role) {
@@ -72,6 +80,9 @@ export async function POST(req: Request) {
 
 // DELETE: Eliminar código
 export async function DELETE(req: Request) {
+    const { response } = await withAdminAuth(req as NextRequest);
+    if (response) return response;
+
     const { id } = await req.json();
     if (!id) {
         return NextResponse.json({ error: "Falta el id" }, { status: 400 });

@@ -19,8 +19,12 @@ async function getUsers() {
         redirect("/es/dashboard");
     }
 
+    const requestHeaders = await headers();
     const res = await fetch(`${API_URL}/api/usersManagement`, {
         cache: "no-store",
+        headers: {
+            cookie: requestHeaders.get("cookie") ?? "",
+        },
     });
 
     if (!res.ok) {

@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { withAdminAuth } from "@/lib/api-auth";
 
 // Function to get all users from the database
-export async function GET() {
+export async function GET(req: NextRequest) {
+    const { response } = await withAdminAuth(req);
+    if (response) return response;
     const users = (await prisma.user.findMany({
         select: {
             id: true,
@@ -22,6 +25,9 @@ export async function GET() {
 
 // Function to modify a user
 export async function PUT(req: NextRequest) {
+    const { response } = await withAdminAuth(req);
+    if (response) return response;
+
     const res= await req.json();
     const { id, ...rest } = res;
     const user = await prisma.user.update({
@@ -36,6 +42,9 @@ export async function PUT(req: NextRequest) {
 
 // Function to delete a user
 export async function DELETE(req: NextRequest) {
+    const { response } = await withAdminAuth(req);
+    if (response) return response;
+
     const res = await req.json();
     const { id } = res;
 

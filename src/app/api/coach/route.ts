@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { withRoleAuth } from "@/lib/api-auth";
 
 // Obtener todos los entrenadores (GET)
-export async function GET() {
+export async function GET(req: NextRequest) {
+      const { response } = await withRoleAuth(req,["admin","staff"]);
+    if (response) return response;
     // 1. Obtén todos los usuarios con rol "coach"
     const users = await prisma.user.findMany({
         where: { role: "coach" },
@@ -49,6 +52,9 @@ export async function GET() {
 
 // Editar entrenador (PUT)
 export async function PUT(req: NextRequest) {
+    const { response } = await withRoleAuth(req,["admin","staff"]);
+    if (response) return response;
+
     const data = await req.json();
     const { user_id, id, nombre, apellidos, dni, telefono, fecha_nacimiento } = data;
 

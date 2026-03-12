@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { NextRequest } from "next/server";
+import { withAdminAuth } from "@/lib/api-auth";
 
 // Obtener deportistas (GET)
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
+    const { session, response } = await withAdminAuth(req);
+    if (response) return response;
     const { search } = Object.fromEntries(new URL(req.url).searchParams);
 
     if (search === "maxId") {
@@ -59,6 +63,9 @@ export async function GET(req: Request) {
 
 // Crear un deportista (POST)
 export async function POST(req: Request) {
+    const { response } = await withAdminAuth(req as NextRequest);
+    if (response) return response;
+
     try {
         const body = await req.json();
 
@@ -81,6 +88,9 @@ export async function POST(req: Request) {
 
 // Eliminar un deportista (DELETE)
 export async function DELETE(req: Request) {
+    const { response } = await withAdminAuth(req as NextRequest);
+    if (response) return response;
+
     try {
         const { id } = await req.json();
 

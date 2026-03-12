@@ -1,8 +1,12 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { NextRequest, NextResponse } from 'next/server';
+import { withRoleAuth  } from '@/lib/api-auth';
 
 export async function POST(request: NextRequest) {
+  const { response } = await withRoleAuth(request,["admin","staff"]);
+  if (response) return response;
+
   try {
     const formData = await request.formData();
     const slug = formData.get("slug") as string;
