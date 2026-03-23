@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev --turbopack -p 4225",
     "build": "next build",
-    "start": "next start -p 4224",
+    "start": "next start",
     "lint": "next lint",
     "pm2:start": "pm2 start \"npm run start\" --name durangobzk",
     "pm2:rs": "pm2 restart durangobzk --update-env",
