@@ -7,7 +7,7 @@ import Footer from "../components/main/Footer";
 import { Fredoka } from "next/font/google";
 import Line from "@/app/[locale]/components/main/line";
 import { NextIntlClientProvider } from "next-intl";
-import { API_URL } from "@/lib/config";
+import { getMessages } from "next-intl/server";
 import { InfoProvider } from "@/context/infoContext";
 import GlobalInfoHandler from "../components/handler/GlobalInfoHandler";
 const fredoka = Fredoka({
@@ -31,18 +31,8 @@ type Props = {
 
 export default async function LocaleLayout(props: Props) {
   const { children } = props;
-  const { locale } = await props.params; 
-
-
-  let messages = {};
-  try {
-    const res = await fetch(`${API_URL}/api/translations?lang=${locale}`, {
-      cache: "no-store",
-    });
-    messages = await res.json();
-  } catch (error) {
-    console.error("Error cargando traducciones en layout:", error);
-  }
+  const { locale } = await props.params;
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>

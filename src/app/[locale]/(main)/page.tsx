@@ -1,4 +1,4 @@
-import { getLocale } from 'next-intl/server';
+import { getLocale, getMessages } from 'next-intl/server';
 import { createTranslator } from 'next-intl';
 import { API_URL } from '@/lib/config';
 import Slideshow from "../components/mainPage/eskola/slide";
@@ -6,8 +6,6 @@ import News from "../components/mainPage/noticeComponents/notices";
 import SubTitle from "../components/mainPage/Titles/SubTitle";
 import Line from "@/app/[locale]/components/main/line0m";
 import ButtonNotice from '../components/mainPage/noticeComponents/Button';
-import { date } from 'better-auth';
-import { dmmfToRuntimeDataModel } from '@prisma/client/runtime/library';
 
 interface Notice {
     href: string;
@@ -23,18 +21,18 @@ interface Notice {
 }
 
 async function fetchNotices(locale: string) {
-
-    if (!API_URL) throw new Error("API URL no definida");
-
-    const res = await fetch(`${API_URL}/api/notices/mainNotices`, {
-        method: "POST",
-        cache: "no-store",
-        body: JSON.stringify({ path: "mainNotices", loc: locale }),
-    });
-
-    if (!res.ok) throw new Error("Error fetching notices");
-
-    return res.json();
+    if (!API_URL) return { data: [] };
+    try {
+        const res = await fetch(`${API_URL}/api/notices/mainNotices`, {
+            method: "POST",
+            cache: "no-store",
+            body: JSON.stringify({ path: "mainNotices", loc: locale }),
+        });
+        if (!res.ok) return { data: [] };
+        return res.json();
+    } catch {
+        return { data: [] };
+    }
 }
 
 function safeTranslate(t: (key: string) => string, key: string): string {
@@ -48,15 +46,7 @@ function safeTranslate(t: (key: string) => string, key: string): string {
 export default async function Home() {
     const locale = await getLocale();
     const { data } = await fetchNotices(locale);
-
-    const API_URL = process.env.NODE_ENV === "development"
-        ? process.env.NEXT_PUBLIC_API_URL_DEVELOPMENT
-        : process.env.NEXT_PUBLIC_API_URL_PRODUCTION;
-
-    const res = await fetch(`${API_URL}/api/translations?lang=${locale}`, { cache: "no-store" });
-    if (!res.ok) throw new Error("Error al cargar traducciones");
-
-    const messages = await res.json();
+    const messages = await getMessages();
 
     const t = createTranslator({ locale, messages, namespace: "homePage" });
     const tNotices = createTranslator({ locale, messages, namespace: "noticeComponent" });

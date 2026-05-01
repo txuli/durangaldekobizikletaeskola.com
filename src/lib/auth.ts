@@ -5,11 +5,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const auth = betterAuth({
-    
+    baseURL: process.env.BETTER_AUTH_URL,
+    advanced: {
+        useSecureCookies: process.env.NODE_ENV === 'production',
+    },
     trustedOrigins: [
         'https://durangaldekobizikletaeskola.com',
         'http://localhost:4225',
-        
+
     ],
     database: createPool({
         host: process.env.DB_HOST || '',

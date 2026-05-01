@@ -12,7 +12,6 @@ export default function LogInForm() {
         await authClient.signIn.email({
             email,
             password,
-            callbackURL: "/es/dashboard",
             fetchOptions: {
                 onSuccess() {
                     window.location.href = '/es/dashboard';
