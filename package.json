@@ -30,7 +30,7 @@
     "next": "^15.5.18",
     "next-intl": "^4.1.0",
     "next-sitemap": "^4.2.3",
-    "nodemailer": "^7.0.2",
+    "nodemailer": "^8.0.5",
     "pdf-lib": "^1.17.1",
     "react": "^19",
     "react-dom": "^19",
