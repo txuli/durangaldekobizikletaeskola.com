@@ -28,7 +28,7 @@
     "formidable": "^3.5.4",
     "mysql2": "^3.14.1",
     "next": "^15.5.18",
-    "next-intl": "^4.1.0",
+    "next-intl": "^4.9.2",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.2",
     "pdf-lib": "^1.17.1",
