@@ -20,7 +20,7 @@
     "@pdf-lib/fontkit": "^1.1.1",
     "@prisma/client": "^6.7.0",
     "@react-email/components": "1.0.1",
-    "better-auth": "^1.6.2",
+    "better-auth": "^1.6.11",
     "busboy": "^1.6.0",
     "discord-logify": "^0.2.1",
     "dotenv": "^16.5.0",
