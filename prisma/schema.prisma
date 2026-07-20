@@ -152,7 +152,7 @@ model years {
 
 model modalities {
   id         Int          @id @default(autoincrement())
-  name      String
+  name       String
   path       String
   year_id    Int
   categories categories[]
@@ -163,7 +163,7 @@ model modalities {
 
 model categories {
   id          Int           @id @default(autoincrement())
-  path       String
+  path        String
   name        String
   modality_id Int
   album_races album_races[]
@@ -174,7 +174,7 @@ model categories {
 
 model album_races {
   id          Int        @id @default(autoincrement())
-  path       String
+  path        String
   name        String
   category_id Int
   category    categories @relation(fields: [category_id], references: [id], onDelete: Cascade, onUpdate: Restrict)
@@ -201,6 +201,12 @@ model images {
   album    albums @relation(fields: [album_Id], references: [id], onDelete: Cascade, onUpdate: Restrict)
 
   @@index([album_Id], map: "images_album_Id_fkey")
+}
+
+model frontImages {
+  id   Int    @id @default(autoincrement())
+  path String
+  site String 
 }
 
 enum events_categoria {
