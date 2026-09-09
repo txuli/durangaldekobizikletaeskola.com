@@ -5,10 +5,12 @@
   "private": true,
   "packageManager": "pnpm@11.21.0",
   "scripts": {
-    "dev": "next dev --turbopack -p 4225",
+    "dev": "next dev --turbopack -p 4225 &&  ssh -N durango-db-tunnel",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "pm2:start": "pm2 start \"npm run start\" --name durangobzk",
     "pm2:rs": "pm2 restart durangobzk --update-env",
     "pm2:stop": "pm2 delete durangobzk"
@@ -28,11 +30,9 @@
     "discord-logify": "^0.2.1",
     "dotenv": "^16.5.0",
     "file-saver": "^2.0.5",
-    "formidable": "^3.5.4",
     "mysql2": "^3.14.1",
     "next": "^15.5.18",
     "next-intl": "^4.1.0",
-    "next-sitemap": "^4.2.3",
     "nodemailer": "^9.0.3",
     "pdf-lib": "^1.17.1",
     "react": "^19",
@@ -45,7 +45,6 @@
     "@types/busboy": "^1.5.4",
     "@types/estree": "^1.0.7",
     "@types/file-saver": "^2.0.7",
-    "@types/formidable": "^3.4.5",
     "@types/json-schema": "^7.0.15",
     "@types/node": "^22.15.15",
     "@types/nodemailer": "^8.0.1",
@@ -54,13 +53,13 @@
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
     "eslint": "^9.26.0",
-    "eslint-config-next": "15.3.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "postcss": "^8.5.10",
     "prisma": "^6.7.0",
     "tailwindcss": "^4.1.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^5.0.0"
   }
 }

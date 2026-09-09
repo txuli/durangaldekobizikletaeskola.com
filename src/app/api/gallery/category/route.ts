@@ -1,17 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isSafePathSegment } from "@/lib/safePathSegment";
 
 export async function PUT(req: NextRequest) {
   try {
     const body = await req.json();
     let { album, modalidad } = body;
 
-    if (!album || !modalidad) {
+    if (typeof album !== "string" || typeof modalidad !== "string") {
       return NextResponse.json({ message: "Faltan datos: álbum o modalidad." }, { status: 400 });
     }
 
     album = album.replace(/\/$/, '');
     console.log("Album:", album);
     modalidad = modalidad.replace(/\/$/, '');
+
+    if (!isSafePathSegment(album) || !isSafePathSegment(modalidad)) {
+      return NextResponse.json({ message: "Faltan datos: álbum o modalidad." }, { status: 400 });
+    }
 
     const url = `https://photos.txuli.com/duranguesa/gallery/${album}/${modalidad}`;
     console.log("Fetch URL:", url);

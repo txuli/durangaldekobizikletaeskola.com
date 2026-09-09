@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isSafePathSegment } from "@/lib/safePathSegment";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { album, modalidad, race } = body;
 
-    if (!album || !modalidad || !race) {
+    if (!isSafePathSegment(album) || !isSafePathSegment(modalidad) || !isSafePathSegment(race)) {
       return NextResponse.json({ message: "Faltan datos: álbum, modalidad o carrera." }, { status: 400 });
     }
 

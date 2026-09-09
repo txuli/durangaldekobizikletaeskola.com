@@ -10,6 +10,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { InfoProvider } from "@/context/infoContext";
 import GlobalInfoHandler from "../components/handler/GlobalInfoHandler";
+import { ErrorProvider } from "@/context/ErrorContext";
+import GlobalErrorHandler from "@/app/[locale]/components/handler/GlobalErrorHandler";
 const fredoka = Fredoka({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
@@ -44,6 +46,7 @@ export default async function LocaleLayout(props: Props) {
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <InfoProvider>
+          <ErrorProvider>
           <NavBar />
           <Line />
           {children}
@@ -51,6 +54,8 @@ export default async function LocaleLayout(props: Props) {
           <Line />
           <Footer color="bg-customblue" />
           <GlobalInfoHandler/>
+          <GlobalErrorHandler/>
+          </ErrorProvider>
           </InfoProvider>
         </NextIntlClientProvider>
       </body>

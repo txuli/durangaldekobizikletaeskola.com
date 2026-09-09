@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { withAuth } from "@/lib/api-auth";
+import { withAuth, withRoleAuth } from "@/lib/api-auth";
 
 export async function GET(req: NextRequest) {
     const { response } = await withAuth(req);
@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
-    const { response } = await withAuth(req);
+    const { response } = await withRoleAuth(req, ["admin", "staff", "coach"]);
     if (response) return response;
 
     const { carrera_id, dorsal, confirmado } = await req.json();

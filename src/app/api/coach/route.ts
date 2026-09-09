@@ -103,6 +103,9 @@ export async function PUT(req: NextRequest) {
 
 // Eliminar entrenador (DELETE)
 export async function DELETE(req: NextRequest) {
+    const { response } = await withRoleAuth(req, ["admin", "staff"]);
+    if (response) return response;
+
     const { id } = await req.json();
 
     // Busca el entrenador para obtener el user_id

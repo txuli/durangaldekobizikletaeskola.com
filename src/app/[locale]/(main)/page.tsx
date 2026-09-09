@@ -6,7 +6,8 @@ import News from "../components/mainPage/noticeComponents/notices";
 import SubTitle from "../components/mainPage/Titles/SubTitle";
 import Line from "@/app/[locale]/components/main/line0m";
 import ButtonNotice from '../components/mainPage/noticeComponents/Button';
-
+import { auth } from "@/lib/auth"
+import { headers } from "next/headers";
 interface Notice {
     href: string;
     imageSrc: string;
@@ -47,7 +48,9 @@ export default async function Home() {
     const locale = await getLocale();
     const { data } = await fetchNotices(locale);
     const messages = await getMessages();
-
+     const session = await auth.api.getSession({
+            headers: await headers()
+        });
     const t = createTranslator({ locale, messages, namespace: "homePage" });
     const tNotices = createTranslator({ locale, messages, namespace: "noticeComponent" });
 
@@ -58,7 +61,7 @@ export default async function Home() {
             year: 'numeric'
         });
 
-        if(locale === "eus") {
+        if (locale === "eus") {
             dateString = dateString.replace(/\//g, "-");
         }
 
@@ -71,45 +74,48 @@ export default async function Home() {
         };
     });
 
-const images = [
-    { url: "https://photos.txuli.com/duranguesa/media/foto11.webp", },
-    { url: "https://photos.txuli.com/duranguesa/media/foto3.webp", },
-    { url: "https://photos.txuli.com/duranguesa/media/foto9_alt.webp", },
-    { url: "https://photos.txuli.com/duranguesa/media/foto7.webp", },
-    { url: "https://photos.txuli.com/duranguesa/media/foto13.webp", },
+    const images = [
+        { url: "https://photos.txuli.com/duranguesa/media/foto11.webp", },
+        { url: "https://photos.txuli.com/duranguesa/media/foto3.webp", },
+        { url: "https://photos.txuli.com/duranguesa/media/foto9_alt.webp", },
+        { url: "https://photos.txuli.com/duranguesa/media/foto7.webp", },
+        { url: "https://photos.txuli.com/duranguesa/media/foto13.webp", },
 
-];
+    ];
 
-const aboutusImages = [
-    { url: 'https://photos.txuli.com/duranguesa/media/foto3.webp', title: t("title"), subtitle: t("subtitle") },
-    { url: 'https://photos.txuli.com/duranguesa/media/foto16.webp', title: t("title2"), subtitle: t("subtitle2") },
-    { url: 'https://photos.txuli.com/duranguesa/media/foto14.webp', title: t("title3"), subtitle: t("subtitle3") },
-    { url: 'https://photos.txuli.com/duranguesa/media/foto15.webp', title: t("title4"), subtitle: t("subtitle4") },
-];
+    const aboutusImages = [
+        { url: 'https://photos.txuli.com/duranguesa/media/foto3.webp', title: t("title"), subtitle: t("subtitle") },
+        { url: 'https://photos.txuli.com/duranguesa/media/foto16.webp', title: t("title2"), subtitle: t("subtitle2") },
+        { url: 'https://photos.txuli.com/duranguesa/media/foto14.webp', title: t("title3"), subtitle: t("subtitle3") },
+        { url: 'https://photos.txuli.com/duranguesa/media/foto15.webp', title: t("title4"), subtitle: t("subtitle4") },
+    ];
 
-return (
-    <div>
-        <Slideshow images={images} title='DURANGALDEKO BIZIKLETA ESKOLA' />
-        <Line />
-        <SubTitle subTitle={t("componentSubtitle")} />
-        <News items={translatedNotices} />
-        <ButtonNotice />
-        <Line />
-        {aboutusImages.map((section, idx) => (
-            <div key={idx} className="w-full relative" style={{ height: "400px" }}>
-                <div className="absolute inset-0 bg-cover bg-center filter brightness-50" style={{ backgroundImage: `url(${section.url})` }}></div>
-                <div className="absolute inset-0 z-5" style={{ background: "linear-gradient(to right, black 10%, transparent 70%)" }}></div>
-                <div className="absolute z-10 inset-0 flex items-center font-fredoka">
-                    <div className="flex w-full p-4 justify-start ml-4">
-                        <div className="w-full lg:w-1/4">
-                            <h2 className="text-3xl font-bold text-white">{section.title}</h2>
-                            <p className="mt-2 text-xl text-white">{section.subtitle}</p>
+    return (
+        <div>
+            <Slideshow images={images} title='DURANGALDEKO BIZIKLETA ESKOLA' />
+            <Line />
+            <SubTitle subTitle={t("componentSubtitle")} />
+            <News items={translatedNotices} />
+            <ButtonNotice />
+            <Line />
+            {
+                session?(<div>hoashjdof</div>):("")
+            }
+            {aboutusImages.map((section, idx) => (
+                <div key={idx} className="w-full relative" style={{ height: "400px" }}>
+                    <div className="absolute inset-0 bg-cover bg-center filter brightness-50" style={{ backgroundImage: `url(${section.url})` }}></div>
+                    <div className="absolute inset-0 z-5" style={{ background: "linear-gradient(to right, black 10%, transparent 70%)" }}></div>
+                    <div className="absolute z-10 inset-0 flex items-center font-fredoka">
+                        <div className="flex w-full p-4 justify-start ml-4">
+                            <div className="w-full lg:w-1/4">
+                                <h2 className="text-3xl font-bold text-white">{section.title}</h2>
+                                <p className="mt-2 text-xl text-white">{section.subtitle}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        ))}
-        <Line />
-    </div>
-);
+            ))}
+            <Line />
+        </div>
+    );
 }

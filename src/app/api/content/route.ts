@@ -4,8 +4,12 @@ import fsp from 'fs/promises';
 import path from 'path';
 import Busboy from 'busboy';
 import { Readable } from 'stream';
+import { withRoleAuth } from '@/lib/api-auth';
 
 export async function POST(req: NextRequest): Promise<Response> {
+  const { response } = await withRoleAuth(req, ["admin", "staff"]);
+  if (response) return response;
+
   return new Promise<Response>((resolve) => {
     const fields: Record<string, string> = {};
     const uploads: Record<string, string> = {};

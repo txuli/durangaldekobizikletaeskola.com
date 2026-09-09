@@ -21,10 +21,9 @@ export async function POST(req: NextRequest) {
 
             const { name, birthDate, address, city, school, guardianName, phone, email, message }: EmailRequestBody = await req.json();
 
-
-            /* if (!name || !birthDate || !city || !guardianName || !phone || !email) {
+            if (!name || !birthDate || !city || !guardianName || !phone || !email) {
                 return NextResponse.json({ message: "Faltan datos en el formulario" }, { status: 400 });
-            } */
+            }
 
             // Nodemailer Config
             const transporter = nodemailer.createTransport({

@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import {  withRoleAuth, withAdminAuth} from "@/lib/api-auth";
 
+const EDITABLE_EVENT_FIELDS = ["nombre", "fecha", "lugar", "categoria", "modalidad", "descripcion"] as const;
+
+function pickEditableFields(data: Record<string, any>) {
+    const picked: Record<string, any> = {};
+    for (const field of EDITABLE_EVENT_FIELDS) {
+        if (field in data) picked[field] = data[field];
+    }
+    return picked;
+}
+
 // Obtener todas las carreras
 export async function GET(req: NextRequest) {
      const { response } = await withRoleAuth(req,["coach","admin","staff"]);
@@ -30,10 +40,10 @@ export async function PUT(req: NextRequest) {
     if (response) return response;
 
     const data = await req.json();
-    const { id, ...rest } = data;
+    const { id } = data;
     const carrera = await prisma.events.update({
         where: { id },
-        data: rest,
+        data: pickEditableFields(data),
     });
     return NextResponse.json(carrera);
 }

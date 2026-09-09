@@ -1,15 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import { withAuth } from "@/lib/api-auth";
+import { withAdminAuth } from "@/lib/api-auth";
+import { isSafePathSegment } from "@/lib/safePathSegment";
 
 export async function POST(req: NextRequest) {
-  const { response } = await withAuth(req);
+  // Matches its siblings createFolder/uploadImages, which are also admin/staff/coach only.
+  const { response } = await withAdminAuth(req);
   if (response) return response;
 
   console.log("Request:", req);
   try {
     const body = await req.json();
+
+    for (const field of ["dir", "year", "mode", "category", "race"] as const) {
+      if (body[field] !== undefined && !isSafePathSegment(body[field])) {
+        return NextResponse.json({ message: `Valor invalido para "${field}".` }, { status: 400 });
+      }
+    }
+
     let url = `https://photos.txuli.com/duranguesa/${body.dir}`;
-    
+
     if (body.year) {
       if (body.mode) {
         if (body.category) {
