@@ -14,7 +14,7 @@
     "title": "ALBISTE GUZTIAK",
     "button": "ALBISTE GEHIAGO"
   },
-   "footer":{
+  "footer": {
     "terms": "Erabilera Baldintzak"
   },
   "noticeComponent": {
@@ -122,11 +122,9 @@
     "sectionP2": "Junior mailan, txirrindularitzaren lehiaketa maila handiagoa da, eta gazteek pauso garrantzitsua ematen dute kirol eta heziketa arloan. Probak gogorragoak eta luzeagoak izaten dira, eta kanpoko lasterketetan parte hartzeko aukera izaten dute, Euskal Herritik kanpo ere.",
     "sectionP3": "Lehiaketa eta ikasketak uztartzea funtsezkoa izaten jarraitzen du, eta talde-giro ona eta lagunartea ezinbestekoak dira bide horretan. Helburu nagusia txirrindulari moduan eta pertsona moduan hazten jarraitzea da, bizikletarekiko pasioa galdu gabe.",
     "sectionP4": "Gazteei onena emateko, titulatutako eta maila bakoitzerako prest dagoen staff bat dugu, eguneroko lanari balioa ematen diona. Taldeak modalitate desberdinetan parte hartzen du, gazteei ahalik eta aukera zabalena emanez.",
-   
     "sectionRoadTitle": "ERREPIDEA",
     "sectionMtbTitle": "MTB",
-
-    "sectionRoadP1":"Egutegiaren zati handiena hartzen duen modalitatea da, eta talde-lana, diziplina eta esfortzua dira oinarriak. Gure taldeak Euskal Herriko egun bakarreko probetan eta inguruko itzuli garrantzitsuenetan parte hartzen du: Txuma, Bizkaiko Itzulia, Gipuzkoako Itzulia, Vuelta a Cantabria eta beste hainbat.",
+    "sectionRoadP1": "Egutegiaren zati handiena hartzen duen modalitatea da, eta talde-lana, diziplina eta esfortzua dira oinarriak. Gure taldeak Euskal Herriko egun bakarreko probetan eta inguruko itzuli garrantzitsuenetan parte hartzen du: Txuma, Bizkaiko Itzulia, Gipuzkoako Itzulia, Vuelta a Cantabria eta beste hainbat.",
     "sectionMtbP1": "2022an sortu zen MTB taldea, modalitate hau bultzatzeko esfortzua eginez, gazteei aukera zabalagoa eskaintzeko helburuarekin. Gure gazteek Green Series, Superprestigio, Bizkaiko eta Euskadiko Txapelketak lehiatzen dituzte.",
     "sectionPistaP1": "Ziklokroseko denboraldiarekin batera, neguko egutegiaren barruan, Pistan ere lehiatzen gara. Berrizko belodromoa erabiltzen dugu entrenatzeko, gure eskualdean daukagun baliabidea aprobetxatuz. Asteburuetan, berriz, Anoetako belodromoan antolatzen diren probetan lehiatzen gara. Bertan, trebetasun desberdinak garatzen dituzte gure gazteek",
     "sectionCXP1": "Neguko egutegian, Ziklokrosean lehiatzen gara Euskal Herriko proba garrantzitsuenetan eta Espainiako Kopako proba batzuetan. Teknika oso garrantzitsua den modalitatea izanik, hori lantzea da helburu, entrenamendu bereziak antolatuz."
@@ -165,8 +163,6 @@
     "button": "BIDALI",
     "terms": "Baldintza orokorrak onartzen ditut",
     "termsError": "Baldintza orokorrak onartu behar dituzu"
-    
-
   },
   "contact": {
     "title": "KONTAKTUA",
@@ -287,5 +283,51 @@
     "p4": "Mendizaleek Euskadi XCO Open-a eduki zuten Oiartzunen eta albiste ezin hobeak ekarri  zizkiguten. Kadetetan Andonik garaipena lortu zuen lasterketa borobila osatuta eta Juniorretan  Anderrek hirugarren postua lortu zuen, Jonek ere lehen bostetan sailkatuz. Honek berebiziko balioa izango du Abadiñon ospatuko diren Euskadiko Txapelketetan; emaitza hauei esker, buruan  hasiko dute lasterketa. Bitartean, beste lasterketa batzuk izango dituzte, hurbilenekoa Lizarrako  Superprestigioko lasterketa. ",
     "p5": "Eskoletako taldekideak Berangon izan zuten Udaberri Kopako lasterketa, non neskek eta mutilek  batera lehiatu zuten, pelotoi handiagoan moldatu behar izan ziren denak, geroz eta hurbilago  duten kadete kategoriari hurbiltzeko modu aparta.",
     "p6": "Zoriontzeko asteburua egin dute gure gazteek, hori bai, ikasteko asko dago oraindik ere! "
+  },
+  "seo": {
+    "home": {
+      "title": "Txirrindularitza Eskola Durangon",
+      "description": "Durangoko (Bizkaia) txirrindularitza eskola, 2014tik. Errepide, mendi, ziklokros eta pista diziplinak eskualdeko haur eta gazteentzat. Batu gure tropelera!"
+    },
+    "eskola": {
+      "title": "Eskola",
+      "description": "Ezagutu Durangaldeko txirrindularitza eskolaren programa: baloreetan heztea, adinka planifikazioa eta kadete mailarako prestaketa."
+    },
+    "contacto": {
+      "title": "Kontaktua",
+      "description": "Jarri harremanetan Durangaldeko Bizikleta Eskolarekin, Durangon (Bizkaia): helbidea, telefonoa, posta elektronikoa eta kokapena."
+    },
+    "galeria": {
+      "title": "Argazki galeria",
+      "description": "Durangaldeko txirrindularitza eskolako lasterketa, entrenamendu eta ekitaldien argazkiak, diziplina, kategoria eta lasterketaka sailkatuta."
+    },
+    "notices": {
+      "title": "Albisteak",
+      "description": "Durangaldeko txirrindularitza eskolako azken albisteak, emaitzak eta kronikak: errepide, mendi, ziklokros eta pista."
+    },
+    "clothes": {
+      "title": "Ekipamendua",
+      "description": "Lortu Durangaldeko Bizikleta Eskolaren ekipamendu ofiziala: aukeratu arropa mota eta neurria, eta egin zure eskaera online."
+    },
+    "cafedromedario": {
+      "title": "Cafe Dromedario-Flotamet",
+      "description": "Eskola mailatik kadete mailarako urratsa Durangaldeko Bizikleta Eskolan, Cafe Dromedario-Flotameten eskutik."
+    },
+    "form": {
+      "title": "Izena eman",
+      "description": "Eman izena Durangaldeko Bizikleta Eskolan. Bete formularioa eta ahalik eta lasterren jarriko gara zurekin harremanetan."
+    },
+    "terms": {
+      "title": "Erabilera baldintzak",
+      "description": "Durangaldeko Bizikleta Eskolaren webgunearen erabilera-baldintzak."
+    },
+    "puntagalea": {
+      "title": "Puntagalea Occident-Durangaldeko",
+      "description": "Durangaldeko Bizikleta Eskola Punta Galearekin bat egin du emakumeen txirrindularitza kadete eta junior kategorietan bultzatzeko."
+    },
+    "puntagaleaTeam": {
+      "title": "Nesken talde berria",
+      "description": "Durangaldeko Bizikleta Eskolak eta Punta Galeak emakumeen kadete eta junior kategoriak bultzatzen dituzte elkarrekin."
+    }
   }
 }

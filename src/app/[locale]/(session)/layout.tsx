@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     title: "GI DURANGALDEKO BZK",
     description:
         "BARNEKO KUDEAKETA. Durangaldeko Bizikleta Eskola - Batu gure tropelera! Bizikletaren munduan murgiltzeko aukera ezin hobea, errepide, mendi, ziklokros edo pista diziplinetan!",
+    // Internal management area (dashboard, users, sign-up, login...): keep
+    // it out of search results entirely. Paired with the /es/(session)
+    // and /eus/(session) disallow rules in robots.ts for good measure.
+    robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 export default async function dashboardLayout({

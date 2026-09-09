@@ -1,12 +1,32 @@
 'use server';
 
+import type { Metadata } from 'next';
 import { createTranslator } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import fs from 'fs/promises';
 import path from 'path';
 import ClothesClient from './clothesClient';
+import { buildAlternates, withBrand } from '@/lib/seo';
 
-export default async function ClothesPage() {
-  const locale = 'es'; // Puedes usar 'await getLocale()' si es dinámico
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seo.clothes' });
+  const title = t('title');
+  const description = t('description');
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, '/clothes'),
+    openGraph: { title: withBrand(title), description },
+    twitter: { title: withBrand(title), description },
+  };
+}
+
+export default async function ClothesPage(props: { params: Params }) {
+  const { locale } = await props.params;
 
   // Cargar el archivo de traducciones
   const messagesPath = path.join(process.cwd(), 'messages', `${locale}.json`);

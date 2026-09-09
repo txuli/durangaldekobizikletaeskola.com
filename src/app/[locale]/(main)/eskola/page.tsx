@@ -1,61 +1,25 @@
-"use client";
-import Slides from "../../components/mainPage/eskola/slide";
-import { useTranslations } from "next-intl";
-import SubTitle from "../../components/mainPage/Titles/SubTitle";
-import Planning from "../../components/mainPage/eskola/planning";
-import Line from "@/app/[locale]/components/main/line0m";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { buildAlternates, withBrand } from "@/lib/seo";
+import EskolaView from "./EskolaView";
+
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo.eskola" });
+  const title = t("title");
+  const description = t("description");
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, "/eskola"),
+    openGraph: { title: withBrand(title), description },
+    twitter: { title: withBrand(title), description },
+  };
+}
 
 export default function Page() {
-    const t = useTranslations("eskolaPage");
-    const images = [
-        { url: 'https://photos.txuli.com/duranguesa/media/foto16.webp' },
-        {
-            url: 'https://photos.txuli.com/duranguesa/eskola2.jpeg'
-
-        },
-        { url: 'https://photos.txuli.com/duranguesa/escuela.jpg' },
-        { url: 'https://photos.txuli.com/duranguesa/esk3.jpeg' },
-        
-    ]
-    const planning = [
-        {
-            url: 'https://photos.txuli.com/duranguesa/planning/Escuelas.JPG',
-            title: t("elementTitle"),
-            text: t("element1Text")
-        },
-        {
-            url: 'https://photos.txuli.com/duranguesa/planning/escuela1.jpg',
-            title: t("elementTitle2"),
-            text: t("element2Text")
-        }
-        ,
-        {
-            url: 'https://photos.txuli.com/duranguesa/planning/escuela2.jpg',
-            title: t("elementTitle3"),
-            text: t("element3Text")
-        }
-    ]
-    return (
-        <main >
-            <Slides
-                images={images}
-                title={t("title")}
-
-            />
-            <Line />
-            <section className="my-20">
-                <p className="text-justify font-fredoka text-3xl px-5 font-light">
-                    {t("section1P1")}
-                </p>
-                <p className="text-justify font-fredoka text-3xl px-5 font-light">{t("section1P2")}</p>
-
-            </section>
-
-            <section className="items-center justify-center">
-                <SubTitle subTitle={t("section2SubTitle")} />
-                <Planning planning={planning} />
-            </section>
-            
-        </main>
-    )
+  return <EskolaView />;
 }

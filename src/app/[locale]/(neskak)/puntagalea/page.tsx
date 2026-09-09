@@ -1,41 +1,27 @@
-"use client"
-import Slideshow from "../../components/mainPage/eskola/slide";
-import Section from "../../components/main/Section";
-import P from "../../components/main/P";
-// import Runner from "../../components/mainPage/drom/Runner";
-// import { runner } from "./images";
-import { images } from "./images";
-import Line from "../../components/main/line0m";
-import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import { buildAlternates, withBrand } from "@/lib/seo";
+import PuntagaleaView from "./PuntagaleaView";
+
+type Params = Promise<{ locale: string }>;
+
+// This route group has no title.template, so the brand suffix is added
+// explicitly here rather than relying on layout-level merging.
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo.puntagalea" });
+  const title = t("title");
+  const description = t("description");
+
+  return {
+    title: withBrand(title),
+    description,
+    alternates: buildAlternates(locale, "/puntagalea"),
+    openGraph: { title: withBrand(title), description },
+    twitter: { title: withBrand(title), description },
+  };
+}
+
 export default function Page() {
-    const t = useTranslations("PuntaGaleaMainPage");
-    return (
-        <>
-            <Slideshow
-                images={images}
-                title="PUNTAGALEA OCCIDENT-DURANGALDEKO"
-            />
-            <Line color="bg-custom-puntagalea-dark-orange"/>
-            {/* <Section >
-            <Runner runner={runner} title={t("titleRunners")} color="bg-custom-puntagalea-orange" color2="bg-custom-puntagalea-blue" />
-            </Section > */}
-            <Section >
-                <P>
-                {t("p1")}
-                </P>
-                <P>
-                {t("p2")}
-                </P>
-                <P>
-                {t("p3")}
-                </P>
-            
-               
-
-                
-            </Section>
-            
-
-        </>
-    )
+  return <PuntagaleaView />;
 }

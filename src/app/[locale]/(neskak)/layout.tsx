@@ -10,6 +10,7 @@ import Footer from "../components/main/Footer";
 import { getLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from "next-intl";
 import NavBar from "../components/main/navBar";
+import { SITE_URL } from "@/lib/config";
 
 const fredoka = Fredoka({
   subsets: ['latin'],
@@ -17,10 +18,34 @@ const fredoka = Fredoka({
   display: 'swap',
 });
 
+const PUNTAGALEA_DESCRIPTION =
+  "PUNTAGALEA OCCIDENT - Batu gure tropelera! Bizikletaren munduan murgiltzeko aukera ezin hobea, errepide, mendi, ziklokros edo pista diziplinetan!";
+
+// Fallback metadata for this route group; the /puntagalea and
+// /puntagaleaTeam pages each export their own more specific title,
+// description and alternates (canonical/hreflang).
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "PUNTAGALEA OCCIDENT",
-  description:
-    "PUNTAGALEA OCCIDENT - Batu gure tropelera! Bizikletaren munduan murgiltzeko aukera ezin hobea, errepide, mendi, ziklokros edo pista diziplinetan!",
+  description: PUNTAGALEA_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    siteName: "Puntagalea Occident",
+    title: "PUNTAGALEA OCCIDENT",
+    description: PUNTAGALEA_DESCRIPTION,
+    images: [{ url: "/media/logo.png" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "PUNTAGALEA OCCIDENT",
+    description: PUNTAGALEA_DESCRIPTION,
+    images: ["/media/logo.png"],
+  },
+  icons: {
+    icon: "/media/logo.png",
+    shortcut: "/media/logo.png",
+    apple: "/media/logo.png",
+  },
 };
 
 export default async function RootLayout({
@@ -37,9 +62,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <link rel="shortcut icon" href="/media/logo.png" />
-      </head>
       <body
         className={`${fredoka.className} antialiased page-specific absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px]`}
       >

@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import Title from "@/app/[locale]/components/mainPage/Titles/Title";
 import P from "@/app/[locale]/components/main/P";
 import Section from "../../components/main/Section";
 import SubTitle from "../../components/mainPage/Titles/SubTitle";
+import { buildAlternates, withBrand } from "@/lib/seo";
+
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "seo.terms" });
+    const title = t("title");
+    const description = t("description");
+
+    return {
+        title,
+        description,
+        alternates: buildAlternates(locale, "/terms&use"),
+        openGraph: { title: withBrand(title), description },
+        twitter: { title: withBrand(title), description },
+    };
+}
 
 export default function TermsOfUsePage() {
     return (

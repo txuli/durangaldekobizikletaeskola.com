@@ -1,11 +1,30 @@
 
+import type { Metadata } from "next";
 import News from "@/app/[locale]/components/mainPage/noticeComponents/notices";
 import Title from "@/app/[locale]/components/mainPage/Titles/Title";
 import Section from "@/app/[locale]/components/main/Section";
 import { API_URL } from "@/lib/config";
 
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { createTranslator } from "next-intl";
+import { buildAlternates, withBrand } from "@/lib/seo";
+
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: "seo.notices" });
+    const title = t("title");
+    const description = t("description");
+
+    return {
+        title,
+        description,
+        alternates: buildAlternates(locale, "/notices"),
+        openGraph: { title: withBrand(title), description },
+        twitter: { title: withBrand(title), description },
+    };
+}
 
 
 interface Notice {
