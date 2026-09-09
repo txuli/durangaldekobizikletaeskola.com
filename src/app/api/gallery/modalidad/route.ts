@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isSafePathSegment } from "@/lib/safePathSegment";
 
 
 export async function POST(req: NextRequest) {
@@ -6,7 +7,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { year } = body;
 
-    if (!year) {
+    if (!isSafePathSegment(year)) {
       return NextResponse.json({ message: "El año no está definido." }, { status: 400 });
     }
 

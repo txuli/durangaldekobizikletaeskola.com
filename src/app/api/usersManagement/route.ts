@@ -1,10 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { withAdminAuth } from "@/lib/api-auth";
+import { withRoleAuth } from "@/lib/api-auth";
+
+// This endpoint can grant the "admin" role, so it must match the /usuarios page's own
+// gate (admin/staff only) - NOT withAdminAuth, which also allows "coach" and would let a
+// coach account edit/delete any user, including promoting themselves to admin.
+const ALLOWED_ROLES = ["admin", "staff"];
+const EDITABLE_USER_FIELDS = ["name", "email", "role"] as const;
+
+function pickEditableFields(data: Record<string, any>) {
+    const picked: Record<string, any> = {};
+    for (const field of EDITABLE_USER_FIELDS) {
+        if (field in data) picked[field] = data[field];
+    }
+    return picked;
+}
 
 // Function to get all users from the database
 export async function GET(req: NextRequest) {
-    const { response } = await withAdminAuth(req);
+    const { response } = await withRoleAuth(req, ALLOWED_ROLES);
     if (response) return response;
     const users = (await prisma.user.findMany({
         select: {
@@ -25,14 +39,14 @@ export async function GET(req: NextRequest) {
 
 // Function to modify a user
 export async function PUT(req: NextRequest) {
-    const { response } = await withAdminAuth(req);
+    const { response } = await withRoleAuth(req, ALLOWED_ROLES);
     if (response) return response;
 
-    const res= await req.json();
-    const { id, ...rest } = res;
+    const res = await req.json();
+    const { id } = res;
     const user = await prisma.user.update({
         where: { id },
-        data: rest,
+        data: pickEditableFields(res),
     });
     if (!user) {
         return NextResponse.json({ message: 'Error al modificar el usuario' }, { status: 500 });
@@ -42,7 +56,7 @@ export async function PUT(req: NextRequest) {
 
 // Function to delete a user
 export async function DELETE(req: NextRequest) {
-    const { response } = await withAdminAuth(req);
+    const { response } = await withRoleAuth(req, ALLOWED_ROLES);
     if (response) return response;
 
     const res = await req.json();

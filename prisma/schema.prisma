@@ -141,6 +141,7 @@ model activation_codes {
   role       activation_codes_role
   expires_at DateTime              @db.DateTime(0)
   usos       Int?                  @default(0)
+  max_usos   Int                   @default(1)
 }
 
 model years {

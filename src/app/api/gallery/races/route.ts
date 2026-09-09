@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isSafePathSegment } from "@/lib/safePathSegment";
 
 export async function PATCH(req: NextRequest) {
   try {
@@ -6,9 +7,9 @@ export async function PATCH(req: NextRequest) {
     const { album, modalidad, race, categoria } = body;
     console.log("Album:", album);
     console.log("Modalidad:", modalidad);
-    console.log("race"+ race) 
+    console.log("race"+ race)
     console.log("Categoria:", categoria);
-    if (!album || !modalidad || !race) {
+    if (!isSafePathSegment(album) || !isSafePathSegment(modalidad) || !isSafePathSegment(race)) {
       return NextResponse.json({ message: "Faltan datos: álbum, modalidad o carrera." }, { status: 400 });
     }
 

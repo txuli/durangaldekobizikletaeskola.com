@@ -2,13 +2,15 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { NextRequest } from "next/server";
 import { withAdminAuth } from "@/lib/api-auth";
+import { randomInt } from "crypto";
 
-// Función para generar un código aleatorio
+// Función para generar un código aleatorio (criptográficamente seguro: estos códigos
+// pueden otorgar roles con privilegios, incluido "admin").
 function generateCode(length = 8) {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
     let code = "";
     for (let i = 0; i < length; i++) {
-        code += chars.charAt(Math.floor(Math.random() * chars.length));
+        code += chars.charAt(randomInt(chars.length));
     }
     return code;
 }

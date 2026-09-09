@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
-import { withAuth } from "@/lib/api-auth";
+import { withRoleAuth } from "@/lib/api-auth";
 
 export async function POST(req: NextRequest) {
-    const { response } = await withAuth(req);
+    // Matches the role gate on the /carreras page this form lives on.
+    const { response } = await withRoleAuth(req, ["admin", "staff", "coach", "instructor", "user"]);
     if (response) return response;
 
     try {

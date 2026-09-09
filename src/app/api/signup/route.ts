@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 import { logger } from "better-auth";
+import { withAuth } from "@/lib/api-auth";
 
 export async function POST(req: NextRequest) {
     try {
@@ -78,11 +79,23 @@ export async function POST(req: NextRequest) {
 
 // Nuevo endpoint para asociar el user_id tras crear el usuario
 export async function PUT(req: NextRequest) {
+    // This step runs right after authClient.signUp.email() on the client, which signs
+    // the new user in - so a session is expected to exist by the time this is called.
+    const { session, response } = await withAuth(req);
+    if (response) return response;
+
     try {
         const data = await req.json();
         const { role, dni, userId, name } = data;
         if (!role||(["coach", "runner"].includes(role) && (!userId || !dni )) || (["user", "staff", "instructor"].includes(role)&& !userId)) {
             return NextResponse.json({ error: "Faltan datos para asociar el usuario" }, { status: 400 });
+        }
+
+        // A caller may only associate/promote their OWN account this way - never someone
+        // else's userId. Without this, anyone could grant an arbitrary account (including
+        // "admin") the role of their choosing.
+        if (userId !== session.user.id) {
+            return NextResponse.json({ error: "No autorizado" }, { status: 403 });
         }
 
         // Actualiza el user_id y nombre en la tabla correspondiente

@@ -4,10 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 4225",
+    "dev": "next dev --turbopack -p 4225 &&  ssh -N durango-db-tunnel",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "pm2:start": "pm2 start \"npm run start\" --name durangobzk",
     "pm2:rs": "pm2 restart durangobzk --update-env",
     "pm2:stop": "pm2 delete durangobzk"
@@ -56,6 +58,7 @@
     "postcss": "^8.5.10",
     "prisma": "^6.7.0",
     "tailwindcss": "^4.1.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^5.0.0"
   }
 }
