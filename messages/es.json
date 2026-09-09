@@ -10,7 +10,7 @@
     "subtitle4": "El trabajo en equipo, el esfuerzo, el compromiso y la amistad son nuestros pilares. A través de estos, logramos metas juntos y ganamos fuerza en el camino.",
     "componentSubtitle": "NOTICIAS"
   },
-  "footer":{
+  "footer": {
     "terms": "Términos y condiciones"
   },
   "noticePage": {
@@ -86,15 +86,12 @@
     "sectionP2": "En la categoría junior, el nivel competitivo del ciclismo es más alto, y los jóvenes dan un paso importante tanto en el ámbito deportivo como en el formativo. Las pruebas son más duras y largas, y tienen la oportunidad de participar en carreras fuera de Euskal Herria. Compaginar competición y estudios sigue siendo fundamental, y un buen ambiente de equipo y la amistad son imprescindibles en este camino. El principal objetivo es seguir creciendo como ciclista y persona, sin perder la pasión por la bicicleta.",
     "sectionP3": "Para ofrecer lo mejor a los jóvenes, contamos con un staff titulado y preparado para cada categoría, que valora el trabajo diario.",
     "sectionP4": "El equipo participa en distintas modalidades, ofreciendo a los jóvenes la mayor variedad de opciones posible:",
-    
     "sectionRoadTitle": "CARRETERA",
     "sectionMtbTitle": "MTB",
-
-    "sectionRoadP1":"Es la modalidad que abarca la mayor parte del calendario, y se basa en el trabajo en equipo, la disciplina y el esfuerzo. Nuestro equipo participa en pruebas de un día por todo Euskal Herria, así como en las vueltas más importantes de la zona: Txuma, Vuelta a Bizkaia, Vuelta a Gipuzkoa, Vuelta a Cantabria y otras más.",
+    "sectionRoadP1": "Es la modalidad que abarca la mayor parte del calendario, y se basa en el trabajo en equipo, la disciplina y el esfuerzo. Nuestro equipo participa en pruebas de un día por todo Euskal Herria, así como en las vueltas más importantes de la zona: Txuma, Vuelta a Bizkaia, Vuelta a Gipuzkoa, Vuelta a Cantabria y otras más.",
     "sectionMtbP1": "El equipo de MTB se creó en 2022 con el objetivo de impulsar esta modalidad y ofrecer a los jóvenes una opción más amplia. Nuestros jóvenes compiten en Green Series, Superprestigio, Campeonatos de Bizkaia y Euskadi.",
     "sectionPistaP1": "Junto con el ciclocross, en el calendario invernal también competimos en pista. Entrenamos en el velódromo de Berriz, aprovechando este recurso de nuestra comarca. Los fines de semana participamos en pruebas organizadas en el velódromo de Anoeta, donde nuestros jóvenes desarrollan distintas habilidades.",
     "sectionCXP1": "En el calendario de invierno competimos en ciclocross en las pruebas más importantes de Euskal Herria y también en algunas pruebas de la Copa de España. Al ser una modalidad en la que la técnica es muy importante, nuestro objetivo es trabajarla con entrenamientos específicos."
-  
   },
   "eskolaPage": {
     "title": "ESCUELA",
@@ -288,5 +285,51 @@
     "p4": "Los bikers tuvieron el Euskadi XCO Open en Oiartzun y nos trajeron noticias inmejorables. En cadetes, Andoni firmó una carrera perfecta logrando la victoria, y en juniors, Ander subió al tercer cajón del podio, con Jon también dentro del top-5. Estos resultados serán muy valiosos para los Campeonatos de Euskadi que se celebrarán en Abadiño; gracias a ellos, podrán salir en cabeza. Mientras tanto, tendrán otras carreras, la más cercana, la prueba del Superprestigio en Lizarra.",
     "p5": "Los escolares participaron en la prueba de la Copa Primavera en Berango, donde chicas y chicos compitieron juntos, teniendo que adaptarse a un pelotón más numeroso, una gran oportunidad para ir acercándose a la categoría cadete.",
     "p6": "Un fin de semana para felicitar a nuestros jóvenes, eso sí, ¡aún queda mucho por aprender!"
+  },
+  "seo": {
+    "home": {
+      "title": "Escuela de Ciclismo en Durango",
+      "description": "Escuela de ciclismo en Durango (Bizkaia) desde 2014. Carretera, montaña, ciclocross y pista para niños y jóvenes de la comarca. ¡Únete a la tropa!"
+    },
+    "eskola": {
+      "title": "La Escuela",
+      "description": "Conoce el programa de la escuela de ciclismo de Durangaldea: formación en valores, planificación por edades y preparación para categoría cadete."
+    },
+    "contacto": {
+      "title": "Contacto",
+      "description": "Contacta con Durangaldeko Bizikleta Eskola en Durango, Bizkaia: dirección, teléfono, correo electrónico y ubicación de la escuela de ciclismo."
+    },
+    "galeria": {
+      "title": "Galería de fotos",
+      "description": "Fotos de carreras, entrenamientos y eventos de la escuela de ciclismo de Durangaldea, organizadas por disciplina, categoría y carrera."
+    },
+    "notices": {
+      "title": "Noticias",
+      "description": "Últimas noticias, resultados y crónicas de la escuela de ciclismo de Durangaldea: carretera, montaña, ciclocross y pista."
+    },
+    "clothes": {
+      "title": "Equipación",
+      "description": "Consigue la equipación oficial de Durangaldeko Bizikleta Eskola: elige tipo de ropa y talla, y haz tu pedido online."
+    },
+    "cafedromedario": {
+      "title": "Café Dromedario-Flotamet",
+      "description": "El paso de categoría escolar a cadete en Durangaldeko Bizikleta Eskola, de la mano de Café Dromedario-Flotamet."
+    },
+    "form": {
+      "title": "Inscríbete",
+      "description": "Inscribe a tu hijo o hija en Durangaldeko Bizikleta Eskola. Completa el formulario y te contactaremos lo antes posible."
+    },
+    "terms": {
+      "title": "Términos y condiciones",
+      "description": "Términos de uso y condiciones del sitio web de Durangaldeko Bizikleta Eskola."
+    },
+    "puntagalea": {
+      "title": "Puntagalea Occident-Durangalde",
+      "description": "Durangaldeko Bizikleta Eskola se asocia con Punta Galea para impulsar el ciclismo femenino en categorías cadete y junior."
+    },
+    "puntagaleaTeam": {
+      "title": "Nuevo grupo de chicas",
+      "description": "Durangaldeko Bizikleta Eskola y Punta Galea impulsan juntas las categorías cadete y junior femeninas de ciclismo."
+    }
   }
 }

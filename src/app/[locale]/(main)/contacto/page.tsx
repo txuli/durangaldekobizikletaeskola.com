@@ -2,10 +2,29 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { getLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { createTranslator } from 'next-intl';
 
 import Title from "../../components/mainPage/Titles/Title";
+import { buildAlternates, withBrand } from '@/lib/seo';
+
+type Params = Promise<{ locale: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'seo.contacto' });
+  const title = t('title');
+  const description = t('description');
+
+  return {
+    title,
+    description,
+    alternates: buildAlternates(locale, '/contacto'),
+    openGraph: { title: withBrand(title), description },
+    twitter: { title: withBrand(title), description },
+  };
+}
 
 export default async function Page() {
   const locale = await getLocale();
