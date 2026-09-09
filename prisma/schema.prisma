@@ -205,6 +205,8 @@ model images {
 
 model frontImages {
   id   Int    @id @default(autoincrement())
+  pageId  Int
+  sectionId Int
   path String
   site String 
 }

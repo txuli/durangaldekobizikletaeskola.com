@@ -33,7 +33,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next-env.d.ts",
-    "next-sitemap.js",
     "build/types/**/*.ts"
   ],
   "exclude": [
