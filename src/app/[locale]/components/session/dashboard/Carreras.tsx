@@ -494,7 +494,10 @@ export default function RaceClient({ carreras, rol }: RaceClientProps) {
         const formattedFecha = selectedRace?.fecha ? formatFecha(selectedRace.fecha).split(" - ")[0] : '';
         const formattedNombre = (selectedRace?.nombre || 'carrera').replace(/\s+/g, "_");
         saveAs(
-            new Blob([pdfBytes]),
+            // pdfDoc.save() returns Uint8Array<ArrayBufferLike>, which TS's BlobPart
+            // rejects (it could theoretically be backed by a SharedArrayBuffer).
+            // Re-wrapping copies it into a plain Uint8Array<ArrayBuffer>.
+            new Blob([new Uint8Array(pdfBytes)]),
             `INSCRIPCIONES_${formattedNombre}_${formattedFecha}.pdf`
         );
     };
