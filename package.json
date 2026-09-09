@@ -18,9 +18,6 @@
   "prisma": {
     "schema": "prisma/schema.prisma"
   },
-  "overrides": {
-    "postcss": "^8.5.10"
-  },
   "dependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "@prisma/client": "^6.7.0",
@@ -31,9 +28,9 @@
     "dotenv": "^16.5.0",
     "file-saver": "^2.0.5",
     "mysql2": "^3.14.1",
-    "next": "^15.5.18",
+    "next": "^15.5.25",
     "next-intl": "^4.1.0",
-    "nodemailer": "^9.0.3",
+    "nodemailer": "^9.1.1",
     "pdf-lib": "^1.17.1",
     "react": "^19",
     "react-dom": "^19",
