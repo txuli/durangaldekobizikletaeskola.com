@@ -6,7 +6,6 @@ import Slideshow from "../components/mainPage/eskola/slide";
 import News from "../components/mainPage/noticeComponents/notices";
 import SubTitle from "../components/mainPage/Titles/SubTitle";
 import Line from "@/app/[locale]/components/main/line0m";
-import EditImages from "@/app/[locale]/components/main/editImages";
 import ButtonNotice from '../components/mainPage/noticeComponents/Button';
 import { authClient } from "@/lib/auth-client";
 import { useEffect } from "react";
@@ -48,13 +47,9 @@ function safeTranslate(t: (key: string) => string, key: string): string {
     }
 }
 
-// Identifica esta página frente a las demás en la tabla frontImages
-const HOME_PAGE_ID = 1;
-
 export default function HomeView() {
     const [data, setData] = useState<Notice[]>([])
     const [session, setSession] = useState<Awaited<ReturnType<typeof authClient.getSession>>>();
-    const [editingSection, setEditingSection] = useState<number | null>(null);
     const locale = useLocale();
     useEffect(() => {
         const loadData = async () => {
@@ -119,20 +114,6 @@ export default function HomeView() {
                             <div className="w-full lg:w-1/4">
                                 <h2 className="text-3xl font-bold text-white">{section.title}</h2>
                                 <p className="mt-2 text-xl text-white">{section.subtitle}</p>
-                                {session ? (
-                                    <button
-                                        type="button"
-                                        onClick={() => setEditingSection(editingSection === idx ? null : idx)}
-                                        className="mt-2 px-3 py-1 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-                                    >
-                                        {editingSection === idx ? "Cerrar" : "Editar imagen"}
-                                    </button>
-                                ) : ("")}
-                                {editingSection === idx && (
-                                    <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/70 p-4">
-                                        <EditImages pageId={HOME_PAGE_ID} sectionId={idx} />
-                                    </div>
-                                )}
                             </div>
                         </div>
                     </div>
