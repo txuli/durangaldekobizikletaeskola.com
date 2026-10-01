@@ -16,7 +16,7 @@ const SECONDARY_SPONSORS = [
     { img: 'https://photos.txuli.com/duranguesa/sponsors/cumenor.webp', link: 'https://cumenor.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-Ingenia.webp', link: 'https://ingenia2014.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-SuministrosMugarra.webp', link: '', style: undefined },
-    { img: 'https://photos.txuli.com/duranguesa/sponsors/New-RuralKutxa.webp', link: 'https://www.ruralkutxa.com/', style: undefined },
+    { img: 'https://photos.txuli.com/duranguesa/sponsors/branka.png', link: '', style: 'overflow-hidden [&>a]:scale-[2.2]' },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-CubicalDenira.webp', link: 'https://cubicaldenira.com/', style: undefined },
     { img: 'https://photos.txuli.com/duranguesa/sponsors/New-MarrazDesign.webp', link: '', style: undefined },
 
